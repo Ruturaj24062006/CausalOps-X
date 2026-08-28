@@ -1,0 +1,33 @@
+{
+    "windows": {
+        "1m": 526,
+        "15m": 516,
+        "5m": 458
+    },
+    "missing": {
+        "metric_std": {
+            "missing_count": 148,
+            "missing_percentage": 9.87
+        },
+        "metric_mean": {
+            "missing_count": 139,
+            "missing_percentage": 9.27
+        },
+        "metric_max": {
+            "missing_count": 180,
+            "missing_percentage": 12.0
+        },
+        "metric_min": {
+            "missing_count": 154,
+            "missing_percentage": 10.27
+        },
+        "metric_current": {
+            "missing_count": 164,
+            "missing_percentage": 10.93
+        }
+    },
+    "duplicates": {
+        "duplicate_count": 0,
+        "duplicate_percentage": 0.0
+    }
+}

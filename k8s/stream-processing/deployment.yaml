@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stream-processing
+  namespace: causalops
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stream-processing
+  template:
+    metadata:
+      labels:
+        app: stream-processing
+    spec:
+      containers:
+        - name: stream-processing
+          image: stream-processing-service:latest
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: KAFKA_BOOTSTRAP_SERVERS
+              value: "kafka:9092"
+            - name: KAFKA_INPUT_TOPICS
+              value: "raw.metrics,raw.logs,raw.events"
+            - name: KAFKA_OUTPUT_TOPIC
+              value: "enriched.features"
+            - name: KAFKA_CONSUMER_GROUP
+              value: "causalops-stream-processor"
+          ports:
+            - containerPort: 8000
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+          readinessProbe:
+            httpGet:
+              path: /ready
+              port: 8000
+            initialDelaySeconds: 15
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+            initialDelaySeconds: 20
+            periodSeconds: 20

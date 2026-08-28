@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: otel-collector
+  namespace: causalops
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: otel-collector
+  template:
+    metadata:
+      labels:
+        app: otel-collector
+    spec:
+      containers:
+        - name: otel-collector
+          image: otel/opentelemetry-collector-contrib:0.95.0
+          imagePullPolicy: IfNotPresent
+          args:
+            - "--config=/conf/config.yaml"
+          ports:
+            - containerPort: 4317
+              name: grpc
+            - containerPort: 4318
+              name: http
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+          volumeMounts:
+            - name: config
+              mountPath: /conf
+          readinessProbe:
+            tcpSocket:
+              port: 4317
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            tcpSocket:
+              port: 4317
+            initialDelaySeconds: 15
+            periodSeconds: 15
+      volumes:
+        - name: config
+          configMap:
+            name: otel-collector-config

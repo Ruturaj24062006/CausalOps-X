@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: neo4j
+  namespace: causalops
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: neo4j
+  template:
+    metadata:
+      labels:
+        app: neo4j
+    spec:
+      containers:
+        - name: neo4j
+          image: neo4j:4.4
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 7474
+              name: http
+            - containerPort: 7687
+              name: bolt
+          env:
+            - name: NEO4J_AUTH
+              valueFrom:
+                secretKeyRef:
+                  name: neo4j-credentials
+                  key: NEO4J_AUTH
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "250m"
+            limits:
+              memory: "1.5Gi"
+              cpu: "1000m"
+          volumeMounts:
+            - name: neo4j-storage
+              mountPath: /data
+          readinessProbe:
+            tcpSocket:
+              port: 7687
+            initialDelaySeconds: 20
+            periodSeconds: 10
+          livenessProbe:
+            tcpSocket:
+              port: 7687
+            initialDelaySeconds: 45
+            periodSeconds: 20
+      volumes:
+        - name: neo4j-storage
+          persistentVolumeClaim:
+            claimName: neo4j-pvc

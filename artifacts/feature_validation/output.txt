@@ -1,0 +1,14 @@
+﻿FEATURE VALIDATION
+==================
+Schema: PASS
+Dimensions: PASS
+Timestamps: PASS
+Windows: PASS
+Duplicates: PASS
+Missing values: PASS/WARN
+Chronology: PASS
+Temporal leakage: PASS
+Split logic: PASS
+
+FINAL:
+FEATURE DATASET READY FOR MODEL TRAINING
