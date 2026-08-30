@@ -1,0 +1,48 @@
+FINAL VALIDATION REPORT
+=======================
+
+Python environment:
+FAIL (Docker native required over Windows)
+
+torch:
+FAIL
+
+torch_geometric:
+FAIL
+
+numpy:
+PASS
+
+scikit-learn:
+FAIL
+
+FastAPI:
+FAIL
+
+V9 checkpoint loading:
+FAIL (Blocked by PyTorch)
+
+V9 scaler loading:
+FAIL (Blocked by scikit-learn)
+
+V9 runtime verification:
+FAIL
+
+API startup:
+FAIL
+
+Health endpoint:
+FAIL
+
+RCA endpoint registered:
+FAIL
+
+Real HTTP inference:
+NOT AVAILABLE
+
+Real telemetry fixture:
+NOT AVAILABLE
+
+Golden test:
+NOT AVAILABLE
+

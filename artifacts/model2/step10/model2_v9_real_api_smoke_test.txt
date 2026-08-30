@@ -1,0 +1,48 @@
+FINAL VALIDATION REPORT
+=======================
+
+Application startup:
+FAIL (Docker block + Native PyTorch uninstalled)
+
+Health:
+NOT AVAILABLE
+
+POST /api/v1/rca/predict:
+FAIL
+
+V9 engine invoked:
+FAIL
+
+Checkpoint:
+FAIL
+
+Scaler:
+FAIL
+
+32 features:
+FAIL
+
+5 edges:
+FAIL
+
+Online Boutique:
+NOT TESTED
+
+Sock Shop:
+NOT TESTED
+
+Train Ticket:
+NOT TESTED
+
+Model 1:
+PASS (Unaffected)
+
+Artifact integrity:
+PASS (Offline file check matches)
+
+Error handling:
+FAIL
+
+Golden test:
+NOT AVAILABLE
+

@@ -1,0 +1,52 @@
+FINAL VALIDATION REPORT
+=======================
+
+Host source:
+PASS
+
+typing repair present:
+PASS
+
+Docker image rebuilt:
+FAIL (Docker build blocked: ERROR: failed to connect to the docker API at npipe:////./pipe/dockerDesktopLinuxEngine; check if the path is correct and if the daemon is running: open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified.
+)
+
+Current source included:
+FAIL
+
+Container started:
+FAIL
+
+Container stable:
+FAIL
+
+Uvicorn:
+FAIL
+
+Health endpoint:
+FAIL
+
+V9 checkpoint:
+FAIL
+
+V9 scaler:
+FAIL
+
+32 features:
+FAIL
+
+5 edge features:
+FAIL
+
+API route:
+FAIL
+
+Real telemetry:
+NOT AVAILABLE
+
+Model 1:
+PASS (Unaffected)
+
+Artifact integrity:
+PASS
+

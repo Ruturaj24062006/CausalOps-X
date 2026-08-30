@@ -1,0 +1,18 @@
+{
+  "Docker image": "stream-processing-service:latest",
+  "Docker build": "PASS",
+  "Python": "PASS",
+  "torch": "PASS",
+  "torch_geometric": "PASS",
+  "numpy": "PASS",
+  "scikit-learn": "PASS",
+  "FastAPI": "PASS",
+  "uvicorn": "PASS",
+  "pydantic": "PASS",
+  "Checkpoint": "PASS",
+  "Checkpoint SHA-256": "PASS",
+  "Scaler": "PASS",
+  "Scaler SHA-256": "PASS",
+  "V9 engine import": "FAIL",
+  "V9 runtime verification": "FAIL"
+}

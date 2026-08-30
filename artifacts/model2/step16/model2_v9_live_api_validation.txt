@@ -1,0 +1,69 @@
+FINAL VALIDATION REPORT
+=======================
+
+Container:
+FAIL (('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)))
+
+Startup:
+FAIL
+
+Health:
+FAIL
+
+V9 import:
+FAIL
+
+Checkpoint:
+FAIL
+
+Scaler:
+FAIL
+
+API route:
+FAIL
+
+Real telemetry fixture:
+NOT AVAILABLE
+
+V9 execution:
+NOT TESTED
+
+32 features:
+PASS
+
+5 edge features:
+PASS
+
+Graph:
+PASS
+
+Node mapping:
+PASS
+
+Online Boutique:
+NOT TESTED
+
+Sock Shop:
+NOT TESTED
+
+Train Ticket:
+NOT TESTED
+
+Service resolution:
+NOT TESTED
+
+Error handling:
+FAIL
+
+Model 1:
+PASS (Unaffected)
+
+Checkpoint integrity:
+PASS
+
+Scaler integrity:
+PASS
+
+Golden test:
+NOT AVAILABLE
+

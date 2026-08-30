@@ -56,7 +56,11 @@ if TORCH_AVAILABLE:
             return self.decode(z, x), mean, logvar
 
 class Model1Engine:
-    def __init__(self, model_dir=r"d:\Projects\CausalOps X\models\anomaly_detection"):
+    def __init__(self, model_dir=None):
+        if model_dir is None:
+            model_dir = os.environ.get("MODEL1_DIR", os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", "models", "anomaly_detection")))
+            if not os.path.exists(model_dir) and os.path.exists("/workspace/models/anomaly_detection"):
+                model_dir = "/workspace/models/anomaly_detection"
         self.model_dir = model_dir
         self.model = None
         self.scaler = None

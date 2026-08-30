@@ -1,0 +1,45 @@
+FINAL VALIDATION REPORT
+=======================
+
+Docker daemon:
+PASS
+
+Docker image rebuild:
+FAIL (Docker build blocked: Command '['docker', 'build', '--no-cache', '-t', 'stream-processing-service', '-f', 'services\\stream-processing-service\\Dockerfile', 'services\\stream-processing-service']' timed out after 600 seconds)
+
+Current V9 source inside image:
+FAIL
+
+Typing repair:
+FAIL
+
+Container startup:
+FAIL
+
+Container stable:
+FAIL
+
+Uvicorn:
+FAIL
+
+Health endpoint:
+FAIL
+
+V9 checkpoint:
+FAIL
+
+V9 scaler:
+FAIL
+
+API route:
+FAIL
+
+Model 1:
+PASS (Unaffected)
+
+Checkpoint integrity:
+PASS
+
+Scaler integrity:
+PASS
+

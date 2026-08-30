@@ -5,7 +5,7 @@ import pickle
 import numpy as np
 import torch
 import torch.nn as nn
-
+from typing import Any
 logger = logging.getLogger(__name__)
 
 # Try purely dynamic PyG import to prevent hard crash if pyg is absent locally

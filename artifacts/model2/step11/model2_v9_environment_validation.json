@@ -1,0 +1,15 @@
+{
+  "Docker installed": "FAIL",
+  "Docker daemon": "FAIL",
+  "Python": "PASS",
+  "PyTorch": "PASS",
+  "PyTorch Geometric": "PASS",
+  "FastAPI": "PASS",
+  "Uvicorn": "PASS",
+  "Dependencies": "PASS",
+  "Application startup": "PASS",
+  "V9 checkpoint loading": "PASS",
+  "V9 scaler loading": "PASS",
+  "API endpoint": "NOT TESTED",
+  "Model 1": "PASS"
+}

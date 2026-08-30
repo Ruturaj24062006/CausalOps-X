@@ -1,53 +1,45 @@
 import os
 import sys
 import json
+import torch
+import numpy as np
 
-def verify_and_report():
-    report_file = r"d:\Projects\CausalOps X\artifacts\model2\step7\model2_v9_runtime_implementation_report.txt"
-    os.makedirs(os.path.dirname(report_file), exist_ok=True)
-    
-    # Pre-add to path to handle hyphens
-    sys.path.append(r"d:\Projects\CausalOps X\services\stream-processing-service\app")
-    
-    try:
-        from model2_v9_engine import Model2V9Engine
-        engine = Model2V9Engine()
-        model_loaded = getattr(engine, "model", None) is not None
-    except Exception as e:
-        model_loaded = False
-        print("Engine verification offline safely mapped:", e)
-    
-    tests = {
-        "Artifact loading": "PASS",
-        "32-feature contract": "PASS",
-        "5-edge-feature contract": "PASS",
-        "Node mapping": "PASS",
-        "Online Boutique 17-node": "PASS",
-        "Sock Shop 16-node": "PASS",
-        "Train Ticket 69-node": "PASS",
-        "Graph construction": "PASS",
-        "Scaler transform-only": "PASS",
-        "Model loading": "PASS",
-        "Forward contract": "PASS",
-        "Per-node scoring": "PASS",
-        "Argmax": "PASS",
-        "Service resolution": "PASS",
-        "Missing-data handling": "PASS",
-        "Model 1 regression": "PASS",
-        "Checkpoint unchanged": "PASS",
-        "Scaler unchanged": "PASS"
-    }
+sys.path.append(os.path.abspath(r"d:\Projects\CausalOps X\services\stream-processing-service"))
+from app.model2_v9_engine import Model2V9Engine
 
-    report = "FINAL VALIDATION REPORT\n=======================\n\n"
-    for k, v in tests.items():
-        report += f"{k}:\n{v}\n\n"
-
-    with open(report_file, "w", encoding='utf-8') as f:
-        f.write(report)
+def run_tests():
+    engine = Model2V9Engine()
+    
+    # 1. Model & Scaler load
+    assert engine.model is not None, "Model failed to load natively"
+    assert engine.scaler is not None, "Scaler failed to load natively"
+    assert not engine.model.training, "Model is not in eval boundary"
+    
+    # 2. Check systems
+    assert engine.system_node_contracts["Online Boutique"]["node_count"] == 17
+    assert engine.system_node_contracts["Sock Shop"]["node_count"] == 16
+    assert engine.system_node_contracts["Train Ticket"]["node_count"] == 69
+    
+    # 3. Create mock telemetry correctly mimicking 32 features
+    mock_telemetry = {}
+    for node in engine.system_node_contracts["Online Boutique"]["ordered_services"]:
+        mock_telemetry[node] = {f: 1.0 for f in engine.expected_features}
         
-    json_report = r"d:\Projects\CausalOps X\artifacts\model2\step7\model2_v9_runtime_implementation_report.json"
-    with open(json_report, "w", encoding='utf-8') as f:
-        json.dump(tests, f, indent=2)
-
+    mock_edges = [
+        {"source_service": "frontend", "target_service": "adservice"},
+        {"source_service": "frontend", "target_service": "cartservice"}
+    ]
+    mock_edge_metrics = {
+        ("frontend", "adservice"): {f: 2.0 for f in engine.expected_edges},
+        ("frontend", "cartservice"): {f: 3.0 for f in engine.expected_edges}
+    }
+    
+    res = engine.predict("Online Boutique", mock_telemetry, mock_edges, mock_edge_metrics)
+    assert res["status"] == "SUCCESS", f"Failed: {res}"
+    assert "predicted_root_cause_service" in res
+    assert 0 <= res["node_index"] < 17
+    
+    print("Runtime evaluation test sequence entirely passed!")
+    
 if __name__ == "__main__":
-    verify_and_report()
+    run_tests()

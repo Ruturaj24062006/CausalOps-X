@@ -3,3 +3,7 @@ uvicorn
 kafka-python-ng
 pydantic
 pytest
+torch
+torch_geometric
+numpy
+scikit-learn

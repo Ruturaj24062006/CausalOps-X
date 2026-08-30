@@ -1,0 +1,17 @@
+{
+  "Docker build": "PASS",
+  "Image created": "PASS",
+  "Python version": "UNKNOWN",
+  "torch": "FAIL",
+  "torch_geometric": "FAIL",
+  "numpy": "FAIL",
+  "scikit-learn": "FAIL",
+  "FastAPI": "FAIL",
+  "uvicorn": "FAIL",
+  "pydantic": "FAIL",
+  "Checkpoint accessible": "PASS",
+  "Checkpoint SHA-256": "PASS",
+  "Scaler accessible": "PASS",
+  "Scaler SHA-256": "PASS",
+  "V9 engine import": "FAIL (Import crashed inside container: 'any'?)"
+}
