@@ -1,0 +1,20 @@
+{
+    "step": 35,
+    "dataset": "RE2",
+    "contract_status": "FAIL",
+    "row_count": null,
+    "column_count": null,
+    "timestamp_columns": [],
+    "target_columns": [],
+    "identifier_columns": [],
+    "matching_columns": [],
+    "missing_columns": [],
+    "extra_columns": [],
+    "dtype_mismatches": [],
+    "null_summary": {},
+    "injection_time": {},
+    "data_integrity": {
+        "status": "FAIL",
+        "reason": "RE2 dataset files (Parquet/Data) are completely missing from the workspace. No data evaluation possible."
+    }
+}

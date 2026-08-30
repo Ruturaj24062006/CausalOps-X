@@ -1,0 +1,5 @@
+{
+    "status": "READY",
+    "target_node_index_logic": "Matches `root_cause_service` string to its index inside the `node_orders[system]` list via explicit lookup `nodes.index(root_service)`. Returns 0-based integer offset directly.",
+    "verification": "The target validation loop ensures `0 <= target_node_index < len(nodes)`."
+}

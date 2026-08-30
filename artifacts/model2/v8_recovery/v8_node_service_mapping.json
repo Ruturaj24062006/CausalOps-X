@@ -1,0 +1,5 @@
+{
+    "status": "NOT RECOVERED",
+    "mapping": "UNKNOWN",
+    "missing_evidence": "No integer index map arrays exist. Without the RCAEval dataset, integer labels like `4` or `13` reported in `final_test_report_v8.csv` cannot be reliably reverse-mapped to services."
+}

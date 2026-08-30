@@ -1,0 +1,30 @@
+{
+    "checkpoint": "best_vae_model1_20f.pth",
+    "input_dim": 20,
+    "sequence_length": 20,
+    "best_epoch": 86,
+    "validation_error_statistics": {
+        "minimum": 0.09051169793908262,
+        "Q1": 3.496079476906155,
+        "median": 6.0002827648297075,
+        "mean": 7.089325121722387,
+        "Q3": 9.400567606095192,
+        "maximum": 47.635814395803855,
+        "std": 4.920015456108006
+    },
+    "test_error_statistics": {
+        "minimum": 0.11065073435273805,
+        "Q1": 3.834327926176974,
+        "median": 6.363192091910776,
+        "mean": 7.595853909328556,
+        "Q3": 10.228939971955944,
+        "maximum": 42.60048901777086,
+        "std": 5.180723098358807
+    },
+    "determinism_check": {
+        "max_abs_diff": 0.0,
+        "mean_abs_diff": 0.0
+    },
+    "NaN_count": 0,
+    "Inf_count": 0
+}

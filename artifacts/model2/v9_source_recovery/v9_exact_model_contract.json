@@ -1,0 +1,14 @@
+{
+    "status": "READY",
+    "class_name": "Model2V9Corrected",
+    "base": "torch.nn.Module",
+    "architecture": "GCNConv -> ReLU -> GCNConv -> ReLU -> GCNConv -> Linear",
+    "layers": [
+        "self.conv1 = GCNConv(node_input_dim, hidden_dim)",
+        "self.conv2 = GCNConv(hidden_dim, hidden_dim)",
+        "self.conv3 = GCNConv(hidden_dim, hidden_dim)",
+        "self.score_head = torch.nn.Linear(hidden_dim, 1)"
+    ],
+    "activations": "torch.relu applied to intermediate convolutions. The final GCN layer (conv3) output DOES NOT pass through ReLU.",
+    "forward_logic": "Passes Data.x and Data.edge_index explicitly. Note that Data.edge_attr is implicitly ignored because GCNConv does not consume edge features."
+}

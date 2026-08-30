@@ -68,11 +68,12 @@ def watch_events_blocking():
                         "action": getattr(obj, "action", None)
                     }
                 )
-                published = publisher.publish(KAFKA_EVENTS_TOPIC, norm_event.model_dump())
+                published = publisher.publish(KAFKA_EVENTS_TOPIC, norm_event.dict())
                 if published:
                     logger.info(f"Published K8s Event: {event_id} - {obj.reason}")
         except Exception as e:
             logger.warning(f"Event watch error/timeout (restarting stream): {e}")
+            last_resource_version = None
             import time
             time.sleep(5)
 

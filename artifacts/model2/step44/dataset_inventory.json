@@ -1,0 +1,8 @@
+{
+    "status": "NOT READY",
+    "reason": "The entire RCAEval RE2 dataset (/kaggle/working/rcaeval_re2) is physically absent from the workspace.",
+    "total_case_directories": null,
+    "missing_files": [
+        "All datasets, including telemetry, logs, metrics, trace files, and topologies."
+    ]
+}

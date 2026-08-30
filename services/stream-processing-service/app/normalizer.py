@@ -21,9 +21,18 @@ def normalize_event(topic: str, raw_data: dict) -> Optional[dict]:
             else:
                 source = "unknown"
 
+        ts_val = raw_data.get("timestamp") or raw_data.get("time")
+        if not ts_val and raw_data.get("@timestamp"):
+            try:
+                ts_val = datetime.datetime.utcfromtimestamp(raw_data["@timestamp"]).isoformat() + "Z"
+            except Exception:
+                pass
+        if not ts_val:
+            ts_val = datetime.datetime.utcnow().isoformat() + "Z"
+            
         normalized = {
             "event_id": raw_data.get("event_id") or str(uuid.uuid4()),
-            "timestamp": raw_data.get("timestamp") or (datetime.datetime.utcnow().isoformat() + "Z"),
+            "timestamp": ts_val,
             "processing_timestamp": datetime.datetime.utcnow().isoformat() + "Z",
             "source": source,
             "service_id": raw_data.get("service_id"),

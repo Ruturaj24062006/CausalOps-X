@@ -1,0 +1,27 @@
+{
+  "model_1": {
+    "name": "LSTM-VAE Anomaly Detector",
+    "path": "d:/Projects/CausalOps X/models/anomaly_detection/best_vae.pth",
+    "type": "pytorch_state_dict",
+    "required_architecture": "LSTM-VAE",
+    "feature_version_expected": "unknown",
+    "input_dimension": 37,
+    "preprocessing_path": "d:/Projects/CausalOps X/models/anomaly_detection/final_scaler.pkl",
+    "output_type": "reconstruction_vector_37",
+    "status": "incompatible_with_feature_v1"
+  },
+  "model_2": {
+    "name": "GNN Root Cause Analyzer",
+    "path": "d:/Projects/CausalOps X/models/root_cause_analysis/best_model_v8.pth",
+    "type": "pytorch_checkpoint",
+    "required_architecture": "Graph Neural Network",
+    "feature_version_expected": "unknown",
+    "input_dimension": {
+      "node": 88,
+      "edge": 5
+    },
+    "preprocessing_path": null,
+    "output_type": "node_ranking_score",
+    "status": "incompatible_with_feature_v1"
+  }
+}

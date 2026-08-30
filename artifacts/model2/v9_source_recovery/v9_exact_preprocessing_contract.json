@@ -1,0 +1,7 @@
+{
+    "status": "READY",
+    "scaler_type": "sklearn.preprocessing.StandardScaler",
+    "fit_scope": "Only on the training fold nodes (Strict separation: NO TEST, NO VALIDATION).",
+    "matrix_dimensions": 32,
+    "behavior": "scaler.fit(training_matrix) followed by saving to 'model2_v9_step35_training_only_scaler.pkl'. Runtime handles inference by enforcing X_scaled = scaler.transform(X)."
+}

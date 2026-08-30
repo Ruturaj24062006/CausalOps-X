@@ -1,0 +1,35 @@
+STEP 44D — MODEL 2 EXACT V8 FEATURE CONSTRUCTION RECOVERY
+
+TABLE A — NODE FEATURE CONTRACT
+index | feature_name | source | formula | transformation
+---------------------------------------------------------
+UNKNOWN / BLOCKED (Source arrays defining the 88 features are systematically absent).
+
+TABLE B — EDGE FEATURE CONTRACT
+index | feature_name | source | formula | transformation
+---------------------------------------------------------
+UNKNOWN / BLOCKED (Source arrays defining the 5 features are systematically absent).
+
+TABLE C — NODE MAPPING
+node_index | service_name
+---------------------------------------------------------
+UNKNOWN / BLOCKED (Index string arrays missing).
+
+TABLE D — EDGE TOPOLOGY
+source_node | target_node | edge_features/source
+---------------------------------------------------------
+UNKNOWN / BLOCKED (edge_index builders missing).
+
+TABLE E — PREPROCESSING
+input | operation | parameters | output
+---------------------------------------------------------
+UNKNOWN / BLOCKED (Statistical configuration artifacts missing).
+
+TABLE F — DIMENSION CHECK
+expected | recovered | status
+---------------------------------------------------------
+node_input_dim = 88 | None | BLOCKED
+edge_input_dim = 5  | None | BLOCKED
+
+STATUS:
+BLOCKED — implementation cannot be reconstructed safely. The provided file `model2_original_notebook_raw_source.py` merely scripts checkpoint metadata interrogation without structurally preserving any algorithmic logic related to graph bindings or topological node transformations.

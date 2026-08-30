@@ -1,0 +1,1654 @@
+{
+  "cases": {
+    "re2ob_checkoutservice_cpu_1": {
+      "case_id": "re2ob_checkoutservice_cpu_1",
+      "root_cause_service": "checkoutservice",
+      "system": "Online Boutique",
+      "target_node_index": 2
+    },
+    "re2ob_checkoutservice_cpu_2": {
+      "case_id": "re2ob_checkoutservice_cpu_2",
+      "root_cause_service": "checkoutservice",
+      "system": "Online Boutique",
+      "target_node_index": 2
+    },
+    "re2ob_checkoutservice_cpu_3": {
+      "case_id": "re2ob_checkoutservice_cpu_3",
+      "root_cause_service": "checkoutservice",
+      "system": "Online Boutique",
+      "target_node_index": 2
+    },
+    "re2ob_checkoutservice_delay_1": {
+      "case_id": "re2ob_checkoutservice_delay_1",
+      "root_cause_service": "checkoutservice",
+      "system": "Online Boutique",
+      "target_node_index": 2
+    },
+    "re2ob_checkoutservice_delay_2": {
+      "case_id": "re2ob_checkoutservice_delay_2",
+      "root_cause_service": "checkoutservice",
+      "system": "Online Boutique",
+      "target_node_index": 2
+    },
+    "re2ob_checkoutservice_delay_3": {
+      "case_id": "re2ob_checkoutservice_delay_3",
+      "root_cause_service": "checkoutservice",
+      "system": "Online Boutique",
+      "target_node_index": 2
+    },
+    "re2ob_checkoutservice_disk_1": {
+      "case_id": "re2ob_checkoutservice_disk_1",
+      "root_cause_service": "checkoutservice",
+      "system": "Online Boutique",
+      "target_node_index": 2
+    },
+    "re2ob_checkoutservice_disk_2": {
+      "case_id": "re2ob_checkoutservice_disk_2",
+      "root_cause_service": "checkoutservice",
+      "system": "Online Boutique",
+      "target_node_index": 2
+    },
+    "re2ob_checkoutservice_disk_3": {
+      "case_id": "re2ob_checkoutservice_disk_3",
+      "root_cause_service": "checkoutservice",
+      "system": "Online Boutique",
+      "target_node_index": 2
+    },
+    "re2ob_checkoutservice_loss_1": {
+      "case_id": "re2ob_checkoutservice_loss_1",
+      "root_cause_service": "checkoutservice",
+      "system": "Online Boutique",
+      "target_node_index": 2
+    },
+    "re2ob_checkoutservice_loss_2": {
+      "case_id": "re2ob_checkoutservice_loss_2",
+      "root_cause_service": "checkoutservice",
+      "system": "Online Boutique",
+      "target_node_index": 2
+    },
+    "re2ob_checkoutservice_loss_3": {
+      "case_id": "re2ob_checkoutservice_loss_3",
+      "root_cause_service": "checkoutservice",
+      "system": "Online Boutique",
+      "target_node_index": 2
+    },
+    "re2ob_checkoutservice_mem_1": {
+      "case_id": "re2ob_checkoutservice_mem_1",
+      "root_cause_service": "checkoutservice",
+      "system": "Online Boutique",
+      "target_node_index": 2
+    },
+    "re2ob_checkoutservice_mem_2": {
+      "case_id": "re2ob_checkoutservice_mem_2",
+      "root_cause_service": "checkoutservice",
+      "system": "Online Boutique",
+      "target_node_index": 2
+    },
+    "re2ob_checkoutservice_mem_3": {
+      "case_id": "re2ob_checkoutservice_mem_3",
+      "root_cause_service": "checkoutservice",
+      "system": "Online Boutique",
+      "target_node_index": 2
+    },
+    "re2ob_checkoutservice_socket_1": {
+      "case_id": "re2ob_checkoutservice_socket_1",
+      "root_cause_service": "checkoutservice",
+      "system": "Online Boutique",
+      "target_node_index": 2
+    },
+    "re2ob_checkoutservice_socket_2": {
+      "case_id": "re2ob_checkoutservice_socket_2",
+      "root_cause_service": "checkoutservice",
+      "system": "Online Boutique",
+      "target_node_index": 2
+    },
+    "re2ob_checkoutservice_socket_3": {
+      "case_id": "re2ob_checkoutservice_socket_3",
+      "root_cause_service": "checkoutservice",
+      "system": "Online Boutique",
+      "target_node_index": 2
+    },
+    "re2ob_currencyservice_cpu_1": {
+      "case_id": "re2ob_currencyservice_cpu_1",
+      "root_cause_service": "currencyservice",
+      "system": "Online Boutique",
+      "target_node_index": 3
+    },
+    "re2ob_currencyservice_cpu_2": {
+      "case_id": "re2ob_currencyservice_cpu_2",
+      "root_cause_service": "currencyservice",
+      "system": "Online Boutique",
+      "target_node_index": 3
+    },
+    "re2ob_currencyservice_cpu_3": {
+      "case_id": "re2ob_currencyservice_cpu_3",
+      "root_cause_service": "currencyservice",
+      "system": "Online Boutique",
+      "target_node_index": 3
+    },
+    "re2ob_currencyservice_delay_1": {
+      "case_id": "re2ob_currencyservice_delay_1",
+      "root_cause_service": "currencyservice",
+      "system": "Online Boutique",
+      "target_node_index": 3
+    },
+    "re2ob_currencyservice_delay_2": {
+      "case_id": "re2ob_currencyservice_delay_2",
+      "root_cause_service": "currencyservice",
+      "system": "Online Boutique",
+      "target_node_index": 3
+    },
+    "re2ob_currencyservice_delay_3": {
+      "case_id": "re2ob_currencyservice_delay_3",
+      "root_cause_service": "currencyservice",
+      "system": "Online Boutique",
+      "target_node_index": 3
+    },
+    "re2ob_currencyservice_disk_1": {
+      "case_id": "re2ob_currencyservice_disk_1",
+      "root_cause_service": "currencyservice",
+      "system": "Online Boutique",
+      "target_node_index": 3
+    },
+    "re2ob_currencyservice_disk_2": {
+      "case_id": "re2ob_currencyservice_disk_2",
+      "root_cause_service": "currencyservice",
+      "system": "Online Boutique",
+      "target_node_index": 3
+    },
+    "re2ob_currencyservice_disk_3": {
+      "case_id": "re2ob_currencyservice_disk_3",
+      "root_cause_service": "currencyservice",
+      "system": "Online Boutique",
+      "target_node_index": 3
+    },
+    "re2ob_currencyservice_loss_1": {
+      "case_id": "re2ob_currencyservice_loss_1",
+      "root_cause_service": "currencyservice",
+      "system": "Online Boutique",
+      "target_node_index": 3
+    },
+    "re2ob_currencyservice_loss_2": {
+      "case_id": "re2ob_currencyservice_loss_2",
+      "root_cause_service": "currencyservice",
+      "system": "Online Boutique",
+      "target_node_index": 3
+    },
+    "re2ob_currencyservice_loss_3": {
+      "case_id": "re2ob_currencyservice_loss_3",
+      "root_cause_service": "currencyservice",
+      "system": "Online Boutique",
+      "target_node_index": 3
+    },
+    "re2ob_currencyservice_mem_1": {
+      "case_id": "re2ob_currencyservice_mem_1",
+      "root_cause_service": "currencyservice",
+      "system": "Online Boutique",
+      "target_node_index": 3
+    },
+    "re2ob_currencyservice_mem_2": {
+      "case_id": "re2ob_currencyservice_mem_2",
+      "root_cause_service": "currencyservice",
+      "system": "Online Boutique",
+      "target_node_index": 3
+    },
+    "re2ob_currencyservice_mem_3": {
+      "case_id": "re2ob_currencyservice_mem_3",
+      "root_cause_service": "currencyservice",
+      "system": "Online Boutique",
+      "target_node_index": 3
+    },
+    "re2ob_currencyservice_socket_1": {
+      "case_id": "re2ob_currencyservice_socket_1",
+      "root_cause_service": "currencyservice",
+      "system": "Online Boutique",
+      "target_node_index": 3
+    },
+    "re2ob_currencyservice_socket_2": {
+      "case_id": "re2ob_currencyservice_socket_2",
+      "root_cause_service": "currencyservice",
+      "system": "Online Boutique",
+      "target_node_index": 3
+    },
+    "re2ob_currencyservice_socket_3": {
+      "case_id": "re2ob_currencyservice_socket_3",
+      "root_cause_service": "currencyservice",
+      "system": "Online Boutique",
+      "target_node_index": 3
+    },
+    "re2ob_emailservice_cpu_1": {
+      "case_id": "re2ob_emailservice_cpu_1",
+      "root_cause_service": "emailservice",
+      "system": "Online Boutique",
+      "target_node_index": 4
+    },
+    "re2ob_emailservice_cpu_2": {
+      "case_id": "re2ob_emailservice_cpu_2",
+      "root_cause_service": "emailservice",
+      "system": "Online Boutique",
+      "target_node_index": 4
+    },
+    "re2ob_emailservice_cpu_3": {
+      "case_id": "re2ob_emailservice_cpu_3",
+      "root_cause_service": "emailservice",
+      "system": "Online Boutique",
+      "target_node_index": 4
+    },
+    "re2ob_emailservice_delay_1": {
+      "case_id": "re2ob_emailservice_delay_1",
+      "root_cause_service": "emailservice",
+      "system": "Online Boutique",
+      "target_node_index": 4
+    },
+    "re2ob_emailservice_delay_2": {
+      "case_id": "re2ob_emailservice_delay_2",
+      "root_cause_service": "emailservice",
+      "system": "Online Boutique",
+      "target_node_index": 4
+    },
+    "re2ob_emailservice_delay_3": {
+      "case_id": "re2ob_emailservice_delay_3",
+      "root_cause_service": "emailservice",
+      "system": "Online Boutique",
+      "target_node_index": 4
+    },
+    "re2ob_emailservice_disk_1": {
+      "case_id": "re2ob_emailservice_disk_1",
+      "root_cause_service": "emailservice",
+      "system": "Online Boutique",
+      "target_node_index": 4
+    },
+    "re2ob_emailservice_disk_2": {
+      "case_id": "re2ob_emailservice_disk_2",
+      "root_cause_service": "emailservice",
+      "system": "Online Boutique",
+      "target_node_index": 4
+    },
+    "re2ob_emailservice_disk_3": {
+      "case_id": "re2ob_emailservice_disk_3",
+      "root_cause_service": "emailservice",
+      "system": "Online Boutique",
+      "target_node_index": 4
+    },
+    "re2ob_emailservice_loss_1": {
+      "case_id": "re2ob_emailservice_loss_1",
+      "root_cause_service": "emailservice",
+      "system": "Online Boutique",
+      "target_node_index": 4
+    },
+    "re2ob_emailservice_loss_2": {
+      "case_id": "re2ob_emailservice_loss_2",
+      "root_cause_service": "emailservice",
+      "system": "Online Boutique",
+      "target_node_index": 4
+    },
+    "re2ob_emailservice_loss_3": {
+      "case_id": "re2ob_emailservice_loss_3",
+      "root_cause_service": "emailservice",
+      "system": "Online Boutique",
+      "target_node_index": 4
+    },
+    "re2ob_emailservice_mem_1": {
+      "case_id": "re2ob_emailservice_mem_1",
+      "root_cause_service": "emailservice",
+      "system": "Online Boutique",
+      "target_node_index": 4
+    },
+    "re2ob_emailservice_mem_2": {
+      "case_id": "re2ob_emailservice_mem_2",
+      "root_cause_service": "emailservice",
+      "system": "Online Boutique",
+      "target_node_index": 4
+    },
+    "re2ob_emailservice_mem_3": {
+      "case_id": "re2ob_emailservice_mem_3",
+      "root_cause_service": "emailservice",
+      "system": "Online Boutique",
+      "target_node_index": 4
+    },
+    "re2ob_emailservice_socket_1": {
+      "case_id": "re2ob_emailservice_socket_1",
+      "root_cause_service": "emailservice",
+      "system": "Online Boutique",
+      "target_node_index": 4
+    },
+    "re2ob_emailservice_socket_2": {
+      "case_id": "re2ob_emailservice_socket_2",
+      "root_cause_service": "emailservice",
+      "system": "Online Boutique",
+      "target_node_index": 4
+    },
+    "re2ob_emailservice_socket_3": {
+      "case_id": "re2ob_emailservice_socket_3",
+      "root_cause_service": "emailservice",
+      "system": "Online Boutique",
+      "target_node_index": 4
+    },
+    "re2ob_productcatalogservice_cpu_1": {
+      "case_id": "re2ob_productcatalogservice_cpu_1",
+      "root_cause_service": "productcatalogservice",
+      "system": "Online Boutique",
+      "target_node_index": 13
+    },
+    "re2ob_productcatalogservice_cpu_2": {
+      "case_id": "re2ob_productcatalogservice_cpu_2",
+      "root_cause_service": "productcatalogservice",
+      "system": "Online Boutique",
+      "target_node_index": 13
+    },
+    "re2ob_productcatalogservice_cpu_3": {
+      "case_id": "re2ob_productcatalogservice_cpu_3",
+      "root_cause_service": "productcatalogservice",
+      "system": "Online Boutique",
+      "target_node_index": 13
+    },
+    "re2ob_productcatalogservice_delay_1": {
+      "case_id": "re2ob_productcatalogservice_delay_1",
+      "root_cause_service": "productcatalogservice",
+      "system": "Online Boutique",
+      "target_node_index": 13
+    },
+    "re2ob_productcatalogservice_delay_2": {
+      "case_id": "re2ob_productcatalogservice_delay_2",
+      "root_cause_service": "productcatalogservice",
+      "system": "Online Boutique",
+      "target_node_index": 13
+    },
+    "re2ob_productcatalogservice_delay_3": {
+      "case_id": "re2ob_productcatalogservice_delay_3",
+      "root_cause_service": "productcatalogservice",
+      "system": "Online Boutique",
+      "target_node_index": 13
+    },
+    "re2ob_productcatalogservice_disk_1": {
+      "case_id": "re2ob_productcatalogservice_disk_1",
+      "root_cause_service": "productcatalogservice",
+      "system": "Online Boutique",
+      "target_node_index": 13
+    },
+    "re2ob_productcatalogservice_disk_2": {
+      "case_id": "re2ob_productcatalogservice_disk_2",
+      "root_cause_service": "productcatalogservice",
+      "system": "Online Boutique",
+      "target_node_index": 13
+    },
+    "re2ob_productcatalogservice_disk_3": {
+      "case_id": "re2ob_productcatalogservice_disk_3",
+      "root_cause_service": "productcatalogservice",
+      "system": "Online Boutique",
+      "target_node_index": 13
+    },
+    "re2ob_productcatalogservice_loss_1": {
+      "case_id": "re2ob_productcatalogservice_loss_1",
+      "root_cause_service": "productcatalogservice",
+      "system": "Online Boutique",
+      "target_node_index": 13
+    },
+    "re2ob_productcatalogservice_loss_2": {
+      "case_id": "re2ob_productcatalogservice_loss_2",
+      "root_cause_service": "productcatalogservice",
+      "system": "Online Boutique",
+      "target_node_index": 13
+    },
+    "re2ob_productcatalogservice_loss_3": {
+      "case_id": "re2ob_productcatalogservice_loss_3",
+      "root_cause_service": "productcatalogservice",
+      "system": "Online Boutique",
+      "target_node_index": 13
+    },
+    "re2ob_productcatalogservice_mem_1": {
+      "case_id": "re2ob_productcatalogservice_mem_1",
+      "root_cause_service": "productcatalogservice",
+      "system": "Online Boutique",
+      "target_node_index": 13
+    },
+    "re2ob_productcatalogservice_mem_2": {
+      "case_id": "re2ob_productcatalogservice_mem_2",
+      "root_cause_service": "productcatalogservice",
+      "system": "Online Boutique",
+      "target_node_index": 13
+    },
+    "re2ob_productcatalogservice_mem_3": {
+      "case_id": "re2ob_productcatalogservice_mem_3",
+      "root_cause_service": "productcatalogservice",
+      "system": "Online Boutique",
+      "target_node_index": 13
+    },
+    "re2ob_productcatalogservice_socket_1": {
+      "case_id": "re2ob_productcatalogservice_socket_1",
+      "root_cause_service": "productcatalogservice",
+      "system": "Online Boutique",
+      "target_node_index": 13
+    },
+    "re2ob_productcatalogservice_socket_2": {
+      "case_id": "re2ob_productcatalogservice_socket_2",
+      "root_cause_service": "productcatalogservice",
+      "system": "Online Boutique",
+      "target_node_index": 13
+    },
+    "re2ob_productcatalogservice_socket_3": {
+      "case_id": "re2ob_productcatalogservice_socket_3",
+      "root_cause_service": "productcatalogservice",
+      "system": "Online Boutique",
+      "target_node_index": 13
+    },
+    "re2ob_recommendationservice_cpu_1": {
+      "case_id": "re2ob_recommendationservice_cpu_1",
+      "root_cause_service": "recommendationservice",
+      "system": "Online Boutique",
+      "target_node_index": 14
+    },
+    "re2ob_recommendationservice_cpu_2": {
+      "case_id": "re2ob_recommendationservice_cpu_2",
+      "root_cause_service": "recommendationservice",
+      "system": "Online Boutique",
+      "target_node_index": 14
+    },
+    "re2ob_recommendationservice_cpu_3": {
+      "case_id": "re2ob_recommendationservice_cpu_3",
+      "root_cause_service": "recommendationservice",
+      "system": "Online Boutique",
+      "target_node_index": 14
+    },
+    "re2ob_recommendationservice_delay_1": {
+      "case_id": "re2ob_recommendationservice_delay_1",
+      "root_cause_service": "recommendationservice",
+      "system": "Online Boutique",
+      "target_node_index": 14
+    },
+    "re2ob_recommendationservice_delay_2": {
+      "case_id": "re2ob_recommendationservice_delay_2",
+      "root_cause_service": "recommendationservice",
+      "system": "Online Boutique",
+      "target_node_index": 14
+    },
+    "re2ob_recommendationservice_delay_3": {
+      "case_id": "re2ob_recommendationservice_delay_3",
+      "root_cause_service": "recommendationservice",
+      "system": "Online Boutique",
+      "target_node_index": 14
+    },
+    "re2ob_recommendationservice_disk_1": {
+      "case_id": "re2ob_recommendationservice_disk_1",
+      "root_cause_service": "recommendationservice",
+      "system": "Online Boutique",
+      "target_node_index": 14
+    },
+    "re2ob_recommendationservice_disk_2": {
+      "case_id": "re2ob_recommendationservice_disk_2",
+      "root_cause_service": "recommendationservice",
+      "system": "Online Boutique",
+      "target_node_index": 14
+    },
+    "re2ob_recommendationservice_disk_3": {
+      "case_id": "re2ob_recommendationservice_disk_3",
+      "root_cause_service": "recommendationservice",
+      "system": "Online Boutique",
+      "target_node_index": 14
+    },
+    "re2ob_recommendationservice_loss_1": {
+      "case_id": "re2ob_recommendationservice_loss_1",
+      "root_cause_service": "recommendationservice",
+      "system": "Online Boutique",
+      "target_node_index": 14
+    },
+    "re2ob_recommendationservice_loss_2": {
+      "case_id": "re2ob_recommendationservice_loss_2",
+      "root_cause_service": "recommendationservice",
+      "system": "Online Boutique",
+      "target_node_index": 14
+    },
+    "re2ob_recommendationservice_loss_3": {
+      "case_id": "re2ob_recommendationservice_loss_3",
+      "root_cause_service": "recommendationservice",
+      "system": "Online Boutique",
+      "target_node_index": 14
+    },
+    "re2ob_recommendationservice_mem_1": {
+      "case_id": "re2ob_recommendationservice_mem_1",
+      "root_cause_service": "recommendationservice",
+      "system": "Online Boutique",
+      "target_node_index": 14
+    },
+    "re2ob_recommendationservice_mem_2": {
+      "case_id": "re2ob_recommendationservice_mem_2",
+      "root_cause_service": "recommendationservice",
+      "system": "Online Boutique",
+      "target_node_index": 14
+    },
+    "re2ob_recommendationservice_mem_3": {
+      "case_id": "re2ob_recommendationservice_mem_3",
+      "root_cause_service": "recommendationservice",
+      "system": "Online Boutique",
+      "target_node_index": 14
+    },
+    "re2ob_recommendationservice_socket_1": {
+      "case_id": "re2ob_recommendationservice_socket_1",
+      "root_cause_service": "recommendationservice",
+      "system": "Online Boutique",
+      "target_node_index": 14
+    },
+    "re2ob_recommendationservice_socket_2": {
+      "case_id": "re2ob_recommendationservice_socket_2",
+      "root_cause_service": "recommendationservice",
+      "system": "Online Boutique",
+      "target_node_index": 14
+    },
+    "re2ob_recommendationservice_socket_3": {
+      "case_id": "re2ob_recommendationservice_socket_3",
+      "root_cause_service": "recommendationservice",
+      "system": "Online Boutique",
+      "target_node_index": 14
+    },
+    "re2ss_carts_cpu_1": {
+      "case_id": "re2ss_carts_cpu_1",
+      "root_cause_service": "carts",
+      "system": "Sock Shop",
+      "target_node_index": 0
+    },
+    "re2ss_carts_cpu_2": {
+      "case_id": "re2ss_carts_cpu_2",
+      "root_cause_service": "carts",
+      "system": "Sock Shop",
+      "target_node_index": 0
+    },
+    "re2ss_carts_cpu_3": {
+      "case_id": "re2ss_carts_cpu_3",
+      "root_cause_service": "carts",
+      "system": "Sock Shop",
+      "target_node_index": 0
+    },
+    "re2ss_carts_delay_1": {
+      "case_id": "re2ss_carts_delay_1",
+      "root_cause_service": "carts",
+      "system": "Sock Shop",
+      "target_node_index": 0
+    },
+    "re2ss_carts_delay_2": {
+      "case_id": "re2ss_carts_delay_2",
+      "root_cause_service": "carts",
+      "system": "Sock Shop",
+      "target_node_index": 0
+    },
+    "re2ss_carts_delay_3": {
+      "case_id": "re2ss_carts_delay_3",
+      "root_cause_service": "carts",
+      "system": "Sock Shop",
+      "target_node_index": 0
+    },
+    "re2ss_carts_disk_1": {
+      "case_id": "re2ss_carts_disk_1",
+      "root_cause_service": "carts",
+      "system": "Sock Shop",
+      "target_node_index": 0
+    },
+    "re2ss_carts_disk_2": {
+      "case_id": "re2ss_carts_disk_2",
+      "root_cause_service": "carts",
+      "system": "Sock Shop",
+      "target_node_index": 0
+    },
+    "re2ss_carts_disk_3": {
+      "case_id": "re2ss_carts_disk_3",
+      "root_cause_service": "carts",
+      "system": "Sock Shop",
+      "target_node_index": 0
+    },
+    "re2ss_carts_loss_1": {
+      "case_id": "re2ss_carts_loss_1",
+      "root_cause_service": "carts",
+      "system": "Sock Shop",
+      "target_node_index": 0
+    },
+    "re2ss_carts_loss_2": {
+      "case_id": "re2ss_carts_loss_2",
+      "root_cause_service": "carts",
+      "system": "Sock Shop",
+      "target_node_index": 0
+    },
+    "re2ss_carts_loss_3": {
+      "case_id": "re2ss_carts_loss_3",
+      "root_cause_service": "carts",
+      "system": "Sock Shop",
+      "target_node_index": 0
+    },
+    "re2ss_carts_mem_1": {
+      "case_id": "re2ss_carts_mem_1",
+      "root_cause_service": "carts",
+      "system": "Sock Shop",
+      "target_node_index": 0
+    },
+    "re2ss_carts_mem_2": {
+      "case_id": "re2ss_carts_mem_2",
+      "root_cause_service": "carts",
+      "system": "Sock Shop",
+      "target_node_index": 0
+    },
+    "re2ss_carts_mem_3": {
+      "case_id": "re2ss_carts_mem_3",
+      "root_cause_service": "carts",
+      "system": "Sock Shop",
+      "target_node_index": 0
+    },
+    "re2ss_carts_socket_1": {
+      "case_id": "re2ss_carts_socket_1",
+      "root_cause_service": "carts",
+      "system": "Sock Shop",
+      "target_node_index": 0
+    },
+    "re2ss_carts_socket_2": {
+      "case_id": "re2ss_carts_socket_2",
+      "root_cause_service": "carts",
+      "system": "Sock Shop",
+      "target_node_index": 0
+    },
+    "re2ss_carts_socket_3": {
+      "case_id": "re2ss_carts_socket_3",
+      "root_cause_service": "carts",
+      "system": "Sock Shop",
+      "target_node_index": 0
+    },
+    "re2ss_catalogue_cpu_1": {
+      "case_id": "re2ss_catalogue_cpu_1",
+      "root_cause_service": "catalogue",
+      "system": "Sock Shop",
+      "target_node_index": 2
+    },
+    "re2ss_catalogue_cpu_2": {
+      "case_id": "re2ss_catalogue_cpu_2",
+      "root_cause_service": "catalogue",
+      "system": "Sock Shop",
+      "target_node_index": 2
+    },
+    "re2ss_catalogue_cpu_3": {
+      "case_id": "re2ss_catalogue_cpu_3",
+      "root_cause_service": "catalogue",
+      "system": "Sock Shop",
+      "target_node_index": 2
+    },
+    "re2ss_catalogue_delay_1": {
+      "case_id": "re2ss_catalogue_delay_1",
+      "root_cause_service": "catalogue",
+      "system": "Sock Shop",
+      "target_node_index": 2
+    },
+    "re2ss_catalogue_delay_2": {
+      "case_id": "re2ss_catalogue_delay_2",
+      "root_cause_service": "catalogue",
+      "system": "Sock Shop",
+      "target_node_index": 2
+    },
+    "re2ss_catalogue_delay_3": {
+      "case_id": "re2ss_catalogue_delay_3",
+      "root_cause_service": "catalogue",
+      "system": "Sock Shop",
+      "target_node_index": 2
+    },
+    "re2ss_catalogue_disk_1": {
+      "case_id": "re2ss_catalogue_disk_1",
+      "root_cause_service": "catalogue",
+      "system": "Sock Shop",
+      "target_node_index": 2
+    },
+    "re2ss_catalogue_disk_2": {
+      "case_id": "re2ss_catalogue_disk_2",
+      "root_cause_service": "catalogue",
+      "system": "Sock Shop",
+      "target_node_index": 2
+    },
+    "re2ss_catalogue_disk_3": {
+      "case_id": "re2ss_catalogue_disk_3",
+      "root_cause_service": "catalogue",
+      "system": "Sock Shop",
+      "target_node_index": 2
+    },
+    "re2ss_catalogue_loss_1": {
+      "case_id": "re2ss_catalogue_loss_1",
+      "root_cause_service": "catalogue",
+      "system": "Sock Shop",
+      "target_node_index": 2
+    },
+    "re2ss_catalogue_loss_2": {
+      "case_id": "re2ss_catalogue_loss_2",
+      "root_cause_service": "catalogue",
+      "system": "Sock Shop",
+      "target_node_index": 2
+    },
+    "re2ss_catalogue_loss_3": {
+      "case_id": "re2ss_catalogue_loss_3",
+      "root_cause_service": "catalogue",
+      "system": "Sock Shop",
+      "target_node_index": 2
+    },
+    "re2ss_catalogue_mem_1": {
+      "case_id": "re2ss_catalogue_mem_1",
+      "root_cause_service": "catalogue",
+      "system": "Sock Shop",
+      "target_node_index": 2
+    },
+    "re2ss_catalogue_mem_2": {
+      "case_id": "re2ss_catalogue_mem_2",
+      "root_cause_service": "catalogue",
+      "system": "Sock Shop",
+      "target_node_index": 2
+    },
+    "re2ss_catalogue_mem_3": {
+      "case_id": "re2ss_catalogue_mem_3",
+      "root_cause_service": "catalogue",
+      "system": "Sock Shop",
+      "target_node_index": 2
+    },
+    "re2ss_catalogue_socket_1": {
+      "case_id": "re2ss_catalogue_socket_1",
+      "root_cause_service": "catalogue",
+      "system": "Sock Shop",
+      "target_node_index": 2
+    },
+    "re2ss_catalogue_socket_2": {
+      "case_id": "re2ss_catalogue_socket_2",
+      "root_cause_service": "catalogue",
+      "system": "Sock Shop",
+      "target_node_index": 2
+    },
+    "re2ss_catalogue_socket_3": {
+      "case_id": "re2ss_catalogue_socket_3",
+      "root_cause_service": "catalogue",
+      "system": "Sock Shop",
+      "target_node_index": 2
+    },
+    "re2ss_orders_cpu_1": {
+      "case_id": "re2ss_orders_cpu_1",
+      "root_cause_service": "orders",
+      "system": "Sock Shop",
+      "target_node_index": 6
+    },
+    "re2ss_orders_cpu_2": {
+      "case_id": "re2ss_orders_cpu_2",
+      "root_cause_service": "orders",
+      "system": "Sock Shop",
+      "target_node_index": 6
+    },
+    "re2ss_orders_cpu_3": {
+      "case_id": "re2ss_orders_cpu_3",
+      "root_cause_service": "orders",
+      "system": "Sock Shop",
+      "target_node_index": 6
+    },
+    "re2ss_orders_delay_1": {
+      "case_id": "re2ss_orders_delay_1",
+      "root_cause_service": "orders",
+      "system": "Sock Shop",
+      "target_node_index": 6
+    },
+    "re2ss_orders_delay_2": {
+      "case_id": "re2ss_orders_delay_2",
+      "root_cause_service": "orders",
+      "system": "Sock Shop",
+      "target_node_index": 6
+    },
+    "re2ss_orders_delay_3": {
+      "case_id": "re2ss_orders_delay_3",
+      "root_cause_service": "orders",
+      "system": "Sock Shop",
+      "target_node_index": 6
+    },
+    "re2ss_orders_disk_1": {
+      "case_id": "re2ss_orders_disk_1",
+      "root_cause_service": "orders",
+      "system": "Sock Shop",
+      "target_node_index": 6
+    },
+    "re2ss_orders_disk_2": {
+      "case_id": "re2ss_orders_disk_2",
+      "root_cause_service": "orders",
+      "system": "Sock Shop",
+      "target_node_index": 6
+    },
+    "re2ss_orders_disk_3": {
+      "case_id": "re2ss_orders_disk_3",
+      "root_cause_service": "orders",
+      "system": "Sock Shop",
+      "target_node_index": 6
+    },
+    "re2ss_orders_loss_1": {
+      "case_id": "re2ss_orders_loss_1",
+      "root_cause_service": "orders",
+      "system": "Sock Shop",
+      "target_node_index": 6
+    },
+    "re2ss_orders_loss_2": {
+      "case_id": "re2ss_orders_loss_2",
+      "root_cause_service": "orders",
+      "system": "Sock Shop",
+      "target_node_index": 6
+    },
+    "re2ss_orders_loss_3": {
+      "case_id": "re2ss_orders_loss_3",
+      "root_cause_service": "orders",
+      "system": "Sock Shop",
+      "target_node_index": 6
+    },
+    "re2ss_orders_mem_1": {
+      "case_id": "re2ss_orders_mem_1",
+      "root_cause_service": "orders",
+      "system": "Sock Shop",
+      "target_node_index": 6
+    },
+    "re2ss_orders_mem_2": {
+      "case_id": "re2ss_orders_mem_2",
+      "root_cause_service": "orders",
+      "system": "Sock Shop",
+      "target_node_index": 6
+    },
+    "re2ss_orders_mem_3": {
+      "case_id": "re2ss_orders_mem_3",
+      "root_cause_service": "orders",
+      "system": "Sock Shop",
+      "target_node_index": 6
+    },
+    "re2ss_orders_socket_1": {
+      "case_id": "re2ss_orders_socket_1",
+      "root_cause_service": "orders",
+      "system": "Sock Shop",
+      "target_node_index": 6
+    },
+    "re2ss_orders_socket_2": {
+      "case_id": "re2ss_orders_socket_2",
+      "root_cause_service": "orders",
+      "system": "Sock Shop",
+      "target_node_index": 6
+    },
+    "re2ss_orders_socket_3": {
+      "case_id": "re2ss_orders_socket_3",
+      "root_cause_service": "orders",
+      "system": "Sock Shop",
+      "target_node_index": 6
+    },
+    "re2ss_payment_cpu_1": {
+      "case_id": "re2ss_payment_cpu_1",
+      "root_cause_service": "payment",
+      "system": "Sock Shop",
+      "target_node_index": 8
+    },
+    "re2ss_payment_cpu_2": {
+      "case_id": "re2ss_payment_cpu_2",
+      "root_cause_service": "payment",
+      "system": "Sock Shop",
+      "target_node_index": 8
+    },
+    "re2ss_payment_cpu_3": {
+      "case_id": "re2ss_payment_cpu_3",
+      "root_cause_service": "payment",
+      "system": "Sock Shop",
+      "target_node_index": 8
+    },
+    "re2ss_payment_delay_1": {
+      "case_id": "re2ss_payment_delay_1",
+      "root_cause_service": "payment",
+      "system": "Sock Shop",
+      "target_node_index": 8
+    },
+    "re2ss_payment_delay_2": {
+      "case_id": "re2ss_payment_delay_2",
+      "root_cause_service": "payment",
+      "system": "Sock Shop",
+      "target_node_index": 8
+    },
+    "re2ss_payment_delay_3": {
+      "case_id": "re2ss_payment_delay_3",
+      "root_cause_service": "payment",
+      "system": "Sock Shop",
+      "target_node_index": 8
+    },
+    "re2ss_payment_disk_1": {
+      "case_id": "re2ss_payment_disk_1",
+      "root_cause_service": "payment",
+      "system": "Sock Shop",
+      "target_node_index": 8
+    },
+    "re2ss_payment_disk_2": {
+      "case_id": "re2ss_payment_disk_2",
+      "root_cause_service": "payment",
+      "system": "Sock Shop",
+      "target_node_index": 8
+    },
+    "re2ss_payment_disk_3": {
+      "case_id": "re2ss_payment_disk_3",
+      "root_cause_service": "payment",
+      "system": "Sock Shop",
+      "target_node_index": 8
+    },
+    "re2ss_payment_loss_1": {
+      "case_id": "re2ss_payment_loss_1",
+      "root_cause_service": "payment",
+      "system": "Sock Shop",
+      "target_node_index": 8
+    },
+    "re2ss_payment_loss_2": {
+      "case_id": "re2ss_payment_loss_2",
+      "root_cause_service": "payment",
+      "system": "Sock Shop",
+      "target_node_index": 8
+    },
+    "re2ss_payment_loss_3": {
+      "case_id": "re2ss_payment_loss_3",
+      "root_cause_service": "payment",
+      "system": "Sock Shop",
+      "target_node_index": 8
+    },
+    "re2ss_payment_mem_1": {
+      "case_id": "re2ss_payment_mem_1",
+      "root_cause_service": "payment",
+      "system": "Sock Shop",
+      "target_node_index": 8
+    },
+    "re2ss_payment_mem_2": {
+      "case_id": "re2ss_payment_mem_2",
+      "root_cause_service": "payment",
+      "system": "Sock Shop",
+      "target_node_index": 8
+    },
+    "re2ss_payment_mem_3": {
+      "case_id": "re2ss_payment_mem_3",
+      "root_cause_service": "payment",
+      "system": "Sock Shop",
+      "target_node_index": 8
+    },
+    "re2ss_payment_socket_1": {
+      "case_id": "re2ss_payment_socket_1",
+      "root_cause_service": "payment",
+      "system": "Sock Shop",
+      "target_node_index": 8
+    },
+    "re2ss_payment_socket_2": {
+      "case_id": "re2ss_payment_socket_2",
+      "root_cause_service": "payment",
+      "system": "Sock Shop",
+      "target_node_index": 8
+    },
+    "re2ss_payment_socket_3": {
+      "case_id": "re2ss_payment_socket_3",
+      "root_cause_service": "payment",
+      "system": "Sock Shop",
+      "target_node_index": 8
+    },
+    "re2ss_user_cpu_1": {
+      "case_id": "re2ss_user_cpu_1",
+      "root_cause_service": "user",
+      "system": "Sock Shop",
+      "target_node_index": 14
+    },
+    "re2ss_user_cpu_2": {
+      "case_id": "re2ss_user_cpu_2",
+      "root_cause_service": "user",
+      "system": "Sock Shop",
+      "target_node_index": 14
+    },
+    "re2ss_user_cpu_3": {
+      "case_id": "re2ss_user_cpu_3",
+      "root_cause_service": "user",
+      "system": "Sock Shop",
+      "target_node_index": 14
+    },
+    "re2ss_user_delay_1": {
+      "case_id": "re2ss_user_delay_1",
+      "root_cause_service": "user",
+      "system": "Sock Shop",
+      "target_node_index": 14
+    },
+    "re2ss_user_delay_2": {
+      "case_id": "re2ss_user_delay_2",
+      "root_cause_service": "user",
+      "system": "Sock Shop",
+      "target_node_index": 14
+    },
+    "re2ss_user_delay_3": {
+      "case_id": "re2ss_user_delay_3",
+      "root_cause_service": "user",
+      "system": "Sock Shop",
+      "target_node_index": 14
+    },
+    "re2ss_user_disk_1": {
+      "case_id": "re2ss_user_disk_1",
+      "root_cause_service": "user",
+      "system": "Sock Shop",
+      "target_node_index": 14
+    },
+    "re2ss_user_disk_2": {
+      "case_id": "re2ss_user_disk_2",
+      "root_cause_service": "user",
+      "system": "Sock Shop",
+      "target_node_index": 14
+    },
+    "re2ss_user_disk_3": {
+      "case_id": "re2ss_user_disk_3",
+      "root_cause_service": "user",
+      "system": "Sock Shop",
+      "target_node_index": 14
+    },
+    "re2ss_user_loss_1": {
+      "case_id": "re2ss_user_loss_1",
+      "root_cause_service": "user",
+      "system": "Sock Shop",
+      "target_node_index": 14
+    },
+    "re2ss_user_loss_2": {
+      "case_id": "re2ss_user_loss_2",
+      "root_cause_service": "user",
+      "system": "Sock Shop",
+      "target_node_index": 14
+    },
+    "re2ss_user_loss_3": {
+      "case_id": "re2ss_user_loss_3",
+      "root_cause_service": "user",
+      "system": "Sock Shop",
+      "target_node_index": 14
+    },
+    "re2ss_user_mem_1": {
+      "case_id": "re2ss_user_mem_1",
+      "root_cause_service": "user",
+      "system": "Sock Shop",
+      "target_node_index": 14
+    },
+    "re2ss_user_mem_2": {
+      "case_id": "re2ss_user_mem_2",
+      "root_cause_service": "user",
+      "system": "Sock Shop",
+      "target_node_index": 14
+    },
+    "re2ss_user_mem_3": {
+      "case_id": "re2ss_user_mem_3",
+      "root_cause_service": "user",
+      "system": "Sock Shop",
+      "target_node_index": 14
+    },
+    "re2ss_user_socket_1": {
+      "case_id": "re2ss_user_socket_1",
+      "root_cause_service": "user",
+      "system": "Sock Shop",
+      "target_node_index": 14
+    },
+    "re2ss_user_socket_2": {
+      "case_id": "re2ss_user_socket_2",
+      "root_cause_service": "user",
+      "system": "Sock Shop",
+      "target_node_index": 14
+    },
+    "re2ss_user_socket_3": {
+      "case_id": "re2ss_user_socket_3",
+      "root_cause_service": "user",
+      "system": "Sock Shop",
+      "target_node_index": 14
+    },
+    "re2tt_ts-auth-service_cpu_1": {
+      "case_id": "re2tt_ts-auth-service_cpu_1",
+      "root_cause_service": "ts-auth-service",
+      "system": "Train Ticket",
+      "target_node_index": 9
+    },
+    "re2tt_ts-auth-service_cpu_2": {
+      "case_id": "re2tt_ts-auth-service_cpu_2",
+      "root_cause_service": "ts-auth-service",
+      "system": "Train Ticket",
+      "target_node_index": 9
+    },
+    "re2tt_ts-auth-service_cpu_3": {
+      "case_id": "re2tt_ts-auth-service_cpu_3",
+      "root_cause_service": "ts-auth-service",
+      "system": "Train Ticket",
+      "target_node_index": 9
+    },
+    "re2tt_ts-auth-service_delay_1": {
+      "case_id": "re2tt_ts-auth-service_delay_1",
+      "root_cause_service": "ts-auth-service",
+      "system": "Train Ticket",
+      "target_node_index": 9
+    },
+    "re2tt_ts-auth-service_delay_2": {
+      "case_id": "re2tt_ts-auth-service_delay_2",
+      "root_cause_service": "ts-auth-service",
+      "system": "Train Ticket",
+      "target_node_index": 9
+    },
+    "re2tt_ts-auth-service_delay_3": {
+      "case_id": "re2tt_ts-auth-service_delay_3",
+      "root_cause_service": "ts-auth-service",
+      "system": "Train Ticket",
+      "target_node_index": 9
+    },
+    "re2tt_ts-auth-service_disk_1": {
+      "case_id": "re2tt_ts-auth-service_disk_1",
+      "root_cause_service": "ts-auth-service",
+      "system": "Train Ticket",
+      "target_node_index": 9
+    },
+    "re2tt_ts-auth-service_disk_2": {
+      "case_id": "re2tt_ts-auth-service_disk_2",
+      "root_cause_service": "ts-auth-service",
+      "system": "Train Ticket",
+      "target_node_index": 9
+    },
+    "re2tt_ts-auth-service_disk_3": {
+      "case_id": "re2tt_ts-auth-service_disk_3",
+      "root_cause_service": "ts-auth-service",
+      "system": "Train Ticket",
+      "target_node_index": 9
+    },
+    "re2tt_ts-auth-service_loss_1": {
+      "case_id": "re2tt_ts-auth-service_loss_1",
+      "root_cause_service": "ts-auth-service",
+      "system": "Train Ticket",
+      "target_node_index": 9
+    },
+    "re2tt_ts-auth-service_loss_2": {
+      "case_id": "re2tt_ts-auth-service_loss_2",
+      "root_cause_service": "ts-auth-service",
+      "system": "Train Ticket",
+      "target_node_index": 9
+    },
+    "re2tt_ts-auth-service_loss_3": {
+      "case_id": "re2tt_ts-auth-service_loss_3",
+      "root_cause_service": "ts-auth-service",
+      "system": "Train Ticket",
+      "target_node_index": 9
+    },
+    "re2tt_ts-auth-service_mem_1": {
+      "case_id": "re2tt_ts-auth-service_mem_1",
+      "root_cause_service": "ts-auth-service",
+      "system": "Train Ticket",
+      "target_node_index": 9
+    },
+    "re2tt_ts-auth-service_mem_2": {
+      "case_id": "re2tt_ts-auth-service_mem_2",
+      "root_cause_service": "ts-auth-service",
+      "system": "Train Ticket",
+      "target_node_index": 9
+    },
+    "re2tt_ts-auth-service_mem_3": {
+      "case_id": "re2tt_ts-auth-service_mem_3",
+      "root_cause_service": "ts-auth-service",
+      "system": "Train Ticket",
+      "target_node_index": 9
+    },
+    "re2tt_ts-auth-service_socket_1": {
+      "case_id": "re2tt_ts-auth-service_socket_1",
+      "root_cause_service": "ts-auth-service",
+      "system": "Train Ticket",
+      "target_node_index": 9
+    },
+    "re2tt_ts-auth-service_socket_2": {
+      "case_id": "re2tt_ts-auth-service_socket_2",
+      "root_cause_service": "ts-auth-service",
+      "system": "Train Ticket",
+      "target_node_index": 9
+    },
+    "re2tt_ts-auth-service_socket_3": {
+      "case_id": "re2tt_ts-auth-service_socket_3",
+      "root_cause_service": "ts-auth-service",
+      "system": "Train Ticket",
+      "target_node_index": 9
+    },
+    "re2tt_ts-order-service_cpu_1": {
+      "case_id": "re2tt_ts-order-service_cpu_1",
+      "root_cause_service": "ts-order-service",
+      "system": "Train Ticket",
+      "target_node_index": 35
+    },
+    "re2tt_ts-order-service_cpu_2": {
+      "case_id": "re2tt_ts-order-service_cpu_2",
+      "root_cause_service": "ts-order-service",
+      "system": "Train Ticket",
+      "target_node_index": 35
+    },
+    "re2tt_ts-order-service_cpu_3": {
+      "case_id": "re2tt_ts-order-service_cpu_3",
+      "root_cause_service": "ts-order-service",
+      "system": "Train Ticket",
+      "target_node_index": 35
+    },
+    "re2tt_ts-order-service_delay_1": {
+      "case_id": "re2tt_ts-order-service_delay_1",
+      "root_cause_service": "ts-order-service",
+      "system": "Train Ticket",
+      "target_node_index": 35
+    },
+    "re2tt_ts-order-service_delay_2": {
+      "case_id": "re2tt_ts-order-service_delay_2",
+      "root_cause_service": "ts-order-service",
+      "system": "Train Ticket",
+      "target_node_index": 35
+    },
+    "re2tt_ts-order-service_delay_3": {
+      "case_id": "re2tt_ts-order-service_delay_3",
+      "root_cause_service": "ts-order-service",
+      "system": "Train Ticket",
+      "target_node_index": 35
+    },
+    "re2tt_ts-order-service_disk_1": {
+      "case_id": "re2tt_ts-order-service_disk_1",
+      "root_cause_service": "ts-order-service",
+      "system": "Train Ticket",
+      "target_node_index": 35
+    },
+    "re2tt_ts-order-service_disk_2": {
+      "case_id": "re2tt_ts-order-service_disk_2",
+      "root_cause_service": "ts-order-service",
+      "system": "Train Ticket",
+      "target_node_index": 35
+    },
+    "re2tt_ts-order-service_disk_3": {
+      "case_id": "re2tt_ts-order-service_disk_3",
+      "root_cause_service": "ts-order-service",
+      "system": "Train Ticket",
+      "target_node_index": 35
+    },
+    "re2tt_ts-order-service_loss_1": {
+      "case_id": "re2tt_ts-order-service_loss_1",
+      "root_cause_service": "ts-order-service",
+      "system": "Train Ticket",
+      "target_node_index": 35
+    },
+    "re2tt_ts-order-service_loss_2": {
+      "case_id": "re2tt_ts-order-service_loss_2",
+      "root_cause_service": "ts-order-service",
+      "system": "Train Ticket",
+      "target_node_index": 35
+    },
+    "re2tt_ts-order-service_loss_3": {
+      "case_id": "re2tt_ts-order-service_loss_3",
+      "root_cause_service": "ts-order-service",
+      "system": "Train Ticket",
+      "target_node_index": 35
+    },
+    "re2tt_ts-order-service_mem_1": {
+      "case_id": "re2tt_ts-order-service_mem_1",
+      "root_cause_service": "ts-order-service",
+      "system": "Train Ticket",
+      "target_node_index": 35
+    },
+    "re2tt_ts-order-service_mem_2": {
+      "case_id": "re2tt_ts-order-service_mem_2",
+      "root_cause_service": "ts-order-service",
+      "system": "Train Ticket",
+      "target_node_index": 35
+    },
+    "re2tt_ts-order-service_mem_3": {
+      "case_id": "re2tt_ts-order-service_mem_3",
+      "root_cause_service": "ts-order-service",
+      "system": "Train Ticket",
+      "target_node_index": 35
+    },
+    "re2tt_ts-order-service_socket_1": {
+      "case_id": "re2tt_ts-order-service_socket_1",
+      "root_cause_service": "ts-order-service",
+      "system": "Train Ticket",
+      "target_node_index": 35
+    },
+    "re2tt_ts-order-service_socket_2": {
+      "case_id": "re2tt_ts-order-service_socket_2",
+      "root_cause_service": "ts-order-service",
+      "system": "Train Ticket",
+      "target_node_index": 35
+    },
+    "re2tt_ts-order-service_socket_3": {
+      "case_id": "re2tt_ts-order-service_socket_3",
+      "root_cause_service": "ts-order-service",
+      "system": "Train Ticket",
+      "target_node_index": 35
+    },
+    "re2tt_ts-route-service_cpu_1": {
+      "case_id": "re2tt_ts-route-service_cpu_1",
+      "root_cause_service": "ts-route-service",
+      "system": "Train Ticket",
+      "target_node_index": 47
+    },
+    "re2tt_ts-route-service_cpu_2": {
+      "case_id": "re2tt_ts-route-service_cpu_2",
+      "root_cause_service": "ts-route-service",
+      "system": "Train Ticket",
+      "target_node_index": 47
+    },
+    "re2tt_ts-route-service_cpu_3": {
+      "case_id": "re2tt_ts-route-service_cpu_3",
+      "root_cause_service": "ts-route-service",
+      "system": "Train Ticket",
+      "target_node_index": 47
+    },
+    "re2tt_ts-route-service_delay_1": {
+      "case_id": "re2tt_ts-route-service_delay_1",
+      "root_cause_service": "ts-route-service",
+      "system": "Train Ticket",
+      "target_node_index": 47
+    },
+    "re2tt_ts-route-service_delay_2": {
+      "case_id": "re2tt_ts-route-service_delay_2",
+      "root_cause_service": "ts-route-service",
+      "system": "Train Ticket",
+      "target_node_index": 47
+    },
+    "re2tt_ts-route-service_delay_3": {
+      "case_id": "re2tt_ts-route-service_delay_3",
+      "root_cause_service": "ts-route-service",
+      "system": "Train Ticket",
+      "target_node_index": 47
+    },
+    "re2tt_ts-route-service_disk_1": {
+      "case_id": "re2tt_ts-route-service_disk_1",
+      "root_cause_service": "ts-route-service",
+      "system": "Train Ticket",
+      "target_node_index": 47
+    },
+    "re2tt_ts-route-service_disk_2": {
+      "case_id": "re2tt_ts-route-service_disk_2",
+      "root_cause_service": "ts-route-service",
+      "system": "Train Ticket",
+      "target_node_index": 47
+    },
+    "re2tt_ts-route-service_disk_3": {
+      "case_id": "re2tt_ts-route-service_disk_3",
+      "root_cause_service": "ts-route-service",
+      "system": "Train Ticket",
+      "target_node_index": 47
+    },
+    "re2tt_ts-route-service_loss_1": {
+      "case_id": "re2tt_ts-route-service_loss_1",
+      "root_cause_service": "ts-route-service",
+      "system": "Train Ticket",
+      "target_node_index": 47
+    },
+    "re2tt_ts-route-service_loss_2": {
+      "case_id": "re2tt_ts-route-service_loss_2",
+      "root_cause_service": "ts-route-service",
+      "system": "Train Ticket",
+      "target_node_index": 47
+    },
+    "re2tt_ts-route-service_loss_3": {
+      "case_id": "re2tt_ts-route-service_loss_3",
+      "root_cause_service": "ts-route-service",
+      "system": "Train Ticket",
+      "target_node_index": 47
+    },
+    "re2tt_ts-route-service_mem_1": {
+      "case_id": "re2tt_ts-route-service_mem_1",
+      "root_cause_service": "ts-route-service",
+      "system": "Train Ticket",
+      "target_node_index": 47
+    },
+    "re2tt_ts-route-service_mem_2": {
+      "case_id": "re2tt_ts-route-service_mem_2",
+      "root_cause_service": "ts-route-service",
+      "system": "Train Ticket",
+      "target_node_index": 47
+    },
+    "re2tt_ts-route-service_mem_3": {
+      "case_id": "re2tt_ts-route-service_mem_3",
+      "root_cause_service": "ts-route-service",
+      "system": "Train Ticket",
+      "target_node_index": 47
+    },
+    "re2tt_ts-route-service_socket_1": {
+      "case_id": "re2tt_ts-route-service_socket_1",
+      "root_cause_service": "ts-route-service",
+      "system": "Train Ticket",
+      "target_node_index": 47
+    },
+    "re2tt_ts-route-service_socket_2": {
+      "case_id": "re2tt_ts-route-service_socket_2",
+      "root_cause_service": "ts-route-service",
+      "system": "Train Ticket",
+      "target_node_index": 47
+    },
+    "re2tt_ts-route-service_socket_3": {
+      "case_id": "re2tt_ts-route-service_socket_3",
+      "root_cause_service": "ts-route-service",
+      "system": "Train Ticket",
+      "target_node_index": 47
+    },
+    "re2tt_ts-train-service_cpu_1": {
+      "case_id": "re2tt_ts-train-service_cpu_1",
+      "root_cause_service": "ts-train-service",
+      "system": "Train Ticket",
+      "target_node_index": 57
+    },
+    "re2tt_ts-train-service_cpu_2": {
+      "case_id": "re2tt_ts-train-service_cpu_2",
+      "root_cause_service": "ts-train-service",
+      "system": "Train Ticket",
+      "target_node_index": 57
+    },
+    "re2tt_ts-train-service_cpu_3": {
+      "case_id": "re2tt_ts-train-service_cpu_3",
+      "root_cause_service": "ts-train-service",
+      "system": "Train Ticket",
+      "target_node_index": 57
+    },
+    "re2tt_ts-train-service_delay_1": {
+      "case_id": "re2tt_ts-train-service_delay_1",
+      "root_cause_service": "ts-train-service",
+      "system": "Train Ticket",
+      "target_node_index": 57
+    },
+    "re2tt_ts-train-service_delay_2": {
+      "case_id": "re2tt_ts-train-service_delay_2",
+      "root_cause_service": "ts-train-service",
+      "system": "Train Ticket",
+      "target_node_index": 57
+    },
+    "re2tt_ts-train-service_delay_3": {
+      "case_id": "re2tt_ts-train-service_delay_3",
+      "root_cause_service": "ts-train-service",
+      "system": "Train Ticket",
+      "target_node_index": 57
+    },
+    "re2tt_ts-train-service_disk_1": {
+      "case_id": "re2tt_ts-train-service_disk_1",
+      "root_cause_service": "ts-train-service",
+      "system": "Train Ticket",
+      "target_node_index": 57
+    },
+    "re2tt_ts-train-service_disk_2": {
+      "case_id": "re2tt_ts-train-service_disk_2",
+      "root_cause_service": "ts-train-service",
+      "system": "Train Ticket",
+      "target_node_index": 57
+    },
+    "re2tt_ts-train-service_disk_3": {
+      "case_id": "re2tt_ts-train-service_disk_3",
+      "root_cause_service": "ts-train-service",
+      "system": "Train Ticket",
+      "target_node_index": 57
+    },
+    "re2tt_ts-train-service_loss_1": {
+      "case_id": "re2tt_ts-train-service_loss_1",
+      "root_cause_service": "ts-train-service",
+      "system": "Train Ticket",
+      "target_node_index": 57
+    },
+    "re2tt_ts-train-service_loss_2": {
+      "case_id": "re2tt_ts-train-service_loss_2",
+      "root_cause_service": "ts-train-service",
+      "system": "Train Ticket",
+      "target_node_index": 57
+    },
+    "re2tt_ts-train-service_loss_3": {
+      "case_id": "re2tt_ts-train-service_loss_3",
+      "root_cause_service": "ts-train-service",
+      "system": "Train Ticket",
+      "target_node_index": 57
+    },
+    "re2tt_ts-train-service_mem_1": {
+      "case_id": "re2tt_ts-train-service_mem_1",
+      "root_cause_service": "ts-train-service",
+      "system": "Train Ticket",
+      "target_node_index": 57
+    },
+    "re2tt_ts-train-service_mem_2": {
+      "case_id": "re2tt_ts-train-service_mem_2",
+      "root_cause_service": "ts-train-service",
+      "system": "Train Ticket",
+      "target_node_index": 57
+    },
+    "re2tt_ts-train-service_mem_3": {
+      "case_id": "re2tt_ts-train-service_mem_3",
+      "root_cause_service": "ts-train-service",
+      "system": "Train Ticket",
+      "target_node_index": 57
+    },
+    "re2tt_ts-train-service_socket_1": {
+      "case_id": "re2tt_ts-train-service_socket_1",
+      "root_cause_service": "ts-train-service",
+      "system": "Train Ticket",
+      "target_node_index": 57
+    },
+    "re2tt_ts-train-service_socket_2": {
+      "case_id": "re2tt_ts-train-service_socket_2",
+      "root_cause_service": "ts-train-service",
+      "system": "Train Ticket",
+      "target_node_index": 57
+    },
+    "re2tt_ts-train-service_socket_3": {
+      "case_id": "re2tt_ts-train-service_socket_3",
+      "root_cause_service": "ts-train-service",
+      "system": "Train Ticket",
+      "target_node_index": 57
+    },
+    "re2tt_ts-travel-service_cpu_1": {
+      "case_id": "re2tt_ts-travel-service_cpu_1",
+      "root_cause_service": "ts-travel-service",
+      "system": "Train Ticket",
+      "target_node_index": 60
+    },
+    "re2tt_ts-travel-service_cpu_2": {
+      "case_id": "re2tt_ts-travel-service_cpu_2",
+      "root_cause_service": "ts-travel-service",
+      "system": "Train Ticket",
+      "target_node_index": 60
+    },
+    "re2tt_ts-travel-service_cpu_3": {
+      "case_id": "re2tt_ts-travel-service_cpu_3",
+      "root_cause_service": "ts-travel-service",
+      "system": "Train Ticket",
+      "target_node_index": 60
+    },
+    "re2tt_ts-travel-service_delay_1": {
+      "case_id": "re2tt_ts-travel-service_delay_1",
+      "root_cause_service": "ts-travel-service",
+      "system": "Train Ticket",
+      "target_node_index": 60
+    },
+    "re2tt_ts-travel-service_delay_2": {
+      "case_id": "re2tt_ts-travel-service_delay_2",
+      "root_cause_service": "ts-travel-service",
+      "system": "Train Ticket",
+      "target_node_index": 60
+    },
+    "re2tt_ts-travel-service_delay_3": {
+      "case_id": "re2tt_ts-travel-service_delay_3",
+      "root_cause_service": "ts-travel-service",
+      "system": "Train Ticket",
+      "target_node_index": 60
+    },
+    "re2tt_ts-travel-service_disk_1": {
+      "case_id": "re2tt_ts-travel-service_disk_1",
+      "root_cause_service": "ts-travel-service",
+      "system": "Train Ticket",
+      "target_node_index": 60
+    },
+    "re2tt_ts-travel-service_disk_2": {
+      "case_id": "re2tt_ts-travel-service_disk_2",
+      "root_cause_service": "ts-travel-service",
+      "system": "Train Ticket",
+      "target_node_index": 60
+    },
+    "re2tt_ts-travel-service_disk_3": {
+      "case_id": "re2tt_ts-travel-service_disk_3",
+      "root_cause_service": "ts-travel-service",
+      "system": "Train Ticket",
+      "target_node_index": 60
+    },
+    "re2tt_ts-travel-service_loss_1": {
+      "case_id": "re2tt_ts-travel-service_loss_1",
+      "root_cause_service": "ts-travel-service",
+      "system": "Train Ticket",
+      "target_node_index": 60
+    },
+    "re2tt_ts-travel-service_loss_2": {
+      "case_id": "re2tt_ts-travel-service_loss_2",
+      "root_cause_service": "ts-travel-service",
+      "system": "Train Ticket",
+      "target_node_index": 60
+    },
+    "re2tt_ts-travel-service_loss_3": {
+      "case_id": "re2tt_ts-travel-service_loss_3",
+      "root_cause_service": "ts-travel-service",
+      "system": "Train Ticket",
+      "target_node_index": 60
+    },
+    "re2tt_ts-travel-service_mem_1": {
+      "case_id": "re2tt_ts-travel-service_mem_1",
+      "root_cause_service": "ts-travel-service",
+      "system": "Train Ticket",
+      "target_node_index": 60
+    },
+    "re2tt_ts-travel-service_mem_2": {
+      "case_id": "re2tt_ts-travel-service_mem_2",
+      "root_cause_service": "ts-travel-service",
+      "system": "Train Ticket",
+      "target_node_index": 60
+    },
+    "re2tt_ts-travel-service_mem_3": {
+      "case_id": "re2tt_ts-travel-service_mem_3",
+      "root_cause_service": "ts-travel-service",
+      "system": "Train Ticket",
+      "target_node_index": 60
+    },
+    "re2tt_ts-travel-service_socket_1": {
+      "case_id": "re2tt_ts-travel-service_socket_1",
+      "root_cause_service": "ts-travel-service",
+      "system": "Train Ticket",
+      "target_node_index": 60
+    },
+    "re2tt_ts-travel-service_socket_2": {
+      "case_id": "re2tt_ts-travel-service_socket_2",
+      "root_cause_service": "ts-travel-service",
+      "system": "Train Ticket",
+      "target_node_index": 60
+    },
+    "re2tt_ts-travel-service_socket_3": {
+      "case_id": "re2tt_ts-travel-service_socket_3",
+      "root_cause_service": "ts-travel-service",
+      "system": "Train Ticket",
+      "target_node_index": 60
+    }
+  },
+  "dataset": "RCAEval RE2",
+  "safety": {
+    "best_model_v8_touched": false,
+    "checkpoint_modified": false,
+    "features_modified": false,
+    "graphs_modified": false,
+    "training_performed": false
+  },
+  "schema_version": "model2_v9_step20_training_target_manifest_v2",
+  "systems": {
+    "Online Boutique": {
+      "case_count": 90,
+      "node_count": 17
+    },
+    "Sock Shop": {
+      "case_count": 90,
+      "node_count": 16
+    },
+    "Train Ticket": {
+      "case_count": 90,
+      "node_count": 69
+    }
+  },
+  "target_representation": {
+    "mapping": "case -> system -> root_cause_service -> frozen Step 7 node index",
+    "source_field": "root_cause_service",
+    "type": "root_node_index"
+  },
+  "total_cases": 270,
+  "valid_target_mappings": 270
+}

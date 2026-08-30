@@ -1,0 +1,6 @@
+{
+    "status": "NOT RECOVERED",
+    "feature_count": 88,
+    "feature_schema": "UNKNOWN",
+    "missing_evidence": "The original Kaggle training notebooks, Python graph builder scripts, and the actual PyTorch Geometric `.pt` graph test cases (e.g., `re2ob_checkoutservice_cpu_2.pt`) are entirely missing from the codebase and external directories. There is no dataset to inspect or extract names/formulas from."
+}

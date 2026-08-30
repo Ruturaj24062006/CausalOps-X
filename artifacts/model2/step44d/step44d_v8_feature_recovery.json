@@ -1,0 +1,13 @@
+{
+    "step": "44D",
+    "status": "BLOCKED",
+    "reason": "The input file model2_original_notebook_raw_source.py strictly constitutes basic filesystem os.walk operations parsing checkpoint dictionaries and JSONs. It lacks logic specifying feature formulation, edge attributes (edge_attr), node ordering maps, PyTorch Geometric constructs (TransformerConv), scaling matrices, or topology edge generation rules.",
+    "tables": {
+        "A": "NODE FEATURE CONTRACT - UNKNOWN / BLOCKED",
+        "B": "EDGE FEATURE CONTRACT - UNKNOWN / BLOCKED",
+        "C": "NODE MAPPING - UNKNOWN / BLOCKED",
+        "D": "EDGE TOPOLOGY - UNKNOWN / BLOCKED",
+        "E": "PREPROCESSING - UNKNOWN / BLOCKED",
+        "F": "DIMENSION CHECK - UNKNOWN / BLOCKED"
+    }
+}

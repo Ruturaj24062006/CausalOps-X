@@ -1,0 +1,4 @@
+{
+    "status": "NOT READY",
+    "reason": "Cannot extrapolate edge relationships without the raw topological dataset."
+}

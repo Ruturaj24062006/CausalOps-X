@@ -1,0 +1,6 @@
+{
+    "threshold": 14.743613253506725,
+    "threshold_method": "92nd percentile",
+    "temporal_policy": "Policy C (2_of_3)",
+    "context_rules_enabled": true
+}

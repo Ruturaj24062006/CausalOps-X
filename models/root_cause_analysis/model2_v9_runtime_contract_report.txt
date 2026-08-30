@@ -1,0 +1,23 @@
+PHASE 2 - EXACT RUNTIME CONTRACT EXTRACTION
+
+1. Exact node feature count: 32 (Declared)
+2. Complete 32-feature list if verified: BLOCKED - No V9 artifact explicitly defines the feature names, combinations, or extraction formulas for the 32 input boundaries.
+3. Exact edge feature count: 5 (Declared)
+4. Complete edge feature list: BLOCKED - Formulations missing in all manifests.
+5. Exact node ordering: BLOCKED - Only 8 unique incident roots were mapped inside `model2_v9_step20_training_target_manifest.json` (out of 17, 16, and 69 total nodes). The full ordering is undefined.
+6. Complete service mapping: BLOCKED - Full structural service string maps are missing.
+7. Exact model architecture: GCN -> ReLU -> GCN -> ReLU -> GCN -> score (node_input: 32, edge: 5, hidden: 128, param_count: 37,377).
+8. Exact graph input shapes: BLOCKED - `edge_index` and dynamic construction batching shapes rely on PyTorch Geometric which is absent and unconfigured.
+9. Exact scaler contract: `StandardScaler` fitted on training-nodes only.
+10. Exact output contract: one_score_per_node (argmax for prediction mapping back to `root_node_index`).
+11. Target mapping: The `target_node_index` aligns to the `root_cause_service`.
+12. Cross-artifact consistency: BLOCKED. `torch` is not installed to natively verify state_dict bounds against the explicit JSON dimensional schemas, and schema vectors themselves are omitted.
+
+RUNTIME CONTRACT STATUS: BLOCKED
+
+List of Blockers:
+- No definition or pipeline formulas for the 32 node features.
+- No definition or pipeline formulas for the 5 edge features.
+- Missing explicit bijective mapping arrays connecting service names (like `frontend` -> `13`) for all nodes universally.
+- Absence of original algorithmic graph construction definition mapping telemetry to homogenous/heterogeneous edges.
+- Unverifiable Pickle standard scalability bounds and PyTorch dictionary signatures locally owing to dependency mismatch (No `torch` or `sklearn`).

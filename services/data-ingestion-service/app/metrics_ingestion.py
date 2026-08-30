@@ -25,7 +25,7 @@ async def ingest_prometheus_metrics():
                             pod=metric.get("pod") or metric.get("kubernetes_pod_name"),
                             payload=result
                         )
-                        publisher.publish(KAFKA_METRICS_TOPIC, event.model_dump())
+                        publisher.publish(KAFKA_METRICS_TOPIC, event.dict())
         except Exception as e:
             logger.error(f"Metrics ingestion error: {e}")
         

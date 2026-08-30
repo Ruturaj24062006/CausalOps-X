@@ -1,0 +1,29 @@
+{
+    "checkpoint": "PASS",
+    "checkpoint_modified": "NO",
+    "scaler": "PASS",
+    "scaler_fit_calls": 0,
+    "node_feature_count": 32,
+    "feature_order": "BLOCKED",
+    "edge_feature_count": 5,
+    "edge_construction": "BLOCKED",
+    "node_mapping": "BLOCKED",
+    "graph_construction": "BLOCKED",
+    "model_loading": "BLOCKED",
+    "inference": "BLOCKED",
+    "node_ranking": "BLOCKED",
+    "service_mapping": "BLOCKED",
+    "golden_test": "BLOCKED",
+    "cpu_inference": "BLOCKED",
+    "cuda_inference": "NOT AVAILABLE",
+    "model_1_regression": "PASS",
+    "training_performed": "NO",
+    "status": "BLOCKED",
+    "missing_blockers": [
+        "Source-recovery artifacts missing: Exact V9 32-node feature construction / formula.",
+        "Source-recovery artifacts missing: Exact V9 5-edge feature construction.",
+        "Source-recovery artifacts missing: Complete PyTorch PyG edge_index generation schemas.",
+        "Source-recovery artifacts missing: Service indices connecting to explicit string nodes.",
+        "Local python lacks PyTorch and Scikit-Learn making artifact loading untestable."
+    ]
+}

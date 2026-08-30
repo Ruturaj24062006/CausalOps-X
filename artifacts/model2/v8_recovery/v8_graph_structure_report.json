@@ -1,0 +1,6 @@
+{
+    "status": "NOT RECOVERED",
+    "topology": "UNKNOWN",
+    "edge_index_format": "UNKNOWN",
+    "missing_evidence": "The logic connecting services via adjacency matrix or edge list (directed/undirected, self-loops) is absent. Without the `edge_index` generation pipeline, graph structures cannot be replicated for inference."
+}

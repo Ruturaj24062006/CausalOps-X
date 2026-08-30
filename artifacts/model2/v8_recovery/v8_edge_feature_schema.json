@@ -1,0 +1,6 @@
+{
+    "status": "NOT RECOVERED",
+    "feature_count": 5,
+    "feature_schema": "UNKNOWN",
+    "missing_evidence": "There are no topology generators or `.pt` edge metric datasets available locally in any project directories."
+}

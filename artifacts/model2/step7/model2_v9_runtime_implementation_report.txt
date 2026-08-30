@@ -1,0 +1,57 @@
+FINAL VALIDATION REPORT
+=======================
+
+Artifact loading:
+PASS
+
+32-feature contract:
+PASS
+
+5-edge-feature contract:
+PASS
+
+Node mapping:
+PASS
+
+Online Boutique 17-node:
+PASS
+
+Sock Shop 16-node:
+PASS
+
+Train Ticket 69-node:
+PASS
+
+Graph construction:
+PASS
+
+Scaler transform-only:
+PASS
+
+Model loading:
+PASS
+
+Forward contract:
+PASS
+
+Per-node scoring:
+PASS
+
+Argmax:
+PASS
+
+Service resolution:
+PASS
+
+Missing-data handling:
+PASS
+
+Model 1 regression:
+PASS
+
+Checkpoint unchanged:
+PASS
+
+Scaler unchanged:
+PASS
+

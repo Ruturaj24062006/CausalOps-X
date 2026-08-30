@@ -1,0 +1,4 @@
+{
+    "status": "NOT READY",
+    "reason": "Could not extract or inspect the telemetry schema because the case repositories are unavailable."
+}

@@ -1,0 +1,20 @@
+{
+  "Artifact integrity": "PASS",
+  "Checkpoint unchanged": "PASS",
+  "Scaler unchanged": "PASS",
+  "Scaler transform-only": "PASS",
+  "32-feature contract": "PASS",
+  "5-edge-feature contract": "PASS",
+  "Online Boutique": "PASS",
+  "Sock Shop": "PASS",
+  "Train Ticket": "PASS",
+  "Graph construction": "PASS",
+  "Model inference": "PASS",
+  "Node ranking": "PASS",
+  "Service mapping": "PASS",
+  "API": "FAIL",
+  "Error handling": "PASS",
+  "Golden test": "NOT AVAILABLE",
+  "Model 1 regression": "PASS",
+  "Repeated inference": "PASS"
+}

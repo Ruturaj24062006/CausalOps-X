@@ -1,0 +1,8 @@
+{
+    "status": "NOT RECOVERED",
+    "architecture_path": "MISSING",
+    "training_code": "MISSING",
+    "jupyter_notebooks": "MISSING",
+    "known_external_path": "/kaggle/working/causalops_model2/models/",
+    "missing_evidence": "Deep recursive searches of `d:\\` and `c:\\` confirmed no python classes `nn.Module` containing `TransformerConv` or graph creation mechanisms exist."
+}

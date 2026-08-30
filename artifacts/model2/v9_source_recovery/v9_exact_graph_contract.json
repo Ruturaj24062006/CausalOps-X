@@ -1,0 +1,9 @@
+{
+    "status": "READY",
+    "tensors": {
+        "x": "torch.tensor(x, dtype=torch.float32)",
+        "edge_attr": "torch.tensor(arr, dtype=torch.float32)",
+        "edge_index": "torch.tensor(np.asarray(edge_pairs, dtype=np.int64).T, dtype=torch.long) OR torch.empty((2, 0), dtype=torch.long)"
+    },
+    "topology": "Graph dataset relies on explicitly approved relationships from a Step 8 contract file. No self-loops artificially added in the edge loops manually."
+}

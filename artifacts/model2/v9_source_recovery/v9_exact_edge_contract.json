@@ -1,0 +1,18 @@
+{
+    "status": "READY",
+    "edge_features_count": 5,
+    "edge_features": [
+        "call_count",
+        "mean_duration",
+        "std_duration",
+        "error_rate",
+        "p90_duration"
+    ],
+    "logic": {
+        "call_count": "len(durations)",
+        "mean_duration": "np.mean(durations)",
+        "std_duration": "np.std(durations, ddof=0)",
+        "error_rate": "np.mean(statuses >= 400)",
+        "p90_duration": "np.percentile(durations, 90)"
+    }
+}

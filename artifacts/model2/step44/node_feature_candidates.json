@@ -1,0 +1,5 @@
+{
+    "status": "NOT READY",
+    "reason": "Cannot extrapolate node feature logic without the base telemetry distributions.",
+    "node_ordering": "NODE ORDERING NOT PROVIDED"
+}

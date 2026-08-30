@@ -1,0 +1,5 @@
+{
+    "status": "NOT RECOVERED",
+    "preprocessing": "UNKNOWN",
+    "missing_evidence": "No `model2_scaler.pkl` or transformation classes exist for the 88 nodal dimensions to prevent distribution skewing."
+}

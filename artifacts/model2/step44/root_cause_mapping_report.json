@@ -1,0 +1,4 @@
+{
+    "status": "NOT READY",
+    "reason": "Unable to verify actual ground-truth label formats without reading the original test definitions."
+}

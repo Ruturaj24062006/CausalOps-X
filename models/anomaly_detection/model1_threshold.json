@@ -1,0 +1,9 @@
+{
+    "threshold": 19.95882233897654,
+    "threshold_method": "percentile",
+    "percentile": 98,
+    "model_checkpoint": "best_vae_model1_20f.pth",
+    "input_dim": 20,
+    "sequence_length": 20,
+    "validation_sample_count": 2890
+}

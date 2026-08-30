@@ -1,0 +1,6 @@
+FROM python:3.11-slim
+WORKDIR /app
+RUN pip install --no-cache-dir kafka-python
+COPY scripts/historical_telemetry_collector.py .
+ENV COLLECTOR_OUT_FILE=/data/historical_telemetry_dump.jsonl
+CMD ["python", "-u", "historical_telemetry_collector.py"]

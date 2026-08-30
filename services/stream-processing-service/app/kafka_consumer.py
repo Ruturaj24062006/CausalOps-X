@@ -6,6 +6,7 @@ from .config import KAFKA_BOOTSTRAP_SERVERS, KAFKA_INPUT_TOPICS, KAFKA_CONSUMER_
 from .normalizer import normalize_event
 from .kafka_producer import producer_client
 from .features.windows import WindowManager
+from .inference import Model1Engine
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -17,6 +18,7 @@ class TelemetryConsumer:
         self.running = False
         self.consumer = None
         self.window_manager = WindowManager()
+        self.engine = Model1Engine()
         
     def start(self):
         self.running = True
@@ -37,7 +39,9 @@ class TelemetryConsumer:
             features = self.window_manager.flush_expired()
             for f in features:
                 producer_client.publish(f.model_dump())
-                logger.debug(f"Published feature vector: {f.feature_id}")
+                pred = self.engine.ingest_vector(f)
+                if pred.get("status") not in ("INSUFFICIENT_SEQUENCE_DATA", "INVALID_FEATURE_COUNT"):
+                    logger.info(f"Model1 Output Validated >> {pred}")
 
     def _consume_loop(self):
         while self.running:

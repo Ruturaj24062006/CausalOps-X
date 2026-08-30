@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: telemetry-collector
+  namespace: causalops
+  labels:
+    app: telemetry-collector
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: telemetry-collector
+  template:
+    metadata:
+      labels:
+        app: telemetry-collector
+    spec:
+      containers:
+        - name: telemetry-collector
+          image: causalops-telemetry-collector:latest
+          imagePullPolicy: Never
+          env:
+            - name: KAFKA_BOOTSTRAP_SERVERS
+              value: "kafka:9092"
+            - name: COLLECTOR_OUT_FILE
+              value: "/data/historical_telemetry_dump.jsonl"
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+          volumeMounts:
+            - name: telemetry-data
+              mountPath: /data
+      volumes:
+        - name: telemetry-data
+          persistentVolumeClaim:
+            claimName: telemetry-history-pvc

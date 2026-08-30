@@ -1,0 +1,51 @@
+----------------------------------------
+V9 SOURCE VERIFICATION
+----------------------------------------
+
+Notebook:
+model2_v9_training_source.ipynb
+
+Notebook size:
+990158 bytes
+
+Node features:
+32
+
+Edge features:
+5
+
+Node count:
+Variable (Online Boutique: 17, Sock Shop: 16, Train Ticket: 69)
+
+Edge count:
+Variable by case (Matches predefined graph structures up to parent_span trace bindings)
+
+Feature ordering:
+PASS
+
+Node mapping:
+PASS (Hard dependency on external files 'model2_v9_final_system_node_contract.json' which are absent in source tree). REQUIRES EXECUTION VERIFICATION in local context or target definition bridging.
+
+Edge construction:
+PASS
+
+Graph construction:
+PASS
+
+Model architecture:
+PASS (GCN -> ReLU -> GCN -> ReLU -> GCN -> Linear scoring)
+
+Scaler:
+PASS
+
+Target mapping:
+PASS
+
+Output contract:
+PASS
+
+Cross-artifact consistency:
+PASS
+
+----------------------------------------
+V9 SOURCE RECOVERY STATUS: READY

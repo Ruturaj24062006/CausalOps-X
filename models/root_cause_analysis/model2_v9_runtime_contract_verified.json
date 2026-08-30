@@ -1,0 +1,33 @@
+{
+    "model_version": "v9",
+    "node_feature_count": 32,
+    "node_features": [],
+    "edge_feature_count": 5,
+    "edge_features": [],
+    "node_count": "UNKNOWN",
+    "node_to_service": {},
+    "service_to_node": {},
+    "model_architecture": {
+        "node_input_dimension": 32,
+        "edge_input_dimension": 5,
+        "hidden_dimension": 128,
+        "num_gnn_layers": 3,
+        "architecture": "GCN -> ReLU -> GCN -> ReLU -> GCN -> score"
+    },
+    "input_contract": "BLOCKED - Missing feature schemas and ordering formulas",
+    "output_contract": {
+        "output_dimension": 1,
+        "output_representation": "one_score_per_node",
+        "prediction_rule": "argmax node score within graph"
+    },
+    "preprocessing_contract": {
+        "scaler": "StandardScaler",
+        "scaler_fit_scope": "training_nodes_only"
+    },
+    "target_contract": {
+        "target_representation": "root_node_index",
+        "target_source": "root_cause_service"
+    },
+    "graph_contract": "BLOCKED - Missing topology graph edge construction logic",
+    "consistency_checks": "BLOCKED"
+}
