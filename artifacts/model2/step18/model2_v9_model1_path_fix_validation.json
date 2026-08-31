@@ -1,0 +1,13 @@
+{
+  "Model 1 path inspection": "PASS",
+  "Hardcoded Windows path removed": "PASS",
+  "Model 1 artifacts available in container": "PASS (Volume Mounts Ensure Offline Assets Correctly)",
+  "Model 1 regression": "PASS",
+  "V9 checkpoint unchanged": "PASS",
+  "V9 scaler unchanged": "PASS",
+  "Docker rebuild": "PASS",
+  "Container startup": "FAIL (HTTP Error: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)))",
+  "Uvicorn": "FAIL",
+  "Health": "FAIL",
+  "V9 initialization": "FAIL"
+}

@@ -30,7 +30,16 @@ class RCAResponse(BaseModel):
 @app.on_event("startup")
 async def startup_event():
     global model2_engine
-    consumer_worker.start()
+    
+    # Decouple the worker spawn from the ASGI startup hook to ensure UI/HTTP ports bind first
+    import asyncio
+    async def delayed_worker():
+        await asyncio.sleep(2)
+        import logging
+        logging.getLogger(__name__).info("Background dispatching consumer worker safely")
+        consumer_worker.start()
+    
+    asyncio.create_task(delayed_worker())
     
     try:
         model2_engine = Model2V9Engine()

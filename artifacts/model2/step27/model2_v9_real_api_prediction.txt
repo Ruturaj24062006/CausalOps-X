@@ -1,0 +1,57 @@
+FINAL VALIDATION REPORT
+=======================
+
+Backend:
+FAIL
+
+Health:
+FAIL
+
+API route:
+PASS (Inherited)
+
+Real fixture:
+NOT AVAILABLE
+
+HTTP request:
+NOT TESTED
+
+V9 engine reached:
+NOT TESTED
+
+32 node features:
+NOT TESTED
+
+5 edge features:
+NOT TESTED
+
+Scaler transform:
+NOT TESTED
+
+Graph construction:
+NOT TESTED
+
+V9 checkpoint:
+NOT TESTED
+
+Per-node scoring:
+NOT TESTED
+
+Argmax:
+NOT TESTED
+
+Root-cause service:
+NOT TESTED
+
+Model 1 regression:
+PASS (Structurally Untouched)
+
+Checkpoint integrity:
+PASS
+
+Scaler integrity:
+PASS
+
+Golden test:
+NOT AVAILABLE
+

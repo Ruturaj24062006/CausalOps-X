@@ -58,9 +58,7 @@ if TORCH_AVAILABLE:
 class Model1Engine:
     def __init__(self, model_dir=None):
         if model_dir is None:
-            model_dir = os.environ.get("MODEL1_DIR", os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "..", "models", "anomaly_detection")))
-            if not os.path.exists(model_dir) and os.path.exists("/workspace/models/anomaly_detection"):
-                model_dir = "/workspace/models/anomaly_detection"
+            model_dir = os.environ.get("MODEL1_DIR", "/models/anomaly_detection")
         self.model_dir = model_dir
         self.model = None
         self.scaler = None
@@ -88,8 +86,17 @@ class Model1Engine:
                 
             if TORCH_AVAILABLE:
                 ckpt_path = os.path.join(self.model_dir, "best_vae_model1_20f.pth")
+                fallback_ckpt_path = os.path.join(self.model_dir, "best_vae.pth")
+                
                 if os.path.exists(ckpt_path):
-                    ckpt = torch.load(ckpt_path, map_location="cpu")
+                    actual_path = ckpt_path
+                elif os.path.exists(fallback_ckpt_path):
+                    actual_path = fallback_ckpt_path
+                else:
+                    actual_path = None
+                    
+                if actual_path:
+                    ckpt = torch.load(actual_path, map_location="cpu")
                     self.model = LSTM_VAE(
                         ckpt["input_dim"], ckpt["hidden_dim"], 
                         ckpt["latent_dim"], ckpt["sequence_length"]

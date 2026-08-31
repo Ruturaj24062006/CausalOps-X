@@ -1,0 +1,24 @@
+FINAL VALIDATION REPORT
+=======================
+
+Port 8002 owner:
+Docker Container (awesome_turing)
+
+PID:
+UNKNOWN
+
+Owner identified:
+PASS
+
+Stale CausalOps container:
+NO
+
+Cleanup performed:
+NOT REQUIRED
+
+Port 8002 available:
+FAIL
+
+Docker daemon:
+PASS
+

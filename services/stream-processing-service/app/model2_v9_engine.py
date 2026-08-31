@@ -57,11 +57,12 @@ class Model2V9Corrected(nn.Module):
 
 
 class Model2V9Engine:
-    def __init__(
-        self, 
-        model_dir=r"d:\Projects\CausalOps X\models\root_cause_analysis",
-        contract_dir=r"d:\Projects\CausalOps X\artifacts\model2\v9_source_recovery"
-    ):
+    def __init__(self, model_dir=None, contract_dir=None):
+        base_dir = os.environ.get("CAUSALOPS_ROOT", "/")
+        if not model_dir:
+            model_dir = os.path.join(base_dir, "models", "root_cause_analysis")
+        if not contract_dir:
+            contract_dir = os.path.join(base_dir, "artifacts", "model2", "v9_source_recovery")
         self.model_dir = model_dir
         self.contract_dir = contract_dir
         self.scaler = None

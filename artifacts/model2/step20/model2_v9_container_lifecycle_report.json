@@ -1,0 +1,12 @@
+{
+  "Container started": "PASS",
+  "Container remained running": "FAIL",
+  "Exit code": "128",
+  "OOMKilled": "FALSE",
+  "Restarting": "FALSE",
+  "Uvicorn": "UNKNOWN",
+  "Health": "UNKNOWN",
+  "API route": "UNKNOWN",
+  "Container logs": "NO LOGS",
+  "Root cause": "Container crashed prematurely."
+}

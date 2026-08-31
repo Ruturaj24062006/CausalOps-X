@@ -1,0 +1,18 @@
+{
+  "Docker server": "PASS",
+  "Rebuilt image": "PASS",
+  "Correct image running": "PASS",
+  "Container": "PASS",
+  "Container stability": "PASS",
+  "Model 1 artifact path": "FAIL",
+  "Model 1 regression": "PASS",
+  "V9 checkpoint": "FAIL",
+  "V9 scaler": "FAIL",
+  "V9 initialization": "FAIL",
+  "Uvicorn": "FAIL",
+  "Health endpoint": "FAIL (HTTP Block: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)))",
+  "Port connectivity": "FAIL",
+  "POST /api/v1/rca/predict registered": "FAIL",
+  "Checkpoint integrity": "PASS",
+  "Scaler integrity": "PASS"
+}

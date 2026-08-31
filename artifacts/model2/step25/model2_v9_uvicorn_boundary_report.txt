@@ -1,0 +1,36 @@
+FINAL VALIDATION REPORT
+=======================
+
+app.main import:
+PASS
+
+FastAPI object:
+PASS
+
+Uvicorn import:
+PASS
+
+Uvicorn startup:
+FAIL
+
+ASGI resolution:
+PASS
+
+Port 8000:
+NOT LISTENING
+
+Internal health:
+FAIL
+
+External health:
+FAIL
+
+Startup hook reached:
+YES
+
+CPU/process state:
+Exited/Dropped
+
+Exact blocking boundary:
+E. Uvicorn process is alive but socket never opens
+

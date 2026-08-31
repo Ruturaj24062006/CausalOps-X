@@ -1,0 +1,13 @@
+{
+  "Container": "PASS",
+  "Uvicorn process": "PASS",
+  "Uvicorn command": "[\"uvicorn\",\"app.main:app\",\"--host\",\"0.0.0.0\",\"--port\",\"8000\"]",
+  "Container port 8000 listening": "FAIL",
+  "Internal health": "FAIL",
+  "Host health": "FAIL",
+  "Docker networking": "FAIL",
+  "Startup hook": "UNKNOWN",
+  "Kafka startup": "UNKNOWN",
+  "Exact logs": "WARNING:app.inference:Hardware artifacts bypassed securely for verification mapping.",
+  "Root cause": "B. Uvicorn is running but not listening on 8000."
+}

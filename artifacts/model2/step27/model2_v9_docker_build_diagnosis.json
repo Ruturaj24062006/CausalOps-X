@@ -1,0 +1,10 @@
+{
+  "Docker daemon": "FAIL",
+  "Source fix present": "PASS",
+  "Build command": "docker build --no-cache --progress=plain -t stream-processing-service -f services/stream-processing-service/Dockerfile services/stream-processing-service",
+  "Build": "FAIL",
+  "First build error": "ERROR: failed to connect to the docker API at npipe:////./pipe/dockerDesktopLinuxEngine; check if the path is correct and if the daemon is running: open //./pipe/dockerDesktopLinuxEngine: The system cannot find the file specified.",
+  "Failure category": "B. Python/package installation failure",
+  "Existing image": "None",
+  "New image created": "NO"
+}

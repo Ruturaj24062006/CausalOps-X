@@ -1,0 +1,48 @@
+FINAL VALIDATION REPORT
+=======================
+
+Port 8002 available:
+PASS
+
+Correct rebuilt image:
+PASS
+
+Correct container:
+PASS
+
+Container running:
+PASS
+
+Container stable:
+PASS
+
+Model 1 artifact:
+FAIL
+
+Model 1 startup:
+FAIL
+
+V9 checkpoint:
+FAIL
+
+V9 scaler:
+FAIL
+
+V9 initialization:
+FAIL
+
+Uvicorn:
+FAIL
+
+Health:
+FAIL (HTTP Block: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)))
+
+API route:
+FAIL
+
+Checkpoint integrity:
+PASS
+
+Scaler integrity:
+PASS
+

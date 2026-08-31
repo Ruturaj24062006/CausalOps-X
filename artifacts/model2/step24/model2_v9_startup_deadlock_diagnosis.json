@@ -1,0 +1,14 @@
+{
+  "Startup sequence": "import main -> import kafka_consumer (TelemetryConsumer() / Model1Engine()) -> import kafka_producer -> import model2_v9_engine (import torch_geometric) -> Uvicorn init -> startup_event",
+  "Last successful operation": "import kafka_consumer (Model1Engine())",
+  "First blocked operation": "Uvicorn ASGI startup sequence",
+  "Model 1": "PASS (Logs confirm initialization bypass completion)",
+  "Model 2 V9": "UNKNOWN",
+  "Kafka": "NOT REACHED",
+  "Kafka endpoint": "UNKNOWN",
+  "Kafka connectivity": "NOT TESTED",
+  "Uvicorn": "BLOCKED",
+  "Port 8000": "FAIL",
+  "Health": "FAIL",
+  "Exact root cause": "D. Uvicorn blocks on ASGI internal startup before startup_event executes!"
+}
