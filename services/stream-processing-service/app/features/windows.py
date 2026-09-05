@@ -15,6 +15,11 @@ class WindowManager:
         # group_by_key -> { window_size -> { window_start_time -> [events] } }
         self.state = {}
         self.window_sizes = {"1m": 60, "5m": 300, "15m": 900}
+        
+        for k, v in self.window_sizes.items():
+            if not isinstance(v, (int, float)):
+                raise TypeError(f"Invalid window configuration for {k}: Expected numeric seconds, got {type(v)}")
+                
         self.lock = __import__('threading').Lock()
         
     def add_event(self, event: dict):
@@ -47,9 +52,10 @@ class WindowManager:
         with self.lock:
             for key, windows in list(self.state.items()):
                 service_id, namespace, pod = key.split("|")
-                for ws_name, ws_sec in list(windows.items()):
+                for ws_name, window_dict in list(windows.items()):
+                    ws_sec = self.window_sizes.get(ws_name, 0)
                     buffer = 5
-                    w_starts = list(windows[ws_name].keys())
+                    w_starts = list(window_dict.keys())
                     for w_start in w_starts:
                         if current_ts > w_start + ws_sec + buffer:
                             events = windows[ws_name].pop(w_start)

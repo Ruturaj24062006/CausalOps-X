@@ -1,5 +1,5 @@
 import json
-import pickle
+import joblib
 import os
 import logging
 from typing import Dict, List, Any
@@ -26,34 +26,35 @@ if TORCH_AVAILABLE:
             self.hidden_dim = hidden_dim
             self.latent_dim = latent_dim
             self.seq_len = seq_len
-            self.encoder_lstm = nn.LSTM(input_dim, hidden_dim, batch_first=True)
-            self.fc_mean = nn.Linear(hidden_dim, latent_dim)
+            
+            self.encoder = nn.LSTM(input_dim, hidden_dim, batch_first=True)
+            self.fc_mu = nn.Linear(hidden_dim, latent_dim)
             self.fc_logvar = nn.Linear(hidden_dim, latent_dim)
-            self.fc_decode = nn.Linear(latent_dim, hidden_dim)
-            self.decoder_lstm = nn.LSTM(input_dim, hidden_dim, batch_first=True)
+            self.latent_to_hidden = nn.Linear(latent_dim, hidden_dim)
+            self.decoder = nn.LSTM(latent_dim, hidden_dim, batch_first=True)
             self.output_layer = nn.Linear(hidden_dim, input_dim)
             
         def encode(self, x):
-            _, (h_n, _) = self.encoder_lstm(x)
+            _, (h_n, _) = self.encoder(x)
             h_n = h_n.squeeze(0)
-            return self.fc_mean(h_n), self.fc_logvar(h_n)
+            return self.fc_mu(h_n), self.fc_logvar(h_n)
             
-        def reparameterize(self, mean, logvar):
+        def reparameterize(self, mu, logvar):
             std = torch.exp(0.5 * logvar)
             eps = torch.randn_like(std)
-            return mean + eps * std
+            return mu + eps * std
             
         def decode(self, z, x):
-            h_0 = self.fc_decode(z).unsqueeze(0)
+            h_0 = self.latent_to_hidden(z).unsqueeze(0)
             c_0 = torch.zeros_like(h_0)
-            dummy_input = torch.zeros((x.size(0), self.seq_len, self.input_dim)).to(x.device)
-            out, _ = self.decoder_lstm(dummy_input, (h_0, c_0))
+            z_seq = z.unsqueeze(1).repeat(1, self.seq_len, 1)
+            out, _ = self.decoder(z_seq, (h_0, c_0))
             return self.output_layer(out)
             
         def forward(self, x):
-            mean, logvar = self.encode(x)
-            z = self.reparameterize(mean, logvar)
-            return self.decode(z, x), mean, logvar
+            mu, logvar = self.encode(x)
+            z = self.reparameterize(mu, logvar)
+            return self.decode(z, x), mu, logvar
 
 class Model1Engine:
     def __init__(self, model_dir=None):
@@ -76,10 +77,10 @@ class Model1Engine:
             if self.schema.get("input_dim") != 20: 
                 raise ValueError("Expected exact 20-feature dimensional schema.")
                 
-            with open(os.path.join(self.model_dir, "model1_scaler.pkl"), "rb") as f:
-                self.scaler = pickle.load(f)
-                if not hasattr(self.scaler, 'transform'):
-                    raise TypeError("Scaler natively corrupted.")
+            scaler_path = os.path.join(self.model_dir, "model1_scaler.pkl")
+            self.scaler = joblib.load(scaler_path)
+            if not hasattr(self.scaler, 'transform'):
+                raise TypeError("Scaler natively corrupted.")
                     
             with open(os.path.join(self.model_dir, "model1_threshold.json"), "r") as f:
                 self.threshold = float(json.load(f)["threshold"])
@@ -96,14 +97,18 @@ class Model1Engine:
                     actual_path = None
                     
                 if actual_path:
-                    ckpt = torch.load(actual_path, map_location="cpu")
-                    self.model = LSTM_VAE(
-                        ckpt["input_dim"], ckpt["hidden_dim"], 
-                        ckpt["latent_dim"], ckpt["sequence_length"]
-                    )
-                    self.model.load_state_dict(ckpt["model_state_dict"])
+                    ckpt = torch.load(actual_path, map_location="cpu", weights_only=False)
+                    state_dict = ckpt["model_state_dict"] if "model_state_dict" in ckpt else ckpt
+                    
+                    in_d = state_dict['output_layer.weight'].shape[0]
+                    hid_d = state_dict['output_layer.weight'].shape[1]
+                    lat_d = state_dict['fc_mu.bias'].shape[0]
+                    s_len = self.schema["sequence_length"]
+                    
+                    self.model = LSTM_VAE(in_d, hid_d, lat_d, s_len)
+                    self.model.load_state_dict(state_dict)
                     self.model.eval()
-                    logger.info("Deep inference engine loaded securely.")
+                    logger.info(f"Model 1 deep inference engine loaded securely with structural input dim {in_d}.")
                 else:
                     logger.warning("Hardware artifacts bypassed securely for verification mapping.")
         except Exception as e:
@@ -164,11 +169,18 @@ class Model1Engine:
             import torch
             
             raw_arr = np.array(raw_mat)
+            logger.info(f"DIAGNOSTIC - input type: {type(raw_arr)}, input shape: {raw_arr.shape}")
+            logger.info(f"DIAGNOSTIC - expected feature dimension: {self.model.input_dim}, sequence length: {self.schema['sequence_length']}")
+            logger.info(f"DIAGNOSTIC - scaler input dimension: {getattr(self.scaler, 'n_features_in_', 'unknown')}")
+            
             scaled_arr = self.scaler.transform(raw_arr)
             tensor_seq = torch.tensor(scaled_arr, dtype=torch.float32).unsqueeze(0)
+            logger.info(f"DIAGNOSTIC - tensor dtype: {tensor_seq.dtype}, tensor shape passed to VAE: {tensor_seq.shape}")
             
             with torch.no_grad():
                 recon, _, _ = self.model(tensor_seq)
+            logger.info(f"DIAGNOSTIC - model output shape: {recon.shape}")
+                
             err = torch.mean((tensor_seq - recon)**2).item()
             if np.isnan(err) or np.isinf(err):
                 return {"status": "REJECT_INVALID_MATHEMATICS"}
@@ -182,5 +194,8 @@ class Model1Engine:
                 "timestamp": sequence[-1].window_end, "namespace": sequence[-1].namespace,
                 "pod": sequence[-1].pod, "window_start": sequence[0].window_start, "window_end": sequence[-1].window_end
             }
-        except Exception:
+        except Exception as e:
+            import traceback
+            trace_str = "".join(traceback.format_exception(type(e), e, e.__traceback__))
+            logger.error(f"MODEL 1 EXCEPTION:\n{trace_str}")
             return {"status": "INFERENCE_FAILURE"}

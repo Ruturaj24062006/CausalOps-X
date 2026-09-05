@@ -105,10 +105,18 @@ class Model2V9Engine:
                 
         # 3. Load Checkpoint
         if os.path.exists(self.ckpt_path) and PYG_AVAILABLE:
-            ckpt = torch.load(self.ckpt_path, map_location="cpu")
+            ckpt = torch.load(self.ckpt_path, map_location="cpu", weights_only=False)
+            
+            if isinstance(ckpt, dict) and "model_state_dict" in ckpt:
+                logger.info("Model 2 V9 checkpoint wrapper detected. Extracting state_dict.")
+                state_dict = ckpt["model_state_dict"]
+            else:
+                state_dict = ckpt
+                
             self.model = Model2V9Corrected()
-            self.model.load_state_dict(ckpt)
+            self.model.load_state_dict(state_dict)
             self.model.eval()
+            logger.info("Model 2 V9 state_dict loaded successfully. Architecture match verified.")
             
     def _validate_telemetry(self, telemetry_data: list):
         if not telemetry_data:

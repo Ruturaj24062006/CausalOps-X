@@ -1,0 +1,68 @@
+{
+  "step": "40",
+  "status": "PASS",
+  "model": "Model2V9Corrected",
+  "task": "root_cause_node_localization",
+  "node_input_dimension": 32,
+  "edge_input_dimension": 5,
+  "hidden_dimension": 128,
+  "num_gnn_layers": 3,
+  "dropout": 0.2,
+  "architecture": "GCN -> ReLU -> GCN -> ReLU -> GCN -> score",
+  "final_gcn_relu": false,
+  "global_pooling": false,
+  "per_node_scoring": true,
+  "output_shape": "total_nodes_in_batch, 1",
+  "prediction_rule": "argmax node score within each graph",
+  "target_representation": "root_node_index",
+  "target_source": "root_cause_service",
+  "loss": "graph_local_cross_entropy",
+  "parameter_count": 37377,
+  "checkpoint": "/kaggle/working/model2_v9_best_per_node_model.pt",
+  "checkpoint_epoch": null,
+  "checkpoint_validation_loss": null,
+  "checkpoint_train_loss": null,
+  "scaler": "/kaggle/working/model2_v9_step35_training_only_scaler.pkl",
+  "scaler_type": "StandardScaler",
+  "scaler_fit_scope": "training_nodes_only",
+  "graph_dataset": "/kaggle/working/model2_v9_final_graph_dataset.pt",
+  "target_manifest": "/kaggle/working/model2_v9_step20_training_target_manifest.json",
+  "split_manifest": "/kaggle/working/model2_v9_step17_final_dataset_split.json",
+  "test_evaluation_report": "/kaggle/working/model2_v9_step39_final_test_evaluation.json",
+  "final_test_top1": 0.6666666666666666,
+  "final_test_top3": 0.8095238095238095,
+  "final_test_top5": 0.9285714285714286,
+  "final_test_mean_target_rank": 2.0,
+  "final_test_median_target_rank": 1.0,
+  "test_cases": 42,
+  "test_used_in_step_40": false,
+  "runtime_training": false,
+  "runtime_scaler_fit": false,
+  "runtime_feature_engineering": false,
+  "runtime_graph_modification": false,
+  "zero_edge_sock_shop_supported": true,
+  "deterministic_inference": true,
+  "representative_predictions": {
+    "re2ob_checkoutservice_cpu_1": {
+      "predicted_node": 3,
+      "num_nodes": 17
+    },
+    "re2ss_carts_cpu_1": {
+      "predicted_node": 0,
+      "num_nodes": 16
+    },
+    "re2tt_ts-auth-service_cpu_1": {
+      "predicted_node": 9,
+      "num_nodes": 69
+    }
+  },
+  "best_model_v8_loaded": false,
+  "best_model_v8_modified": false,
+  "artifact_hashes": {
+    "graph_dataset": "1c5628db0767c2294631d9fb52e906e34b393107251115921564d6283e8f56d9",
+    "target_manifest": "ab951db2a423fc8e70030034e7d4e190f6d30a82ad312d4f497e7dc278da7e07",
+    "split_manifest": "71bfac96f47ef5e13cde12b6a8886497270adebe81666acce278244ae01f75a8",
+    "training_scaler": "df36200bc4924486a652528b6fd0ddb6dfa053a697b11b0de517922342cb3d85",
+    "best_v9_checkpoint": "64f745ebfd632f131ecd6a7a5add196ff54e5f97240d37908aa6818fbc73216a"
+  }
+}
