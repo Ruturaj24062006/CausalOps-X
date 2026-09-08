@@ -7,8 +7,11 @@ import collections
 from sklearn.preprocessing import StandardScaler
 
 csv_path = r"d:\Projects\CausalOps X\datasets\processed\model1_causalops_v1_features.csv"
-scaler_path = r"d:\Projects\CausalOps X\models\anomaly_detection\model1_scaler.pkl"
+# BUG 2 FIX: Use a 20F-specific scaler filename to avoid overwriting the existing
+# 37-feature model1_scaler.pkl which is associated with the recovered 37F artifact.
+scaler_path = r"d:\Projects\CausalOps X\models\anomaly_detection\model1_20f_scaler.pkl"
 schema_path = r"d:\Projects\CausalOps X\models\anomaly_detection\model1_feature_schema.json"
+seqs_dir    = r"d:\Projects\CausalOps X\datasets\processed"
 
 expected_order = [
     "metric_count", "metric_mean", "metric_std", "metric_min", "metric_max", "metric_current",
@@ -161,6 +164,20 @@ def preprocess():
     }
     with open(schema_path, 'w') as f:
         json.dump(schema, f, indent=4)
+
+    # BUG 2 FIX: Save the sliding-window sequence arrays to disk so that
+    # colab_lstm_vae_train.py can load train_seqs.npy and val_seqs.npy.
+    # Sequences are cast to float32 to match the DataLoader dtype contract.
+    os.makedirs(seqs_dir, exist_ok=True)
+    train_arr = np.array(train_seqs, dtype=np.float32)  # shape: (N_train, 20, 20)
+    val_arr   = np.array(val_seqs,   dtype=np.float32)  # shape: (N_val,   20, 20)
+    test_arr  = np.array(test_seqs,  dtype=np.float32)  # shape: (N_test,  20, 20)
+    np.save(os.path.join(seqs_dir, "train_seqs.npy"), train_arr)
+    np.save(os.path.join(seqs_dir, "val_seqs.npy"),   val_arr)
+    np.save(os.path.join(seqs_dir, "test_seqs.npy"),  test_arr)
+    print(f"Saved train_seqs.npy : shape={train_arr.shape}, dtype={train_arr.dtype}")
+    print(f"Saved val_seqs.npy   : shape={val_arr.shape},   dtype={val_arr.dtype}")
+    print(f"Saved test_seqs.npy  : shape={test_arr.shape},  dtype={test_arr.dtype}")
         
     print("============================================================")
     print("STEP 18 — MODEL 1 PREPROCESSING REPORT")
@@ -187,7 +204,10 @@ def preprocess():
     print(f"Namespace boundary:\n{'PASS' if boundary_pass else 'FAIL'}\n")
     print(f"Pod boundary:\n{'PASS' if boundary_pass else 'FAIL'}\n")
     print(f"Feature order:\nPASS\n")
-    print(f"Saved scaler:\n{scaler_path.replace(chr(92), '/')}\n")
+    print(f"Saved scaler (20F):\n{scaler_path.replace(chr(92), '/')}\n")
+    print(f"Saved train sequences:\n{os.path.join(seqs_dir, 'train_seqs.npy').replace(chr(92), '/')}\n")
+    print(f"Saved val sequences:\n{os.path.join(seqs_dir, 'val_seqs.npy').replace(chr(92), '/')}\n")
+    print(f"Saved test sequences:\n{os.path.join(seqs_dir, 'test_seqs.npy').replace(chr(92), '/')}\n")
     print(f"Saved feature schema:\n{schema_path.replace(chr(92), '/')}\n")
     print(f"READY FOR LSTM-VAE TRAINING:\nYES\n")
     print("STEP 18 COMPLETE")

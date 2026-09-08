@@ -1,0 +1,18 @@
+﻿python :   File "<string>", 
+line 13
+At line:1 char:1
++ python -c "
++ ~~~~~~~~~~~
+    + CategoryInfo           
+   : NotSpecified: (  File   
+  "<string>", line 13:Stri   
+ ng) [], RemoteException
+    + FullyQualifiedErrorId  
+   : NativeCommandError
+ 
+    has_ns_header = '" 
+namespace\,
+                    ^
+SyntaxError: unterminated 
+string literal (detected at 
+line 13)

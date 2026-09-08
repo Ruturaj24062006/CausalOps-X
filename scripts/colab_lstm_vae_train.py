@@ -186,8 +186,40 @@ def train_model():
     pd.DataFrame(history).to_csv("training_history_model1_20f.csv", index=False)
     with open("model_config_model1_20f.json", "w") as f:
         json.dump(CONFIG, f, indent=4)
-        
-    print("Training sequence complete. Generated 5 expected artifacts.")
+
+    # BUG 3 FIX: Compute and save REAL validation reconstruction errors from the
+    # best checkpoint. These are used by threshold_selection.py to derive the
+    # real 98th-percentile anomaly threshold.
+    # NO synthetic/random values. NO simulate_checkpoint_verification.py.
+    print("Computing real validation reconstruction errors from best checkpoint...")
+    best_ckpt = torch.load(
+        "best_vae_model1_20f.pth", map_location="cpu", weights_only=False
+    )
+    best_model_eval = LSTM_VAE(
+        best_ckpt["input_dim"],
+        best_ckpt["hidden_dim"],
+        best_ckpt["latent_dim"],
+        best_ckpt["sequence_length"]
+    )
+    best_model_eval.load_state_dict(best_ckpt["model_state_dict"])
+    best_model_eval.eval()
+
+    val_errors_list = []
+    with torch.no_grad():
+        for batch in val_loader:
+            batch = batch.to("cpu")
+            recon, _, _ = best_model_eval(batch)
+            # Per-sequence MSE averaged over (seq_len, features) dimensions
+            per_seq_mse = torch.mean((batch - recon) ** 2, dim=(1, 2))
+            val_errors_list.append(per_seq_mse.numpy())
+
+    val_errors_arr = np.concatenate(val_errors_list).astype(np.float32)
+    np.save("model1_validation_errors.npy", val_errors_arr)
+    print(f"Saved model1_validation_errors.npy: shape={val_errors_arr.shape}")
+    print(f"  min={val_errors_arr.min():.4f}  max={val_errors_arr.max():.4f}  mean={val_errors_arr.mean():.4f}")
+    print(f"  p98 (preview threshold): {np.percentile(val_errors_arr, 98):.4f}")
+    print()
+    print("Training sequence complete. Generated 6 expected artifacts.")
 
 if __name__ == "__main__":
     train_model()

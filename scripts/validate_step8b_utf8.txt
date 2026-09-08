@@ -1,0 +1,66 @@
+﻿============================================================
+STEP 8B ù STATIC VALIDATION
+============================================================
+
+--- SYNTAX VALIDATION ---
+  generate_dataset.py: SYNTAX OK
+  preprocess_dataset.py: SYNTAX OK
+  colab_lstm_vae_train.py: SYNTAX OK
+
+--- BUG 1: generate_dataset.py ---
+  namespace+pod in header string  : True
+  getattr(v, namespace) in code   : True
+  getattr(v, pod) in code         : True
+  feature_cols slice = [5:]       : True
+  20-feature order intact         : True
+  no np.random (no fake values)   : True
+  BUG 1: PASS
+
+--- BUG 2: preprocess_dataset.py ---
+  20F scaler = model1_20f_scaler.pkl : True
+  37F scaler NOT overwritten         : False
+  np.save train_seqs.npy             : True
+  np.save val_seqs.npy               : True
+  np.save test_seqs.npy              : True
+  np.save() call present             : True
+  dtype=np.float32                   : True
+  no np.random (no synthetic data)   : True
+  seq_len=20                         : True
+  70/15/15 split intact              : True
+  scaler fit on TRAIN ONLY           : True
+  boundary-straddling rejection      : True
+  20 features intact                 : True
+  BUG 2: FAIL
+
+--- BUG 3: colab_lstm_vae_train.py ---
+  model1_validation_errors.npy saved : True
+  np.save() call present             : True
+  loads best_vae_model1_20f.pth      : True
+  best_model_eval instance used      : True
+  torch.load call present            : True
+  no np.random (real errors only)    : False
+  no simulate_checkpoint_verif.      : False
+  per_seq_mse computed               : True
+  best_model set to eval() mode      : True
+  arch intact (20/64/16/seq20)       : True
+  train cfg intact (256/0.001/100)   : True
+  Adam optimizer intact              : True
+  BUG 3: FAIL
+
+--- PROTECTED ARTIFACT INTEGRITY ---
+  best_vae.pth: UNTOUCHED
+  final_scaler.pkl: UNTOUCHED
+  model1_scaler.pkl (37F): UNTOUCHED
+  model2_v9_best_per_node_model.pt: UNTOUCHED
+  model2_v9_step35_training_only_scaler.pkl: UNTOUCHED
+  model1_20f_scaler.pkl pre-exists: False (False expected ù created only when preprocessing runs)
+
+============================================================
+SUMMARY
+============================================================
+BUG 1 (namespace+pod CSV)    : PASS
+BUG 2 (sequence npy saves)   : FAIL
+BUG 3 (real val errors save) : FAIL
+37F + M2 artifacts untouched : PASS
+Training executed            : NO
+OVERALL: FAIL

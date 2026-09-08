@@ -1,0 +1,11 @@
+﻿=== SYNTAX VALIDATION ===
+  generate_dataset.py: SYNTAX OK
+  preprocess_dataset.py: SYNTAX OK
+  colab_lstm_vae_train.py: SYNTAX OK
+
+=== ARTIFACT HASH VERIFICATION (37F + Model2) ===
+  best_vae.pth: UNTOUCHED
+  final_scaler.pkl: UNTOUCHED
+  model1_scaler.pkl: UNTOUCHED
+  model2_v9_best_per_node_model.pt: UNTOUCHED
+  model2_v9_step35_training_only_scaler.pkl: UNTOUCHED

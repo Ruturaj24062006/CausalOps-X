@@ -1,0 +1,17 @@
+﻿python :   File "<string>", 
+line 9
+At line:1 char:1
++ python -c "
++ ~~~~~~~~~~~
+    + CategoryInfo           
+   : NotSpecified: (  File   
+  "<string>", line 9:Strin   
+ g) [], RemoteException
+    + FullyQualifiedErrorId  
+   : NativeCommandError
+ 
+    r1a = '" namespace\,
+          ^
+SyntaxError: unterminated 
+string literal (detected at 
+line 9)

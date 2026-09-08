@@ -1,0 +1,6 @@
+﻿model1_validation_errors.npy (2890,) float64 0.0905 47.6358
+model1_test_errors.npy (2930,) float64 0.1107 42.6005
+model1_test_labels.npy (2930,) int32 0.0 1.0
+model1_test_predictions.npy (2930,) int64 0.0 1.0
+---
+datasets dir exists: False

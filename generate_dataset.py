@@ -93,10 +93,20 @@ def generate():
     
     with open(csv_path, 'w', newline='') as f:
         writer = csv.writer(f)
-        header = ["service_id", "window_start", "window_end"] + expected_order
+        # BUG 1 FIX: include namespace and pod columns required by preprocess_dataset.py
+        # namespace and pod come from real parsed event data — not invented.
+        # namespace = deployment namespace from events.txt ("causalops" per parse_events)
+        # pod       = actual pod name extracted from the K8s event object reference
+        header = ["service_id", "namespace", "pod", "window_start", "window_end"] + expected_order
         writer.writerow(header)
         for v in feature_vectors:
-            row = [getattr(v, "service_id"), getattr(v, "window_start"), getattr(v, "window_end")]
+            row = [
+                getattr(v, "service_id"),
+                getattr(v, "namespace"),   # real namespace from event data
+                getattr(v, "pod"),          # real pod name from event data
+                getattr(v, "window_start"),
+                getattr(v, "window_end")
+            ]
             feats = getattr(v, "features")
             for f_name in expected_order:
                 row.append(feats.get(f_name))
@@ -107,7 +117,9 @@ def generate():
         data = list(reader)
         
     col_names = reader.fieldnames
-    feature_cols = col_names[3:]
+    # BUG 1 FIX: header now has 5 metadata cols (service_id, namespace, pod, window_start, window_end)
+    # before the 20 feature columns — slice must start at index 5, not 3.
+    feature_cols = col_names[5:]
     order_pass = (feature_cols == expected_order)
     
     numeric_pass = True
