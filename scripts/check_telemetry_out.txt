@@ -1,0 +1,27 @@
+﻿--- PROMETHEUS ---
+Prometheus pod: pod/prometheus-78ddcd5db9-8z6xj
+Targets response length: 58812
+Active targets count: 32
+Metrics response length: 3611
+
+--- APP LOGS ---
+Logs length: 1374
+Logs snippet: INFO:httpx:HTTP Request: GET http://prometheus:9090/api/v1/query?query=up "HTTP/1.1 200 OK"
+INFO:
+
+--- KAFKA ---
+
+Checking Kafka topic: raw.metrics
+Messages found in raw.metrics (timeout/limit): 2
+
+Checking Kafka topic: raw.logs
+Messages found in raw.logs (timeout/limit): 2
+
+Checking Kafka topic: raw.events
+Messages found in raw.events (timeout/limit): 2
+
+Checking Kafka topic: enriched.features
+Messages found in enriched.features (timeout/limit): 2
+
+--- K8S EVENTS ---
+Kubernetes live events count: 53

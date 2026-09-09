@@ -1,0 +1,48 @@
+{
+  "checks": {
+    "no_unknown_identity": true,
+    "no_sequence_gap_gt_300": true,
+    "zero_internal_gaps": true,
+    "exact_20_features": true,
+    "exact_feature_order": true,
+    "exact_20_obs": true,
+    "namespace_isolation": true,
+    "pod_isolation": true,
+    "chronological_split": true,
+    "leakage_pass": true,
+    "scaler_compatible": true,
+    "no_synthetic": true,
+    "no_duplicate": true,
+    "sufficient_pod": true,
+    "artifacts_unchanged": true
+  },
+  "audit_metrics": {
+    "total_curated_rows_before_id_filter": 41066,
+    "rows_excluded_invalid_identity": 4614,
+    "pct_excluded_invalid_identity": 11.235572006039058,
+    "Total_valid_identities": 55,
+    "identities_gte_50_seqs": 12,
+    "identities_lt_50_seqs": 43,
+    "total_valid_sequences_before_pod_filter": 31169,
+    "total_primary_training_population": 31117,
+    "train_seqs": 21778,
+    "val_seqs": 4662,
+    "test_seqs": 4677
+  },
+  "gap_stats": {
+    "min": 60.0,
+    "median": 60.0,
+    "P50": 60.0,
+    "P75": 60.0,
+    "P90": 60.0,
+    "P95": 120.0,
+    "P99": 300.0,
+    "P99_5": 300.0,
+    "P100": 300.0
+  },
+  "balance_audit": {
+    "largest_pod_pct": 13.339149600514281,
+    "top_5_pct": 63.743227109927446,
+    "top_10_pct": 96.88217467168703
+  }
+}

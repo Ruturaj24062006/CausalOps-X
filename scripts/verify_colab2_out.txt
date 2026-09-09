@@ -1,0 +1,14 @@
+﻿Checkpoint loads: PASS
+Input dimension: 20
+Hidden dimension: 64
+Latent dimension: 16
+Sequence length: 20
+Best epoch: 52
+Best validation ELBO: 515.9800
+Training epochs completed: 62
+Early stopping triggered: YES
+Validation errors File: c:\ColabMockWorkspace\model1_validation_errors.npy
+Count: 5699
+Finite: PASS
+NaN: PASS
+Infinity: PASS

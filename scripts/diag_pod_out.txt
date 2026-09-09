@@ -1,0 +1,5 @@
+﻿First timestamp: None to None
+Last timestamp: None to None
+Sample features keys: 0
+20-feature contract: []
+Namespace / Pod: None None

@@ -1,0 +1,1070 @@
+{
+  "checks": {
+    "all_rows_real": true,
+    "no_synthetic_rows": true,
+    "no_duplicated_rows": true,
+    "no_nan": true,
+    "no_infinity": true,
+    "namespace_exists": true,
+    "pod_identity_exists": true,
+    "timestamps_exist": true,
+    "timestamps_parseable": true,
+    "timestamps_chronological": true,
+    "exactly_20_features": true,
+    "exact_feature_order_preserved": true,
+    "failed_event_dist": 11,
+    "unhealthy_event_dist": 147,
+    "incident_period_dist": 0
+  },
+  "seq_checks": {
+    "shape_verified": true,
+    "valid_timestamps": true,
+    "chronological": true,
+    "same_namespace": true,
+    "same_pod": true,
+    "no_incident": true,
+    "no_failed": true,
+    "no_unhealthy": true
+  },
+  "feature_distributions": {
+    "metric_count": {
+      "min": 0.0,
+      "max": 184.0,
+      "mean": 13.964750171115675,
+      "median": 0.0,
+      "std": 39.58208555970691,
+      "P01": 0.0,
+      "P05": 0.0,
+      "P25": 0.0,
+      "P75": 0.0,
+      "P95": 128.0,
+      "P99": 128.0
+    },
+    "metric_mean": {
+      "min": 0.0,
+      "max": 0.4,
+      "mean": 0.021070659704321724,
+      "median": 0.0,
+      "std": 0.05964163418751432,
+      "P01": 0.0,
+      "P05": 0.0,
+      "P25": 0.0,
+      "P75": 0.0,
+      "P95": 0.1875,
+      "P99": 0.1935483870967742
+    },
+    "metric_std": {
+      "min": 0.0,
+      "max": 0.5163977794943223,
+      "mean": 0.043708732080481726,
+      "median": 0.0,
+      "std": 0.12368293012633622,
+      "P01": 0.0,
+      "P05": 0.0,
+      "P25": 0.0,
+      "P75": 0.0,
+      "P95": 0.39184602471712554,
+      "P99": 0.3966817518790096
+    },
+    "metric_min": {
+      "min": 0.0,
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0,
+      "P01": 0.0,
+      "P05": 0.0,
+      "P25": 0.0,
+      "P75": 0.0,
+      "P95": 0.0,
+      "P99": 0.0
+    },
+    "metric_max": {
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.11102962745673219,
+      "median": 0.0,
+      "std": 0.3141688229018778,
+      "P01": 0.0,
+      "P05": 0.0,
+      "P25": 0.0,
+      "P75": 0.0,
+      "P95": 1.0,
+      "P99": 1.0
+    },
+    "metric_current": {
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.0027378507871321013,
+      "median": 0.0,
+      "std": 0.05225279858724795,
+      "P01": 0.0,
+      "P05": 0.0,
+      "P25": 0.0,
+      "P75": 0.0,
+      "P95": 0.0,
+      "P99": 0.0
+    },
+    "log_count": {
+      "min": 0.0,
+      "max": 3336.0,
+      "mean": 21.586462305661485,
+      "median": 12.0,
+      "std": 63.450170231805664,
+      "P01": 0.0,
+      "P05": 0.0,
+      "P25": 1.0,
+      "P75": 14.0,
+      "P95": 88.0,
+      "P99": 116.0
+    },
+    "error_count": {
+      "min": 0.0,
+      "max": 347.0,
+      "mean": 7.723745966559108,
+      "median": 4.0,
+      "std": 15.396245293886048,
+      "P01": 0.0,
+      "P05": 0.0,
+      "P25": 0.0,
+      "P75": 12.0,
+      "P95": 40.0,
+      "P99": 103.0
+    },
+    "warning_count": {
+      "min": 0.0,
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0,
+      "P01": 0.0,
+      "P05": 0.0,
+      "P25": 0.0,
+      "P75": 0.0,
+      "P95": 0.0,
+      "P99": 0.0
+    },
+    "info_count": {
+      "min": 0.0,
+      "max": 3336.0,
+      "mean": 13.862716339102375,
+      "median": 0.0,
+      "std": 62.51994206442246,
+      "P01": 0.0,
+      "P05": 0.0,
+      "P25": 0.0,
+      "P75": 13.0,
+      "P95": 88.0,
+      "P99": 88.0
+    },
+    "unique_error_count": {
+      "min": 0.0,
+      "max": 214.0,
+      "mean": 5.399432873765523,
+      "median": 1.0,
+      "std": 12.141001311645828,
+      "P01": 0.0,
+      "P05": 0.0,
+      "P25": 0.0,
+      "P75": 12.0,
+      "P95": 13.0,
+      "P99": 53.0
+    },
+    "unique_message_count": {
+      "min": 0.0,
+      "max": 1623.0,
+      "mean": 10.943580717708027,
+      "median": 12.0,
+      "std": 31.247806917979858,
+      "P01": 0.0,
+      "P05": 0.0,
+      "P25": 1.0,
+      "P75": 13.0,
+      "P95": 18.0,
+      "P99": 109.93000000000029
+    },
+    "event_count": {
+      "min": 0.0,
+      "max": 392.0,
+      "mean": 0.8186907206414393,
+      "median": 0.0,
+      "std": 11.498536633073638,
+      "P01": 0.0,
+      "P05": 0.0,
+      "P25": 0.0,
+      "P75": 0.0,
+      "P95": 0.0,
+      "P99": 3.0
+    },
+    "warning_event_count": {
+      "min": 0.0,
+      "max": 49.0,
+      "mean": 0.024616211987875232,
+      "median": 0.0,
+      "std": 0.9192780586303089,
+      "P01": 0.0,
+      "P05": 0.0,
+      "P25": 0.0,
+      "P75": 0.0,
+      "P95": 0.0,
+      "P99": 0.0
+    },
+    "normal_event_count": {
+      "min": 0.0,
+      "max": 343.0,
+      "mean": 0.7940745086535641,
+      "median": 0.0,
+      "std": 11.121337682340597,
+      "P01": 0.0,
+      "P05": 0.0,
+      "P25": 0.0,
+      "P75": 0.0,
+      "P95": 0.0,
+      "P99": 3.0
+    },
+    "failed_event_count": {
+      "min": 0.0,
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0,
+      "P01": 0.0,
+      "P05": 0.0,
+      "P25": 0.0,
+      "P75": 0.0,
+      "P95": 0.0,
+      "P99": 0.0
+    },
+    "unhealthy_event_count": {
+      "min": 0.0,
+      "max": 0.0,
+      "mean": 0.0,
+      "median": 0.0,
+      "std": 0.0,
+      "P01": 0.0,
+      "P05": 0.0,
+      "P25": 0.0,
+      "P75": 0.0,
+      "P95": 0.0,
+      "P99": 0.0
+    },
+    "unique_reason_count": {
+      "min": 0.0,
+      "max": 8.0,
+      "mean": 0.03977217170235651,
+      "median": 0.0,
+      "std": 0.39610066114519715,
+      "P01": 0.0,
+      "P05": 0.0,
+      "P25": 0.0,
+      "P75": 0.0,
+      "P95": 0.0,
+      "P99": 1.0
+    },
+    "unique_resource_count": {
+      "min": 0.0,
+      "max": 5.0,
+      "mean": 0.012931455949936443,
+      "median": 0.0,
+      "std": 0.12332373262401379,
+      "P01": 0.0,
+      "P05": 0.0,
+      "P25": 0.0,
+      "P75": 0.0,
+      "P95": 0.0,
+      "P99": 1.0
+    },
+    "pod_event_count": {
+      "min": 0.0,
+      "max": 248.0,
+      "mean": 0.7011586975652684,
+      "median": 0.0,
+      "std": 10.344465230943129,
+      "P01": 0.0,
+      "P05": 0.0,
+      "P25": 0.0,
+      "P75": 0.0,
+      "P95": 0.0,
+      "P99": 1.0
+    }
+  },
+  "pod_stats": [
+    {
+      "namespace": "causalops",
+      "pod": "kafka-0",
+      "healthy_rows": 4564,
+      "seq_count": 4545,
+      "status": "SUFFICIENT"
+    },
+    {
+      "namespace": "causalops",
+      "pod": "unknown",
+      "healthy_rows": 36,
+      "seq_count": 17,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "causalops",
+      "pod": "neo4j-54555fbd99-4bmdk",
+      "healthy_rows": 3,
+      "seq_count": 0,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "local-path-storage",
+      "pod": "helper-pod-create-pvc-aad35d88-b2ef-49ae-9a8d-82d9f1cade78",
+      "healthy_rows": 2,
+      "seq_count": 0,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "causalops",
+      "pod": "neo4j-54555fbd99-v5lrt",
+      "healthy_rows": 3,
+      "seq_count": 0,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "causalops",
+      "pod": "neo4j-5b6f759899-48tpx",
+      "healthy_rows": 3,
+      "seq_count": 0,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "causalops",
+      "pod": "neo4j-5b6f759899-nsvhg",
+      "healthy_rows": 2,
+      "seq_count": 0,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "causalops",
+      "pod": "neo4j-5b6f759899-2chzm",
+      "healthy_rows": 4,
+      "seq_count": 0,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "local-path-storage",
+      "pod": "helper-pod-create-pvc-2e4a43a6-6b86-49a5-8fb0-f50e66adeef1",
+      "healthy_rows": 2,
+      "seq_count": 0,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "local-path-storage",
+      "pod": "helper-pod-delete-pvc-aad35d88-b2ef-49ae-9a8d-82d9f1cade78",
+      "healthy_rows": 2,
+      "seq_count": 0,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "causalops",
+      "pod": "neo4j-5b6f759899-zk8lj",
+      "healthy_rows": 3,
+      "seq_count": 0,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "causalops",
+      "pod": "neo4j-6d94db569b-jdl5d",
+      "healthy_rows": 23,
+      "seq_count": 4,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "causalops",
+      "pod": "redis-7c5b74cb9c-tkcwh",
+      "healthy_rows": 3653,
+      "seq_count": 3634,
+      "status": "SUFFICIENT"
+    },
+    {
+      "namespace": "local-path-storage",
+      "pod": "helper-pod-create-pvc-0c2b2a2f-9fdd-4b15-89cd-c3cd460f5edb",
+      "healthy_rows": 2,
+      "seq_count": 0,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "causalops",
+      "pod": "prometheus-78ddcd5db9-8z6xj",
+      "healthy_rows": 88,
+      "seq_count": 69,
+      "status": "SUFFICIENT"
+    },
+    {
+      "namespace": "local-path-storage",
+      "pod": "helper-pod-create-pvc-6e88bbc9-daed-4174-9264-83b18e2380cd",
+      "healthy_rows": 2,
+      "seq_count": 0,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "causalops",
+      "pod": "otel-collector-5f54d5cb95-7k675",
+      "healthy_rows": 26,
+      "seq_count": 7,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "causalops",
+      "pod": "jaeger-6779d66796-m4f48",
+      "healthy_rows": 4563,
+      "seq_count": 4544,
+      "status": "SUFFICIENT"
+    },
+    {
+      "namespace": "causalops",
+      "pod": "curl-test",
+      "healthy_rows": 3,
+      "seq_count": 0,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "causalops",
+      "pod": "fluent-bit-5hr49",
+      "healthy_rows": 116,
+      "seq_count": 97,
+      "status": "SUFFICIENT"
+    },
+    {
+      "namespace": "kube-system",
+      "pod": "kindnet-j929k",
+      "healthy_rows": 4564,
+      "seq_count": 4545,
+      "status": "SUFFICIENT"
+    },
+    {
+      "namespace": "causalops",
+      "pod": "postgres-56ccc9b7d-nc2t7",
+      "healthy_rows": 4565,
+      "seq_count": 4546,
+      "status": "SUFFICIENT"
+    },
+    {
+      "namespace": "causalops",
+      "pod": "log-test",
+      "healthy_rows": 4,
+      "seq_count": 0,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "kube-system",
+      "pod": "etcd-causalops-control-plane",
+      "healthy_rows": 1051,
+      "seq_count": 1032,
+      "status": "SUFFICIENT"
+    },
+    {
+      "namespace": "kube-system",
+      "pod": "kube-apiserver-causalops-control-plane",
+      "healthy_rows": 3239,
+      "seq_count": 3220,
+      "status": "SUFFICIENT"
+    },
+    {
+      "namespace": "causalops",
+      "pod": "data-ingestion-64c5857bb8-fwxv7",
+      "healthy_rows": 5,
+      "seq_count": 0,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "unknown",
+      "pod": "unknown",
+      "healthy_rows": 4543,
+      "seq_count": 4524,
+      "status": "SUFFICIENT"
+    },
+    {
+      "namespace": "causalops",
+      "pod": "event-dummy",
+      "healthy_rows": 2,
+      "seq_count": 0,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "causalops",
+      "pod": "data-ingestion-5b6f5c694f-q8xjm",
+      "healthy_rows": 10,
+      "seq_count": 0,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "kube-system",
+      "pod": "kube-controller-manager-causalops-control-plane",
+      "healthy_rows": 42,
+      "seq_count": 23,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "causalops",
+      "pod": "log-test-e2e",
+      "healthy_rows": 2,
+      "seq_count": 0,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "causalops",
+      "pod": "curl-trace-test",
+      "healthy_rows": 1,
+      "seq_count": 0,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "causalops",
+      "pod": "data-ingestion-5cb88796ff-pz4t2",
+      "healthy_rows": 1762,
+      "seq_count": 1743,
+      "status": "SUFFICIENT"
+    },
+    {
+      "namespace": "causalops",
+      "pod": "event-dummy-2",
+      "healthy_rows": 1,
+      "seq_count": 0,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "causalops",
+      "pod": "stream-processing-d4d6d4767-9xnv7",
+      "healthy_rows": 3,
+      "seq_count": 0,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "causalops",
+      "pod": "stream-processing-9bd47db5b-dhcc7",
+      "healthy_rows": 7,
+      "seq_count": 0,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "causalops",
+      "pod": "stream-processing-5cb99bfd-vbp2z",
+      "healthy_rows": 3468,
+      "seq_count": 3449,
+      "status": "SUFFICIENT"
+    },
+    {
+      "namespace": "default",
+      "pod": "unknown",
+      "healthy_rows": 19,
+      "seq_count": 0,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "kube-system",
+      "pod": "kube-proxy-cmts7",
+      "healthy_rows": 14,
+      "seq_count": 0,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "kube-system",
+      "pod": "kube-scheduler-causalops-control-plane",
+      "healthy_rows": 17,
+      "seq_count": 0,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "local-path-storage",
+      "pod": "local-path-provisioner-855c7b7774-5x9gh",
+      "healthy_rows": 25,
+      "seq_count": 6,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "kube-system",
+      "pod": "unknown",
+      "healthy_rows": 15,
+      "seq_count": 0,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "causalops",
+      "pod": "telemetry-collector-6859495b88-rjct6",
+      "healthy_rows": 1,
+      "seq_count": 0,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "local-path-storage",
+      "pod": "helper-pod-create-pvc-0195fcf2-3564-4265-b2d1-8ed64e788973",
+      "healthy_rows": 1,
+      "seq_count": 0,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "causalops",
+      "pod": "telemetry-collector-6859495b88-l6brq",
+      "healthy_rows": 3,
+      "seq_count": 0,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "causalops",
+      "pod": "telemetry-collector-6859495b88-bx6q8",
+      "healthy_rows": 587,
+      "seq_count": 568,
+      "status": "SUFFICIENT"
+    },
+    {
+      "namespace": "causalops",
+      "pod": "data-ingestion-bb885cfcf-7j6qk",
+      "healthy_rows": 2772,
+      "seq_count": 2753,
+      "status": "SUFFICIENT"
+    },
+    {
+      "namespace": "kube-system",
+      "pod": "coredns-589f44dc88-6pwq8",
+      "healthy_rows": 5,
+      "seq_count": 0,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "kube-system",
+      "pod": "coredns-589f44dc88-rkl8c",
+      "healthy_rows": 4,
+      "seq_count": 0,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "causalops",
+      "pod": "dns-test",
+      "healthy_rows": 3,
+      "seq_count": 0,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "causalops",
+      "pod": "net-test",
+      "healthy_rows": 2,
+      "seq_count": 0,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "causalops",
+      "pod": "stream-processing-65cb686c6b-xnwtl",
+      "healthy_rows": 19,
+      "seq_count": 0,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "causalops",
+      "pod": "stream-processing-7cbbcd56d5-pkbcc",
+      "healthy_rows": 5,
+      "seq_count": 0,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "causalops",
+      "pod": "stream-processing-8887c84c7-dgwpt",
+      "healthy_rows": 66,
+      "seq_count": 47,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "causalops",
+      "pod": "stream-processing-74fd44788-z9zx6",
+      "healthy_rows": 2,
+      "seq_count": 0,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "causalops",
+      "pod": "stream-processing-56b7bb6cb7-pfg95",
+      "healthy_rows": 26,
+      "seq_count": 7,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "causalops",
+      "pod": "stream-processing-5d678dd566-qgpj5",
+      "healthy_rows": 33,
+      "seq_count": 14,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "causalops",
+      "pod": "stream-processing-555b8746bb-cgnxf",
+      "healthy_rows": 23,
+      "seq_count": 4,
+      "status": "INSUFFICIENT"
+    },
+    {
+      "namespace": "causalops",
+      "pod": "stream-processing-6bccf8f79-nl276",
+      "healthy_rows": 897,
+      "seq_count": 878,
+      "status": "SUFFICIENT"
+    }
+  ],
+  "gap_stats": {
+    "min": 60.0,
+    "median": 60.0,
+    "P95": 240.0,
+    "max": 545400.0
+  },
+  "train_population": [
+    {
+      "pod": "postgres-56ccc9b7d-nc2t7",
+      "namespace": "causalops",
+      "train_seqs": 3182,
+      "percentage": 11.291696238466997
+    },
+    {
+      "pod": "kafka-0",
+      "namespace": "causalops",
+      "train_seqs": 3181,
+      "percentage": 11.288147622427253
+    },
+    {
+      "pod": "kindnet-j929k",
+      "namespace": "kube-system",
+      "train_seqs": 3181,
+      "percentage": 11.288147622427253
+    },
+    {
+      "pod": "jaeger-6779d66796-m4f48",
+      "namespace": "causalops",
+      "train_seqs": 3180,
+      "percentage": 11.28459900638751
+    },
+    {
+      "pod": "unknown",
+      "namespace": "unknown",
+      "train_seqs": 3166,
+      "percentage": 11.234918381831086
+    },
+    {
+      "pod": "redis-7c5b74cb9c-tkcwh",
+      "namespace": "causalops",
+      "train_seqs": 2543,
+      "percentage": 9.024130589070262
+    },
+    {
+      "pod": "stream-processing-5cb99bfd-vbp2z",
+      "namespace": "causalops",
+      "train_seqs": 2414,
+      "percentage": 8.566359119943222
+    },
+    {
+      "pod": "kube-apiserver-causalops-control-plane",
+      "namespace": "kube-system",
+      "train_seqs": 2254,
+      "percentage": 7.998580553584102
+    },
+    {
+      "pod": "data-ingestion-bb885cfcf-7j6qk",
+      "namespace": "causalops",
+      "train_seqs": 1927,
+      "percentage": 6.838183108587651
+    },
+    {
+      "pod": "data-ingestion-5cb88796ff-pz4t2",
+      "namespace": "causalops",
+      "train_seqs": 1220,
+      "percentage": 4.329311568488289
+    },
+    {
+      "pod": "etcd-causalops-control-plane",
+      "namespace": "kube-system",
+      "train_seqs": 722,
+      "percentage": 2.5621007806955287
+    },
+    {
+      "pod": "stream-processing-6bccf8f79-nl276",
+      "namespace": "causalops",
+      "train_seqs": 614,
+      "percentage": 2.178850248403123
+    },
+    {
+      "pod": "telemetry-collector-6859495b88-bx6q8",
+      "namespace": "causalops",
+      "train_seqs": 397,
+      "percentage": 1.4088005677785664
+    },
+    {
+      "pod": "fluent-bit-5hr49",
+      "namespace": "causalops",
+      "train_seqs": 67,
+      "percentage": 0.2377572746628815
+    },
+    {
+      "pod": "prometheus-78ddcd5db9-8z6xj",
+      "namespace": "causalops",
+      "train_seqs": 48,
+      "percentage": 0.170333569907736
+    },
+    {
+      "pod": "stream-processing-8887c84c7-dgwpt",
+      "namespace": "causalops",
+      "train_seqs": 32,
+      "percentage": 0.113555713271824
+    },
+    {
+      "pod": "kube-controller-manager-causalops-control-plane",
+      "namespace": "kube-system",
+      "train_seqs": 16,
+      "percentage": 0.056777856635912
+    },
+    {
+      "pod": "unknown",
+      "namespace": "causalops",
+      "train_seqs": 11,
+      "percentage": 0.0390347764371895
+    },
+    {
+      "pod": "stream-processing-5d678dd566-qgpj5",
+      "namespace": "causalops",
+      "train_seqs": 9,
+      "percentage": 0.0319375443577005
+    },
+    {
+      "pod": "otel-collector-5f54d5cb95-7k675",
+      "namespace": "causalops",
+      "train_seqs": 4,
+      "percentage": 0.014194464158978
+    },
+    {
+      "pod": "local-path-provisioner-855c7b7774-5x9gh",
+      "namespace": "local-path-storage",
+      "train_seqs": 4,
+      "percentage": 0.014194464158978
+    },
+    {
+      "pod": "stream-processing-56b7bb6cb7-pfg95",
+      "namespace": "causalops",
+      "train_seqs": 4,
+      "percentage": 0.014194464158978
+    },
+    {
+      "pod": "neo4j-6d94db569b-jdl5d",
+      "namespace": "causalops",
+      "train_seqs": 2,
+      "percentage": 0.007097232079489
+    },
+    {
+      "pod": "stream-processing-555b8746bb-cgnxf",
+      "namespace": "causalops",
+      "train_seqs": 2,
+      "percentage": 0.007097232079489
+    },
+    {
+      "pod": "neo4j-54555fbd99-4bmdk",
+      "namespace": "causalops",
+      "train_seqs": 0,
+      "percentage": 0.0
+    },
+    {
+      "pod": "helper-pod-create-pvc-aad35d88-b2ef-49ae-9a8d-82d9f1cade78",
+      "namespace": "local-path-storage",
+      "train_seqs": 0,
+      "percentage": 0.0
+    },
+    {
+      "pod": "neo4j-54555fbd99-v5lrt",
+      "namespace": "causalops",
+      "train_seqs": 0,
+      "percentage": 0.0
+    },
+    {
+      "pod": "neo4j-5b6f759899-48tpx",
+      "namespace": "causalops",
+      "train_seqs": 0,
+      "percentage": 0.0
+    },
+    {
+      "pod": "neo4j-5b6f759899-nsvhg",
+      "namespace": "causalops",
+      "train_seqs": 0,
+      "percentage": 0.0
+    },
+    {
+      "pod": "neo4j-5b6f759899-2chzm",
+      "namespace": "causalops",
+      "train_seqs": 0,
+      "percentage": 0.0
+    },
+    {
+      "pod": "helper-pod-create-pvc-2e4a43a6-6b86-49a5-8fb0-f50e66adeef1",
+      "namespace": "local-path-storage",
+      "train_seqs": 0,
+      "percentage": 0.0
+    },
+    {
+      "pod": "helper-pod-delete-pvc-aad35d88-b2ef-49ae-9a8d-82d9f1cade78",
+      "namespace": "local-path-storage",
+      "train_seqs": 0,
+      "percentage": 0.0
+    },
+    {
+      "pod": "neo4j-5b6f759899-zk8lj",
+      "namespace": "causalops",
+      "train_seqs": 0,
+      "percentage": 0.0
+    },
+    {
+      "pod": "helper-pod-create-pvc-0c2b2a2f-9fdd-4b15-89cd-c3cd460f5edb",
+      "namespace": "local-path-storage",
+      "train_seqs": 0,
+      "percentage": 0.0
+    },
+    {
+      "pod": "helper-pod-create-pvc-6e88bbc9-daed-4174-9264-83b18e2380cd",
+      "namespace": "local-path-storage",
+      "train_seqs": 0,
+      "percentage": 0.0
+    },
+    {
+      "pod": "curl-test",
+      "namespace": "causalops",
+      "train_seqs": 0,
+      "percentage": 0.0
+    },
+    {
+      "pod": "log-test",
+      "namespace": "causalops",
+      "train_seqs": 0,
+      "percentage": 0.0
+    },
+    {
+      "pod": "data-ingestion-64c5857bb8-fwxv7",
+      "namespace": "causalops",
+      "train_seqs": 0,
+      "percentage": 0.0
+    },
+    {
+      "pod": "event-dummy",
+      "namespace": "causalops",
+      "train_seqs": 0,
+      "percentage": 0.0
+    },
+    {
+      "pod": "data-ingestion-5b6f5c694f-q8xjm",
+      "namespace": "causalops",
+      "train_seqs": 0,
+      "percentage": 0.0
+    },
+    {
+      "pod": "log-test-e2e",
+      "namespace": "causalops",
+      "train_seqs": 0,
+      "percentage": 0.0
+    },
+    {
+      "pod": "curl-trace-test",
+      "namespace": "causalops",
+      "train_seqs": 0,
+      "percentage": 0.0
+    },
+    {
+      "pod": "event-dummy-2",
+      "namespace": "causalops",
+      "train_seqs": 0,
+      "percentage": 0.0
+    },
+    {
+      "pod": "stream-processing-d4d6d4767-9xnv7",
+      "namespace": "causalops",
+      "train_seqs": 0,
+      "percentage": 0.0
+    },
+    {
+      "pod": "stream-processing-9bd47db5b-dhcc7",
+      "namespace": "causalops",
+      "train_seqs": 0,
+      "percentage": 0.0
+    },
+    {
+      "pod": "unknown",
+      "namespace": "default",
+      "train_seqs": 0,
+      "percentage": 0.0
+    },
+    {
+      "pod": "kube-proxy-cmts7",
+      "namespace": "kube-system",
+      "train_seqs": 0,
+      "percentage": 0.0
+    },
+    {
+      "pod": "kube-scheduler-causalops-control-plane",
+      "namespace": "kube-system",
+      "train_seqs": 0,
+      "percentage": 0.0
+    },
+    {
+      "pod": "unknown",
+      "namespace": "kube-system",
+      "train_seqs": 0,
+      "percentage": 0.0
+    },
+    {
+      "pod": "telemetry-collector-6859495b88-rjct6",
+      "namespace": "causalops",
+      "train_seqs": 0,
+      "percentage": 0.0
+    },
+    {
+      "pod": "helper-pod-create-pvc-0195fcf2-3564-4265-b2d1-8ed64e788973",
+      "namespace": "local-path-storage",
+      "train_seqs": 0,
+      "percentage": 0.0
+    },
+    {
+      "pod": "telemetry-collector-6859495b88-l6brq",
+      "namespace": "causalops",
+      "train_seqs": 0,
+      "percentage": 0.0
+    },
+    {
+      "pod": "coredns-589f44dc88-6pwq8",
+      "namespace": "kube-system",
+      "train_seqs": 0,
+      "percentage": 0.0
+    },
+    {
+      "pod": "coredns-589f44dc88-rkl8c",
+      "namespace": "kube-system",
+      "train_seqs": 0,
+      "percentage": 0.0
+    },
+    {
+      "pod": "dns-test",
+      "namespace": "causalops",
+      "train_seqs": 0,
+      "percentage": 0.0
+    },
+    {
+      "pod": "net-test",
+      "namespace": "causalops",
+      "train_seqs": 0,
+      "percentage": 0.0
+    },
+    {
+      "pod": "stream-processing-65cb686c6b-xnwtl",
+      "namespace": "causalops",
+      "train_seqs": 0,
+      "percentage": 0.0
+    },
+    {
+      "pod": "stream-processing-7cbbcd56d5-pkbcc",
+      "namespace": "causalops",
+      "train_seqs": 0,
+      "percentage": 0.0
+    },
+    {
+      "pod": "stream-processing-74fd44788-z9zx6",
+      "namespace": "causalops",
+      "train_seqs": 0,
+      "percentage": 0.0
+    }
+  ],
+  "top_5_contrib": 56.3875088715401,
+  "scaler_pass": true
+}

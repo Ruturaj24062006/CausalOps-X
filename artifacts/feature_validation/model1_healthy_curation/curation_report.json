@@ -1,0 +1,23 @@
+{
+  "source_rows": 41066,
+  "curated_healthy_rows": 40908,
+  "healthy_retention_percent": 99.61525349437491,
+  "checks": {
+    "failed_event_count_zero": true,
+    "unhealthy_event_count_zero": true,
+    "no_incident_leakage": true,
+    "no_nan_inf": true,
+    "exactly_20_features": true,
+    "feature_order_preserved": true,
+    "namespace_pod_isolation": true,
+    "no_incident_crossing": true,
+    "no_pod_crossing": true,
+    "chronological_split": true,
+    "no_split_overlap": true,
+    "no_synthetic_rows": true,
+    "no_duplicated_rows": true
+  },
+  "train_range": "2026-08-22T21:30:00Z to 2026-09-04T12:24:00Z",
+  "val_range": "2026-08-24T07:37:00Z to 2026-09-04T18:34:00Z",
+  "test_range": "2026-08-28T16:31:00Z to 2026-09-08T18:48:00Z"
+}

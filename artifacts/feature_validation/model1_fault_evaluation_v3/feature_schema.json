@@ -1,0 +1,26 @@
+{
+  "feature_order": [
+    "metric_count",
+    "metric_mean",
+    "metric_std",
+    "metric_min",
+    "metric_max",
+    "metric_current",
+    "log_count",
+    "error_count",
+    "warning_count",
+    "info_count",
+    "unique_error_count",
+    "unique_message_count",
+    "event_count",
+    "warning_event_count",
+    "normal_event_count",
+    "failed_event_count",
+    "unhealthy_event_count",
+    "unique_reason_count",
+    "unique_resource_count",
+    "pod_event_count"
+  ],
+  "sequence_length": 20,
+  "input_dim": 20
+}

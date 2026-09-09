@@ -1,0 +1,20 @@
+﻿--- TASK 6: CSV STATS ---
+Total feature rows: 41066
+Number of service/pod groups: 62
+Earliest window: 2026-08-22T20:22:00Z
+Latest window: 2026-09-08T18:47:00Z
+Missing values: 182620
+Infinite values: 0
+Features with real variation: ['metric_count', 'metric_mean', 'metric_std', 'metric_current', 'log_count', 'error_count', 'info_count', 'unique_error_count', 'unique_message_count', 'event_count', 'warning_event_count', 'normal_event_count', 'failed_event_count', 'unhealthy_event_count', 'unique_reason_count', 'unique_resource_count', 'pod_event_count']
+Constant features: ['metric_min', 'metric_max', 'warning_count']
+
+--- TASK 8: NPY SEQUENCE STATS ---
+train_seqs.npy shape: (28255, 20, 20)
+val_seqs.npy shape: (5699, 20, 20)
+test_seqs.npy shape: (5888, 20, 20)
+No NaN: True
+No infinity: True
+
+--- TASK 9: SCALER CHECK ---
+20F scaler n_features_in_: 20
+37F artifacts untouched: True

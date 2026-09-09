@@ -1,0 +1,9 @@
+{
+  "total_valid_sequences": 40276,
+  "global_train_count": 28096,
+  "global_val_count": 6014,
+  "global_test_count": 6037,
+  "sufficient_pods_count": 15,
+  "insufficient_pods_count": 44,
+  "minimum_sequences_among_sufficient": 69
+}

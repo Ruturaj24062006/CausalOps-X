@@ -1,0 +1,36 @@
+{
+  "capture_pipeline_status": "PASS",
+  "schema_validation": "PASS",
+  "replay_validation": "PASS (STATIC TEST)",
+  "production_safety_validation": "PASS",
+  "evaluation_flag_default": "false",
+  "candidate_compatibility": "PASS",
+  "checklist": {
+    "feature_matrix_exists": true,
+    "feature_matrix_shape_20x20": true,
+    "exactly_20_feature_names": true,
+    "feature_order_exact": true,
+    "timestamps_count_20": true,
+    "timestamps_chronological": true,
+    "max_gap_le_300": true,
+    "namespace_exists": true,
+    "pod_exists": true,
+    "no_unknown_identity": true,
+    "ground_truth_label_exists": true,
+    "anomaly_score_exists": true,
+    "prediction_exists": true,
+    "model_checkpoint_identified": true,
+    "scaler_identified": true,
+    "evaluation_id_exists": true,
+    "fault_id_exists": true
+  },
+  "artifacts_safety": {
+    "production_model1": "UNCHANGED",
+    "production_scaler": "UNCHANGED",
+    "production_threshold": "UNCHANGED",
+    "old_37F_model1": "UNCHANGED",
+    "model2": "UNCHANGED",
+    "candidate": "UNCHANGED",
+    "v2_dataset": "UNCHANGED"
+  }
+}

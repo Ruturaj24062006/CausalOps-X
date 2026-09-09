@@ -1,0 +1,63 @@
+INFO:app.inference:MODEL1 20F SCALER FILE: PASS
+INFO:app.inference:MODEL1 20F THRESHOLD FILE: PASS
+INFO:app.inference:MODEL1 20F CHECKPOINT FILE: PASS
+INFO:app.inference:MODEL1 SYNTHETIC PADDING: NOT USED
+INFO:app.inference:MODEL1 RETRAINING: NOT PERFORMED
+INFO:app.inference:MODEL1 SCALER FEATURES: 20
+INFO:app.inference:MODEL1 THRESHOLD: 17.43091926574707
+INFO:app.inference:MODEL1 ARCHITECTURE MATCH: PASS
+INFO:app.inference:MODEL1 INPUT FEATURES: 20
+INFO:app.inference:MODEL1 SEQUENCE LENGTH: 20
+INFO:app.inference:MODEL1 FEATURE ORDER: PASS
+/usr/local/lib/python3.11/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+/usr/local/lib/python3.11/site-packages/sklearn/base.py:525: InconsistentVersionWarning: Trying to unpickle estimator StandardScaler from version 1.6.1 when using version 1.9.0. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+INFO:app.model2_v9_engine:Model 2 V9 checkpoint wrapper detected. Extracting state_dict.
+INFO:app.model2_v9_engine:Model 2 V9 state_dict loaded successfully. Architecture match verified.
+INFO:app.main:Model 2 V9 Engine securely initialized on startup.
+INFO:app.main:Stream Processing Service started and consumer dispatched
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:app.main:Background dispatching consumer worker safely
+INFO:app.kafka_consumer:Connecting consumer to kafka:9092
+INFO:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('10.96.157.91', 9092)]>: connecting to kafka:9092 [('10.96.157.91', 9092) IPv4]
+INFO:kafka.conn:Probing node bootstrap-0 broker version
+INFO:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('10.96.157.91', 9092)]>: Connection complete.
+INFO:kafka.conn:Broker version identified as 2.6.0
+INFO:kafka.conn:Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+INFO:kafka.consumer.subscription_state:Updating subscribed topics to: ('raw.metrics', 'raw.logs', 'raw.events')
+INFO:app.kafka_consumer:Successfully bound streaming telemetry connections
+INFO:kafka.cluster:Group coordinator for causalops-stream-processor is BrokerMetadata(nodeId='coordinator-1', host='kafka', port=9092, rack=None)
+INFO:kafka.coordinator:Discovered coordinator coordinator-1 for group causalops-stream-processor
+INFO:kafka.coordinator:Starting new heartbeat thread
+INFO:kafka.coordinator.consumer:Revoking previously assigned partitions set() for group causalops-stream-processor
+INFO:kafka.conn:<BrokerConnection node_id=coordinator-1 host=kafka:9092 <connecting> [IPv4 ('10.96.157.91', 9092)]>: connecting to kafka:9092 [('10.96.157.91', 9092) IPv4]
+INFO:kafka.conn:<BrokerConnection node_id=coordinator-1 host=kafka:9092 <connecting> [IPv4 ('10.96.157.91', 9092)]>: Connection complete.
+INFO:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('10.96.157.91', 9092)]>: Closing connection. 
+INFO:kafka.coordinator:(Re-)joining group causalops-stream-processor
+INFO:kafka.coordinator:Successfully joined group causalops-stream-processor with generation 83
+INFO:kafka.consumer.subscription_state:Updated partition assignment: [TopicPartition(topic='raw.events', partition=0), TopicPartition(topic='raw.logs', partition=0), TopicPartition(topic='raw.metrics', partition=0)]
+INFO:kafka.coordinator.consumer:Setting newly assigned partitions {TopicPartition(topic='raw.events', partition=0), TopicPartition(topic='raw.metrics', partition=0), TopicPartition(topic='raw.logs', partition=0)} for group causalops-stream-processor
+INFO:kafka.conn:<BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('10.96.157.91', 9092)]>: connecting to kafka:9092 [('10.96.157.91', 9092) IPv4]
+INFO:kafka.conn:<BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('10.96.157.91', 9092)]>: Connection complete.
+INFO:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('10.96.157.91', 9092)]>: connecting to kafka:9092 [('10.96.157.91', 9092) IPv4]
+INFO:kafka.conn:Probing node bootstrap-0 broker version
+INFO:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('10.96.157.91', 9092)]>: Connection complete.
+INFO:kafka.conn:Broker version identified as 2.6.0
+INFO:kafka.conn:Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+INFO:     10.244.0.1:34532 - "GET /ready HTTP/1.1" 200 OK
+WARNING:kafka.coordinator:Heartbeat failed for group causalops-stream-processor because it is rebalancing
+INFO:kafka.coordinator.consumer:Revoking previously assigned partitions {TopicPartition(topic='raw.events', partition=0), TopicPartition(topic='raw.metrics', partition=0), TopicPartition(topic='raw.logs', partition=0)} for group causalops-stream-processor
+INFO:kafka.coordinator:(Re-)joining group causalops-stream-processor
+INFO:kafka.coordinator:Elected group leader -- performing partition assignments using range
+INFO:kafka.coordinator:Successfully joined group causalops-stream-processor with generation 84
+INFO:kafka.consumer.subscription_state:Updated partition assignment: [TopicPartition(topic='raw.events', partition=0), TopicPartition(topic='raw.logs', partition=0), TopicPartition(topic='raw.metrics', partition=0)]
+INFO:kafka.coordinator.consumer:Setting newly assigned partitions {TopicPartition(topic='raw.events', partition=0), TopicPartition(topic='raw.metrics', partition=0), TopicPartition(topic='raw.logs', partition=0)} for group causalops-stream-processor
+INFO:     10.244.0.15:35448 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:kafka.conn:<BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('10.96.157.91', 9092)]>: connecting to kafka:9092 [('10.96.157.91', 9092) IPv4]
+INFO:kafka.conn:<BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('10.96.157.91', 9092)]>: Connection complete.
+INFO:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('10.96.157.91', 9092)]>: Closing connection. 

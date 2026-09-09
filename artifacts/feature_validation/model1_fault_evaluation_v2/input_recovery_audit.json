@@ -1,0 +1,24 @@
+{
+  "evaluation_windows": 354,
+  "raw_20_feature_inputs_found": "NO",
+  "source_locations": [],
+  "matched_windows": 0,
+  "partially_matched_windows": 0,
+  "unrecoverable_windows": 354,
+  "matching_methodology": "Searched the repository explicitly for JSON/CSV/NPY artifacts mapping the exact timestamps bounding the independent evaluation fault range (20:15 - 21:20) natively. Queried existing log dumps (`live_logs5.txt`, `live_logs6.txt`) which contained threshold scores but logically omitted the `features=[...]` input arrays internally, preventing sequential tensor reconstruction natively.",
+  "timestamp_coverage": "The existing offline historical datasets physically cease mapping operational data reliably after 2026-09-08T18:47Z natively natively. The fault period occurred sequentially after this bound continuously (~20:15 - 21:20), creating an irrecoverable chronological gap.",
+  "sequence_integrity": "N/A",
+  "feature_schema_integrity": "N/A",
+  "is_recoverable": "NOT RECOVERABLE",
+  "exact_files_searched": [
+    "artifacts/feature_validation/model1_fault_evaluation_v2/dataset.json",
+    "scripts/live_logs5.txt",
+    "scripts/live_logs6.txt",
+    "datasets/processed/model1_causalops_v1_features.csv",
+    "data/historical_telemetry_dump.jsonl"
+  ],
+  "exact_files_created": [
+    "artifacts/feature_validation/model1_fault_evaluation_v2/input_recovery_audit.json"
+  ],
+  "exact_files_modified": []
+}

@@ -1,0 +1,5 @@
+﻿Postgres pod: pod/postgres-56ccc9b7d-nc2t7
+Exec psql failed:
+ Did not find any relation named "telemetry_event".
+command terminated with exit code 1
+

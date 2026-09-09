@@ -1,0 +1,22 @@
+{
+  "total_rows": 41066,
+  "healthy_count": 40908,
+  "healthy_retention": 99.61525349437491,
+  "last_ts": "2026-09-08T18:47:00Z",
+  "leakage": "PASS",
+  "known_incidents": [
+    "2026-09-08T20:15:00Z to 2026-09-08T21:20:00Z (Steps 20, 23, 25, 26 evaluation windows)"
+  ],
+  "train_seqs": 28230,
+  "val_seqs": 6049,
+  "test_seqs": 6050,
+  "min_seqs_per_pod": 0,
+  "insufficient_pods_count": 41,
+  "insufficient_pods_examples": [
+    "neo4j-54555fbd99-4bmdk (0 seqs)",
+    "helper-pod-create-pvc-aad35d88-b2ef-49ae-9a8d-82d9f1cade78 (0 seqs)",
+    "neo4j-54555fbd99-v5lrt (0 seqs)",
+    "neo4j-5b6f759899-48tpx (0 seqs)",
+    "neo4j-5b6f759899-nsvhg (0 seqs)"
+  ]
+}

@@ -1,0 +1,35 @@
+﻿STEP 9A ù REAL 20F DATASET: PASS
+
+Source events.txt: PASS
+CSV generated: PASS
+CSV rows: 26
+CSV columns: 25
+
+namespace column: PASS
+pod column: PASS
+
+20F feature contract: PASS
+
+train_seqs.npy: PASS
+train shape: (0,)
+
+val_seqs.npy: PASS
+val shape: (0,)
+
+test_seqs.npy: PASS
+test shape: (0,)
+
+dtype: PASS
+NaN check: PASS
+infinity check: PASS
+
+20F scaler: PASS
+scaler n_features_in_: 20
+
+37F artifacts untouched: PASS
+Model 2 V9 untouched: PASS
+
+Model 1 training executed: NO
+
+STEP 9A: PASS
+

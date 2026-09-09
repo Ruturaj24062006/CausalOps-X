@@ -1,0 +1,28 @@
+﻿--- TASK 1 ---
+train_seqs.npy shape: (28255, 20, 20)
+val_seqs.npy shape: (5699, 20, 20)
+test_seqs.npy shape: (5888, 20, 20)
+n_features_in_: 20
+
+--- TASK 2/3 ---
+input_dim: True
+hidden_dim: True
+latent_dim: True
+sequence_length: True
+batch_size: True
+learning_rate: True
+epochs: True
+patience: True
+seed: True
+Adam optimizer present: True
+MSE/KL Loss present: True
+best checkpoint output: True
+final checkpoint output: True
+validation errors output: True
+Encoder LSTM(20 -> 64): True
+Latent logvar = Linear(64 -> 16): True
+Decoder LSTM(20 -> 64): True
+
+--- TASK 4 ---
+Package created: True
+37F artifacts untouched: True

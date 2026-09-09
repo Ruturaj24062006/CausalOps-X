@@ -1,0 +1,24 @@
+﻿--- TASK 4: VERIFY PROMETHEUS ---
+Prometheus Pod: Command 'kubectl get pods -n monitoring -l app=prometheus -o jsonpath='{.items[0].metadata.name}'' returned non-zero exit status 1.
+Targets response length: 251
+Metrics response length: 260
+Could not parse Prometheus metrics JSON.
+
+--- TASK 5: VERIFY APPLICATION LOGS ---
+App Pod: data-ingestion-bb885cfcf-7j6qk
+Logs length: 670
+INFO:     10.244.0.1:42892 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:42896 - "GET /health HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET http://prometheus:9090/api/v1/query?query=up "HTTP/1.1
+
+--- TASK 6: VERIFY KUBERNETES EVENTS ---
+Live events count: 53
+
+--- TASK 7: VERIFY KAFKA ---
+Kafka Pod: Command 'kubectl get pods -n kafka -l app=kafka -o jsonpath='{.items[0].metadata.name}'' returned non-zero exit status 1.
+Kafka Topics: ['Command', "'kubectl", 'exec', '-n', 'kafka', 'Command', "'kubectl", 'get', 'pods', '-n', 'kafka', '-l', 'app=kafka', '-o', "jsonpath='{.items[0].metadata.name}''", 'returned', 'non-zero', 'exit', 'status', '1.', '--', 'kafka-topics.sh', '--list', '--bootstrap-server', "localhost:9092'", 'returned', 'non-zero', 'exit', 'status', '1.']
+Checking raw.metrics...
+raw.metrics output length: 321
+
+--- TASK 9: CHECK DATA SUFFICIENCY ---
+enriched.features message count: 1

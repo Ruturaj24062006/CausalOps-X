@@ -1,0 +1,38 @@
+﻿Postgres pod: pod/postgres-56ccc9b7d-nc2t7
+Tables:
+ Did not find any relations.
+
+Counts:
+                      relname                      | n_live_tup 
+--------------------------------------------------+------------
+ compression_algorithm                            |          0
+ continuous_agg                                   |          0
+ continuous_agg_migrate_plan                      |          0
+ cache_inval_hypertable                           |          0
+ compression_chunk_size                           |          0
+ continuous_aggs_invalidation_threshold           |          0
+ cache_inval_extension                            |          0
+ dimension                                        |          0
+ hypertable                                       |          0
+ chunk_column_stats                               |          0
+ continuous_aggs_materialization_invalidation_log |          0
+ chunk_constraint                                 |          0
+ tablespace                                       |          0
+ continuous_aggs_watermark                        |          0
+ chunk_index                                      |          0
+ bgw_job                                          |          0
+ dimension_slice                                  |          0
+ continuous_aggs_hypertable_invalidation_log      |          0
+ chunk                                            |          0
+ continuous_aggs_bucket_function                  |          0
+ bgw_job_stat_history                             |          1
+ continuous_agg_migrate_plan_step                 |          0
+ telemetry_event                                  |          0
+ metadata                                         |          0
+ bgw_job_stat                                     |          0
+ bgw_policy_chunk_stats                           |          0
+ compression_settings                             |          0
+ cache_inval_bgw_job                              |          0
+(28 rows)
+
+

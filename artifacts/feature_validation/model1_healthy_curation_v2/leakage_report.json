@@ -1,0 +1,7 @@
+{
+  "overlap_train_val": false,
+  "overlap_train_test": false,
+  "overlap_val_test": false,
+  "boundary_cross_pass": true,
+  "incident_excluded_pass": true
+}

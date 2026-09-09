@@ -1,0 +1,21 @@
+﻿NAMESPACE            NAME                                              READY   STATUS    RESTARTS         AGE
+causalops            data-ingestion-bb885cfcf-7j6qk                    1/1     Running   9 (6m42s ago)    10d
+causalops            fluent-bit-5hr49                                  1/1     Running   14 (6m42s ago)   16d
+causalops            jaeger-6779d66796-m4f48                           1/1     Running   14 (6m42s ago)   16d
+causalops            kafka-0                                           1/1     Running   14 (6m42s ago)   16d
+causalops            neo4j-6d94db569b-jdl5d                            1/1     Running   14 (6m42s ago)   16d
+causalops            otel-collector-5f54d5cb95-7k675                   1/1     Running   14 (6m42s ago)   16d
+causalops            postgres-56ccc9b7d-nc2t7                          1/1     Running   14 (6m42s ago)   16d
+causalops            prometheus-78ddcd5db9-8z6xj                       1/1     Running   14 (6m42s ago)   16d
+causalops            redis-7c5b74cb9c-tkcwh                            1/1     Running   14 (6m42s ago)   16d
+causalops            stream-processing-6bccf8f79-nl276                 1/1     Running   3 (6m42s ago)    6d12h
+causalops            telemetry-collector-6859495b88-bx6q8              1/1     Running   9 (6m42s ago)    10d
+kube-system          coredns-589f44dc88-6pwq8                          1/1     Running   14 (6m42s ago)   16d
+kube-system          coredns-589f44dc88-rkl8c                          1/1     Running   14 (6m42s ago)   16d
+kube-system          etcd-causalops-control-plane                      1/1     Running   14 (6m42s ago)   16d
+kube-system          kindnet-j929k                                     1/1     Running   14 (6m42s ago)   16d
+kube-system          kube-apiserver-causalops-control-plane            1/1     Running   14 (6m42s ago)   16d
+kube-system          kube-controller-manager-causalops-control-plane   1/1     Running   14 (6m42s ago)   16d
+kube-system          kube-proxy-cmts7                                  1/1     Running   14 (6m42s ago)   16d
+kube-system          kube-scheduler-causalops-control-plane            1/1     Running   14 (6m42s ago)   16d
+local-path-storage   local-path-provisioner-855c7b7774-5x9gh           1/1     Running   28 (6m1s ago)    16d

@@ -1,0 +1,36 @@
+{
+  "threshold": 17.43091926574707,
+  "threshold_method": "98th_percentile_validation_mse",
+  "percentile": 98,
+  "model_checkpoint": "best_vae_model1_20f.pth",
+  "input_dim": 20,
+  "sequence_length": 20,
+  "validation_sample_count": 5699,
+  "validation_error_min": 0.00044761854223906994,
+  "validation_error_max": 32.105892181396484,
+  "validation_error_mean": 1.5274717309321661,
+  "validation_error_median": 0.00594641687348485,
+  "validation_error_std": 4.327828785636786,
+  "validation_errors_above_threshold": 114,
+  "validation_anomaly_rate_percent": 2.000350938761186,
+  "percentile_analysis": {
+    "90": 5.030068588256836,
+    "92": 5.035604610443115,
+    "94": 5.299860992431641,
+    "95": 7.5131297111511195,
+    "96": 9.078134460449219,
+    "97": 10.642570304870592,
+    "98": 17.43091926574707,
+    "98.5": 20.99714021682735,
+    "99": 28.952690925598137,
+    "99.5": 30.486639804840102,
+    "99.9": 31.69836608123795
+  },
+  "mad_analysis": {
+    "3": 0.020376390544697642,
+    "4": 0.02518638176843524,
+    "5": 0.029996372992172837,
+    "6": 0.034806364215910435,
+    "7": 0.03961635543964803
+  }
+}

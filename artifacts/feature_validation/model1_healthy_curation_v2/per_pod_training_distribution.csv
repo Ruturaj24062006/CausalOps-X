@@ -1,0 +1,13 @@
+namespace,pod,train_seqs,percentage
+kube-system,kindnet-j929k,2905,13.339149600514281
+causalops,postgres-56ccc9b7d-nc2t7,2905,13.339149600514281
+causalops,kafka-0,2904,13.334557810634584
+causalops,jaeger-6779d66796-m4f48,2904,13.334557810634584
+causalops,redis-7c5b74cb9c-tkcwh,2264,10.395812287629717
+causalops,stream-processing-5cb99bfd-vbp2z,2254,10.349894388832768
+causalops,data-ingestion-bb885cfcf-7j6qk,1731,7.9483882817522264
+kube-system,kube-apiserver-causalops-control-plane,1574,7.227477270640096
+causalops,data-ingestion-5cb88796ff-pz4t2,1140,5.23464046285242
+causalops,stream-processing-6bccf8f79-nl276,518,2.3785471576820645
+kube-system,etcd-causalops-control-plane,480,2.2040591422536506
+causalops,telemetry-collector-6859495b88-bx6q8,199,0.913766186059326

@@ -1,0 +1,8 @@
+{
+  "version": "v3",
+  "description": "Stable pipeline for independent real-fault evaluation capturing complete 20x20 input arrays securely.",
+  "model_candidate_id": "model1_20f_healthy_candidate",
+  "capture_format": "JSONL",
+  "pipeline_state": "INTEGRATED",
+  "cluster_status": "OFFLINE"
+}

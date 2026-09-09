@@ -1,0 +1,163 @@
+INFO:app.inference:MODEL1 20F SCALER FILE: PASS
+INFO:app.inference:MODEL1 20F THRESHOLD FILE: PASS
+INFO:app.inference:MODEL1 20F CHECKPOINT FILE: PASS
+INFO:app.inference:MODEL1 SYNTHETIC PADDING: NOT USED
+INFO:app.inference:MODEL1 RETRAINING: NOT PERFORMED
+INFO:app.inference:MODEL1 SCALER FEATURES: 20
+INFO:app.inference:MODEL1 THRESHOLD: 17.43091926574707
+INFO:app.inference:MODEL1 ARCHITECTURE MATCH: PASS
+INFO:app.inference:MODEL1 INPUT FEATURES: 20
+INFO:app.inference:MODEL1 SEQUENCE LENGTH: 20
+INFO:app.inference:MODEL1 FEATURE ORDER: PASS
+/usr/local/lib/python3.11/site-packages/torch/jit/_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+  warnings.warn(
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+/usr/local/lib/python3.11/site-packages/sklearn/base.py:525: InconsistentVersionWarning: Trying to unpickle estimator StandardScaler from version 1.6.1 when using version 1.9.0. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+  warnings.warn(
+INFO:app.model2_v9_engine:Model 2 V9 checkpoint wrapper detected. Extracting state_dict.
+INFO:app.model2_v9_engine:Model 2 V9 state_dict loaded successfully. Architecture match verified.
+INFO:app.main:Model 2 V9 Engine securely initialized on startup.
+INFO:app.main:Stream Processing Service started and consumer dispatched
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:app.main:Background dispatching consumer worker safely
+INFO:app.kafka_consumer:Connecting consumer to kafka:9092
+INFO:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('10.96.157.91', 9092)]>: connecting to kafka:9092 [('10.96.157.91', 9092) IPv4]
+INFO:kafka.conn:Probing node bootstrap-0 broker version
+INFO:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('10.96.157.91', 9092)]>: Connection complete.
+INFO:kafka.conn:Broker version identified as 2.6.0
+INFO:kafka.conn:Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+INFO:kafka.consumer.subscription_state:Updating subscribed topics to: ('raw.metrics', 'raw.logs', 'raw.events')
+INFO:app.kafka_consumer:Successfully bound streaming telemetry connections
+INFO:kafka.cluster:Group coordinator for causalops-stream-processor is BrokerMetadata(nodeId='coordinator-1', host='kafka', port=9092, rack=None)
+INFO:kafka.coordinator:Discovered coordinator coordinator-1 for group causalops-stream-processor
+INFO:kafka.coordinator:Starting new heartbeat thread
+INFO:kafka.coordinator.consumer:Revoking previously assigned partitions set() for group causalops-stream-processor
+INFO:kafka.conn:<BrokerConnection node_id=coordinator-1 host=kafka:9092 <connecting> [IPv4 ('10.96.157.91', 9092)]>: connecting to kafka:9092 [('10.96.157.91', 9092) IPv4]
+INFO:kafka.conn:<BrokerConnection node_id=coordinator-1 host=kafka:9092 <connecting> [IPv4 ('10.96.157.91', 9092)]>: Connection complete.
+INFO:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('10.96.157.91', 9092)]>: Closing connection. 
+INFO:kafka.coordinator:(Re-)joining group causalops-stream-processor
+INFO:kafka.coordinator:Successfully joined group causalops-stream-processor with generation 83
+INFO:kafka.consumer.subscription_state:Updated partition assignment: [TopicPartition(topic='raw.events', partition=0), TopicPartition(topic='raw.logs', partition=0), TopicPartition(topic='raw.metrics', partition=0)]
+INFO:kafka.coordinator.consumer:Setting newly assigned partitions {TopicPartition(topic='raw.events', partition=0), TopicPartition(topic='raw.metrics', partition=0), TopicPartition(topic='raw.logs', partition=0)} for group causalops-stream-processor
+INFO:kafka.conn:<BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('10.96.157.91', 9092)]>: connecting to kafka:9092 [('10.96.157.91', 9092) IPv4]
+INFO:kafka.conn:<BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('10.96.157.91', 9092)]>: Connection complete.
+INFO:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('10.96.157.91', 9092)]>: connecting to kafka:9092 [('10.96.157.91', 9092) IPv4]
+INFO:kafka.conn:Probing node bootstrap-0 broker version
+INFO:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connecting> [IPv4 ('10.96.157.91', 9092)]>: Connection complete.
+INFO:kafka.conn:Broker version identified as 2.6.0
+INFO:kafka.conn:Set configuration api_version=(2, 6, 0) to skip auto check_version requests on startup
+INFO:     10.244.0.1:34532 - "GET /ready HTTP/1.1" 200 OK
+WARNING:kafka.coordinator:Heartbeat failed for group causalops-stream-processor because it is rebalancing
+INFO:kafka.coordinator.consumer:Revoking previously assigned partitions {TopicPartition(topic='raw.events', partition=0), TopicPartition(topic='raw.metrics', partition=0), TopicPartition(topic='raw.logs', partition=0)} for group causalops-stream-processor
+INFO:kafka.coordinator:(Re-)joining group causalops-stream-processor
+INFO:kafka.coordinator:Elected group leader -- performing partition assignments using range
+INFO:kafka.coordinator:Successfully joined group causalops-stream-processor with generation 84
+INFO:kafka.consumer.subscription_state:Updated partition assignment: [TopicPartition(topic='raw.events', partition=0), TopicPartition(topic='raw.logs', partition=0), TopicPartition(topic='raw.metrics', partition=0)]
+INFO:kafka.coordinator.consumer:Setting newly assigned partitions {TopicPartition(topic='raw.events', partition=0), TopicPartition(topic='raw.metrics', partition=0), TopicPartition(topic='raw.logs', partition=0)} for group causalops-stream-processor
+INFO:     10.244.0.15:35448 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:kafka.conn:<BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('10.96.157.91', 9092)]>: connecting to kafka:9092 [('10.96.157.91', 9092) IPv4]
+INFO:kafka.conn:<BrokerConnection node_id=1 host=kafka:9092 <connecting> [IPv4 ('10.96.157.91', 9092)]>: Connection complete.
+INFO:kafka.conn:<BrokerConnection node_id=bootstrap-0 host=kafka:9092 <connected> [IPv4 ('10.96.157.91', 9092)]>: Closing connection. 
+INFO:     10.244.0.1:59264 - "GET /health HTTP/1.1" 200 OK
+INFO:     10.244.0.1:59268 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.15:35436 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     10.244.0.1:47330 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:40696 - "GET /health HTTP/1.1" 200 OK
+INFO:     10.244.0.1:40708 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.15:54862 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     10.244.0.1:37202 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.15:40164 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     10.244.0.1:49978 - "GET /health HTTP/1.1" 200 OK
+INFO:     10.244.0.1:49984 - "GET /ready HTTP/1.1" 200 OK
+INFO:app.inference:DIAGNOSTIC - input type: <class 'numpy.ndarray'>, input shape: (20, 20)
+INFO:app.inference:DIAGNOSTIC - expected feature dimension: 20, sequence length: 20
+INFO:app.inference:DIAGNOSTIC - scaler input dimension: 20
+INFO:app.inference:DIAGNOSTIC - tensor dtype: torch.float32, tensor shape passed to VAE: torch.Size([1, 20, 20])
+INFO:app.inference:DIAGNOSTIC - model output shape: torch.Size([1, 20, 20])
+INFO:app.inference:Model 1 inference execution -> NORMAL (Score: 0.5181) [NS: causalops]
+INFO:app.kafka_consumer:Model1 Output Validated >> {'prediction': 'NORMAL', 'anomaly_score': 0.5181162357330322, 'threshold': 17.43091926574707, 'model': 'model1', 'timestamp': '2026-09-08T20:14:00+00:00', 'namespace': 'causalops', 'pod': 'data-ingestion-bb885cfcf-7j6qk', 'window_start': '2026-09-08T19:45:00+00:00', 'window_end': '2026-09-08T20:14:00+00:00'}
+INFO:app.inference:DIAGNOSTIC - input type: <class 'numpy.ndarray'>, input shape: (20, 20)
+INFO:app.inference:DIAGNOSTIC - expected feature dimension: 20, sequence length: 20
+INFO:app.inference:DIAGNOSTIC - scaler input dimension: 20
+INFO:app.inference:DIAGNOSTIC - tensor dtype: torch.float32, tensor shape passed to VAE: torch.Size([1, 20, 20])
+INFO:app.inference:DIAGNOSTIC - model output shape: torch.Size([1, 20, 20])
+INFO:app.inference:Model 1 inference execution -> NORMAL (Score: 0.2780) [NS: causalops]
+INFO:app.kafka_consumer:Model1 Output Validated >> {'prediction': 'NORMAL', 'anomaly_score': 0.27795255184173584, 'threshold': 17.43091926574707, 'model': 'model1', 'timestamp': '2026-09-08T20:14:00+00:00', 'namespace': 'causalops', 'pod': 'postgres-56ccc9b7d-nc2t7', 'window_start': '2026-09-08T19:45:00+00:00', 'window_end': '2026-09-08T20:14:00+00:00'}
+INFO:app.inference:DIAGNOSTIC - input type: <class 'numpy.ndarray'>, input shape: (20, 20)
+INFO:app.inference:DIAGNOSTIC - expected feature dimension: 20, sequence length: 20
+INFO:app.inference:DIAGNOSTIC - scaler input dimension: 20
+INFO:app.inference:DIAGNOSTIC - tensor dtype: torch.float32, tensor shape passed to VAE: torch.Size([1, 20, 20])
+INFO:     10.244.0.1:59404 - "GET /ready HTTP/1.1" 200 OK
+INFO:app.inference:DIAGNOSTIC - model output shape: torch.Size([1, 20, 20])
+INFO:app.inference:Model 1 inference execution -> NORMAL (Score: 0.4576) [NS: causalops]
+INFO:app.kafka_consumer:Model1 Output Validated >> {'prediction': 'NORMAL', 'anomaly_score': 0.45759642124176025, 'threshold': 17.43091926574707, 'model': 'model1', 'timestamp': '2026-09-08T20:14:00+00:00', 'namespace': 'causalops', 'pod': 'kafka-0', 'window_start': '2026-09-08T19:45:00+00:00', 'window_end': '2026-09-08T20:14:00+00:00'}
+INFO:app.inference:DIAGNOSTIC - input type: <class 'numpy.ndarray'>, input shape: (20, 20)
+INFO:app.inference:DIAGNOSTIC - expected feature dimension: 20, sequence length: 20
+INFO:app.inference:DIAGNOSTIC - scaler input dimension: 20
+INFO:app.inference:DIAGNOSTIC - tensor dtype: torch.float32, tensor shape passed to VAE: torch.Size([1, 20, 20])
+INFO:     10.244.0.15:53418 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:app.inference:DIAGNOSTIC - model output shape: torch.Size([1, 20, 20])
+INFO:app.inference:Model 1 inference execution -> NORMAL (Score: 0.2359) [NS: kube-system]
+INFO:app.kafka_consumer:Model1 Output Validated >> {'prediction': 'NORMAL', 'anomaly_score': 0.23588843643665314, 'threshold': 17.43091926574707, 'model': 'model1', 'timestamp': '2026-09-08T20:14:00+00:00', 'namespace': 'kube-system', 'pod': 'kindnet-j929k', 'window_start': '2026-09-08T19:45:00+00:00', 'window_end': '2026-09-08T20:14:00+00:00'}
+INFO:app.inference:DIAGNOSTIC - input type: <class 'numpy.ndarray'>, input shape: (20, 20)
+INFO:app.inference:DIAGNOSTIC - expected feature dimension: 20, sequence length: 20
+INFO:app.inference:DIAGNOSTIC - scaler input dimension: 20
+INFO:app.inference:DIAGNOSTIC - tensor dtype: torch.float32, tensor shape passed to VAE: torch.Size([1, 20, 20])
+INFO:app.inference:DIAGNOSTIC - model output shape: torch.Size([1, 20, 20])
+INFO:app.inference:Model 1 inference execution -> NORMAL (Score: 0.0265) [NS: causalops]
+INFO:app.kafka_consumer:Model1 Output Validated >> {'prediction': 'NORMAL', 'anomaly_score': 0.026453863829374313, 'threshold': 17.43091926574707, 'model': 'model1', 'timestamp': '2026-09-08T20:14:00+00:00', 'namespace': 'causalops', 'pod': 'jaeger-6779d66796-m4f48', 'window_start': '2026-09-08T19:45:00+00:00', 'window_end': '2026-09-08T20:14:00+00:00'}
+INFO:     10.244.0.1:59608 - "GET /health HTTP/1.1" 200 OK
+INFO:     10.244.0.1:59616 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.15:36020 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     10.244.0.1:50000 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.1:60392 - "GET /health HTTP/1.1" 200 OK
+INFO:     10.244.0.1:60394 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.15:32996 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     10.244.0.1:44728 - "GET /ready HTTP/1.1" 200 OK
+INFO:     10.244.0.15:44040 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     10.244.0.1:53572 - "GET /health HTTP/1.1" 200 OK
+INFO:     10.244.0.1:53588 - "GET /ready HTTP/1.1" 200 OK
+INFO:app.inference:DIAGNOSTIC - input type: <class 'numpy.ndarray'>, input shape: (20, 20)
+INFO:app.inference:DIAGNOSTIC - expected feature dimension: 20, sequence length: 20
+INFO:app.inference:DIAGNOSTIC - scaler input dimension: 20
+INFO:app.inference:DIAGNOSTIC - tensor dtype: torch.float32, tensor shape passed to VAE: torch.Size([1, 20, 20])
+INFO:app.inference:DIAGNOSTIC - model output shape: torch.Size([1, 20, 20])
+INFO:app.inference:Model 1 inference execution -> NORMAL (Score: 0.5087) [NS: causalops]
+INFO:app.kafka_consumer:Model1 Output Validated >> {'prediction': 'NORMAL', 'anomaly_score': 0.5087056756019592, 'threshold': 17.43091926574707, 'model': 'model1', 'timestamp': '2026-09-08T20:15:00+00:00', 'namespace': 'causalops', 'pod': 'data-ingestion-bb885cfcf-7j6qk', 'window_start': '2026-09-08T19:55:00+00:00', 'window_end': '2026-09-08T20:15:00+00:00'}
+INFO:app.inference:DIAGNOSTIC - input type: <class 'numpy.ndarray'>, input shape: (20, 20)
+INFO:app.inference:DIAGNOSTIC - expected feature dimension: 20, sequence length: 20
+INFO:app.inference:DIAGNOSTIC - scaler input dimension: 20
+INFO:app.inference:DIAGNOSTIC - tensor dtype: torch.float32, tensor shape passed to VAE: torch.Size([1, 20, 20])
+INFO:app.inference:DIAGNOSTIC - model output shape: torch.Size([1, 20, 20])
+INFO:app.inference:Model 1 inference execution -> NORMAL (Score: 0.4326) [NS: causalops]
+INFO:app.kafka_consumer:Model1 Output Validated >> {'prediction': 'NORMAL', 'anomaly_score': 0.43263301253318787, 'threshold': 17.43091926574707, 'model': 'model1', 'timestamp': '2026-09-08T20:15:00+00:00', 'namespace': 'causalops', 'pod': 'data-ingestion-bb885cfcf-7j6qk', 'window_start': '2026-09-08T19:58:00+00:00', 'window_end': '2026-09-08T20:15:00+00:00'}
+INFO:app.inference:DIAGNOSTIC - input type: <class 'numpy.ndarray'>, input shape: (20, 20)
+INFO:app.inference:DIAGNOSTIC - expected feature dimension: 20, sequence length: 20
+INFO:app.inference:DIAGNOSTIC - scaler input dimension: 20
+INFO:app.inference:DIAGNOSTIC - tensor dtype: torch.float32, tensor shape passed to VAE: torch.Size([1, 20, 20])
+INFO:     10.244.0.1:54614 - "GET /ready HTTP/1.1" 200 OK
+INFO:app.inference:DIAGNOSTIC - model output shape: torch.Size([1, 20, 20])
+INFO:app.inference:Model 1 inference execution -> NORMAL (Score: 1.9631) [NS: causalops]
+INFO:app.kafka_consumer:Model1 Output Validated >> {'prediction': 'NORMAL', 'anomaly_score': 1.9631397724151611, 'threshold': 17.43091926574707, 'model': 'model1', 'timestamp': '2026-09-08T20:15:00+00:00', 'namespace': 'causalops', 'pod': 'data-ingestion-bb885cfcf-7j6qk', 'window_start': '2026-09-08T19:59:00+00:00', 'window_end': '2026-09-08T20:15:00+00:00'}
+INFO:app.inference:DIAGNOSTIC - input type: <class 'numpy.ndarray'>, input shape: (20, 20)
+INFO:app.inference:DIAGNOSTIC - expected feature dimension: 20, sequence length: 20
+INFO:app.inference:DIAGNOSTIC - scaler input dimension: 20
+INFO:app.inference:DIAGNOSTIC - tensor dtype: torch.float32, tensor shape passed to VAE: torch.Size([1, 20, 20])
+INFO:     10.244.0.15:50958 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:app.inference:DIAGNOSTIC - model output shape: torch.Size([1, 20, 20])
+INFO:app.inference:Model 1 inference execution -> NORMAL (Score: 0.2760) [NS: causalops]
+INFO:app.kafka_consumer:Model1 Output Validated >> {'prediction': 'NORMAL', 'anomaly_score': 0.27601078152656555, 'threshold': 17.43091926574707, 'model': 'model1', 'timestamp': '2026-09-08T20:15:00+00:00', 'namespace': 'causalops', 'pod': 'postgres-56ccc9b7d-nc2t7', 'window_start': '2026-09-08T19:55:00+00:00', 'window_end': '2026-09-08T20:15:00+00:00'}
+INFO:app.inference:DIAGNOSTIC - input type: <class 'numpy.ndarray'>, input shape: (20, 20)
+INFO:app.inference:DIAGNOSTIC - expected feature dimension: 20, sequence length: 20
+INFO:app.inference:DIAGNOSTIC - scaler input dimension: 20
+INFO:app.inference:DIAGNOSTIC - tensor dtype: torch.float32, tensor shape passed to VAE: torch.Size([1, 20, 20])
+INFO:app.inference:DIAGNOSTIC - model output shape: torch.Size([1, 20, 20])
+INFO:app.inference:Model 1 inference execution -> NORMAL (Score: 0.4081) [NS: causalops]
+INFO:app.kafka_consumer:Model1 Output Validated >> {'prediction': 'NORMAL', 'anomaly_score': 0.4080532491207123, 'threshold': 17.43091926574707, 'model': 'model1', 'timestamp': '2026-09-08T20:15:00+00:00', 'namespace': 'causalops', 'pod': 'postgres-56ccc9b7d-nc2t7', 'window_start': '2026-09-08T19:58:00+00:00', 'window_end': '2026-09-08T20:15:00+00:00'}
+INFO:app.inference:DIAGNOSTIC - input type: <class 'numpy.ndarray'>, input shape: (20, 20)
+INFO:app.inference:DIAGNOSTIC - expected feature dimension: 20, sequence length: 20
+INFO:app.inference:DIAGNOSTIC - scaler input dimension: 20
+INFO:app.inference:DIAGNOSTIC - tensor dtype: torch.float32, tensor shape passed to VAE: torch.Size([1, 20, 20])
