@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: model1-shadow-evaluator
+  namespace: causalops
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: model1-shadow-evaluator
+  template:
+    metadata:
+      labels:
+        app: model1-shadow-evaluator
+    spec:
+      containers:
+      - name: evaluator
+        image: model1-shadow-evaluator:latest
+        imagePullPolicy: Never
+        env:
+        - name: MODEL1_SHADOW_EVAL
+          value: "true"
+        - name: KAFKA_BOOTSTRAP_SERVERS
+          value: "kafka:9092"
