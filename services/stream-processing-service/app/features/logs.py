@@ -13,9 +13,19 @@ def extract_log_features(events: list) -> dict:
     
     for e in events:
         payload = e.get("payload", {})
-        msg = str(payload.get("log", payload.get("message", ""))).strip()
-        stream = payload.get("stream", "")
-        level = str(payload.get("level", "")).lower()
+        msg = ""
+        if isinstance(payload, dict):
+            for k in ["log", "message", "msg", "Log", "Message"]:
+                if k in payload and payload[k]:
+                    msg = str(payload[k]).strip()
+                    break
+            if not msg and "kubernetes" not in payload:
+                msg = str(payload).strip()
+        else:
+            msg = str(payload).strip()
+            
+        stream = payload.get("stream", "") if isinstance(payload, dict) else ""
+        level = str(payload.get("level", payload.get("severity", ""))).lower() if isinstance(payload, dict) else ""
         
         if msg:
             messages.add(msg)

@@ -17,7 +17,7 @@ def extract_event_features(events: list) -> dict:
         payload = e.get("payload", {})
         reason = payload.get("reason", "")
         e_type = payload.get("type", "")
-        r_type = payload.get("resource", "")
+        r_type = payload.get("involvedObject", {}).get("kind", "") if isinstance(payload, dict) else ""
         
         if reason:
             reasons.add(reason)

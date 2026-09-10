@@ -15,10 +15,6 @@ spec:
     spec:
       containers:
       - name: evaluator
-        image: model1-shadow-evaluator:latest
+        image: stream-processing-service:latest
         imagePullPolicy: Never
-        env:
-        - name: MODEL1_SHADOW_EVAL
-          value: "true"
-        - name: KAFKA_BOOTSTRAP_SERVERS
-          value: "kafka:9092"
+        command: ["sleep", "3600"]

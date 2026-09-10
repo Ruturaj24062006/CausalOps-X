@@ -64,11 +64,11 @@ export default function RootCause() {
                     <div className="flex-col gap-2 text-small">
                         <div className="flex justify-between">
                             <span className="text-muted">Node Features</span>
-                            <span style={{ fontFamily: 'monospace' }}>32</span>
+                            <span style={{ fontFamily: 'monospace' }}>20</span>
                         </div>
                         <div className="flex justify-between">
                             <span className="text-muted">Edge Features</span>
-                            <span style={{ fontFamily: 'monospace' }}>5</span>
+                            <span style={{ fontFamily: 'monospace' }}>2</span>
                         </div>
                     </div>
 
