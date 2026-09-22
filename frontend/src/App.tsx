@@ -84,6 +84,7 @@ const AnomalyDetection = React.lazy(() => import('./pages/AnomalyDetection'));
 const RootCause = React.lazy(() => import('./pages/RootCause'));
 const Shell = React.lazy(() => import('./pages/Shell'));
 const ServiceGraph = React.lazy(() => import('./pages/ServiceGraph'));
+const Incidents = React.lazy(() => import('./pages/Incidents'));
 
 export default function App() {
   return (
@@ -95,7 +96,7 @@ export default function App() {
             <Route path="live-telemetry" element={<LiveTelemetry />} />
             <Route path="anomaly-detection" element={<AnomalyDetection />} />
             <Route path="root-cause" element={<RootCause />} />
-            <Route path="incidents" element={<Shell />} />
+            <Route path="incidents" element={<Incidents />} />
             <Route path="service-graph" element={<ServiceGraph />} />
             <Route path="settings" element={<Shell />} />
             <Route path="profile" element={<Shell />} />

@@ -60,6 +60,11 @@ class Model1Engine:
     def __init__(self, model_dir=None):
         if model_dir is None:
             model_dir = os.environ.get("MODEL1_DIR", "/models/anomaly_detection")
+            if not os.path.exists(model_dir):
+                # Fallback to local workspace relative path for Windows dev
+                local_fallback = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../models/anomaly_detection"))
+                if os.path.exists(local_fallback):
+                    model_dir = local_fallback
         self.model_dir = model_dir
         self.model = None
         self.scaler = None

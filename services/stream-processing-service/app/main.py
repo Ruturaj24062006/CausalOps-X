@@ -3,6 +3,7 @@ from pydantic import BaseModel, Field
 from typing import Dict, List, Any, Optional
 from .kafka_consumer import consumer_worker
 from .kafka_producer import producer_client
+from . import state_store
 import logging
 import datetime
 from .model2_v9_engine import Model2V9Engine
@@ -87,41 +88,57 @@ def ml_status():
 
 @app.get("/api/v1/ml/latest")
 def ml_latest():
-    # Provide the actual robust backend structural variables legitimately securely realistically appropriately cleanly correctly organically accurately
-    import datetime
-    return {
-        "status": "PROCESSING",
-        "timestamp": datetime.datetime.now().isoformat() + "Z",
-        "anomaly": {
-            "detected": False,
-            "score": 14.2,
-            "threshold": 17.43091926574707
-        },
-        "root_cause": {
-            "status": "NOT TRIGGERED",
-            "missing_requirements": []
-        }
-    }
+    """
+    Returns the most recent real Model 1 inference result.
+    Falls back to safe defaults until the Kafka consumer produces its first result.
+    """
+    return state_store.get_latest()
 
 @app.get("/api/v1/topology")
 def get_topology():
+    services = ["api-gateway", "payment-service", "fraud-service", "order-service", "inventory-service", "notification-service", "audit-service"]
+    nodes = []
+    
+    import urllib.request
+    import json
+    import subprocess
+    import os
+    
+    # Check if running locally rather than in K8s
+    is_local = not os.path.exists("/var/run/secrets/kubernetes.io")
+
+    for s in services:
+        status = "HEALTHY"
+        try:
+            if is_local:
+                # Bypass lack of K8s DNS on local Windows dev by using kubectl
+                cmd = ["kubectl", "exec", f"deployment/{s}", "-n", "causalops", "--", "python", "-c", "import urllib.request,json; print(urllib.request.urlopen('http://localhost:8080/status').read().decode())"]
+                out = subprocess.check_output(cmd, stderr=subprocess.DEVNULL, timeout=2).decode()
+                data = json.loads(out)
+                status = data.get("status", "HEALTHY")
+            else:
+                req = urllib.request.Request(f"http://{s}:8080/status", method="GET")
+                with urllib.request.urlopen(req, timeout=1) as resp:
+                    data = json.loads(resp.read().decode())
+                    status = data.get("status", "HEALTHY")
+        except:
+            status = "FAILED"
+            
+        nodes.append({"id": s, "name": s, "type": "Deployment", "namespace": "causalops", "status": status})
+        
+    edges = [
+        {"source": "api-gateway", "target": "payment-service", "type": "http"},
+        {"source": "payment-service", "target": "fraud-service", "type": "http"},
+        {"source": "payment-service", "target": "order-service", "type": "http"},
+        {"source": "order-service", "target": "inventory-service", "type": "http"},
+        {"source": "order-service", "target": "notification-service", "type": "http"},
+        {"source": "api-gateway", "target": "audit-service", "type": "async"}
+    ]
+    
     return {
         "timestamp": datetime.datetime.now().isoformat() + "Z",
-        "nodes": [
-            {"id": "kafka-0", "name": "kafka", "type": "StatefulSet", "namespace": "causalops", "status": "Ready"},
-            {"id": "postgres-56ccc9b7d-dwmmh", "name": "postgres", "type": "Deployment", "namespace": "causalops", "status": "Ready"},
-            {"id": "neo4j-6d94db569b-w6f26", "name": "neo4j", "type": "Deployment", "namespace": "causalops", "status": "Ready"},
-            {"id": "redis-7c5b74cb9c-lznng", "name": "redis", "type": "Deployment", "namespace": "causalops", "status": "Ready"},
-            {"id": "data-ingestion-bb885cfcf-t86jm", "name": "data-ingestion", "type": "Deployment", "namespace": "causalops", "status": "Ready"},
-            {"id": "stream-processing-7fb4fcf478-pmqsz", "name": "stream-processing", "type": "Deployment", "namespace": "causalops", "status": "Ready"}
-        ],
-        "edges": [
-            {"source": "data-ingestion-bb885cfcf-t86jm", "target": "kafka-0", "type": "produces"},
-            {"source": "stream-processing-7fb4fcf478-pmqsz", "target": "kafka-0", "type": "consumes"},
-            {"source": "data-ingestion-bb885cfcf-t86jm", "target": "postgres-56ccc9b7d-dwmmh", "type": "database_write"},
-            {"source": "data-ingestion-bb885cfcf-t86jm", "target": "neo4j-6d94db569b-w6f26", "type": "database_write"},
-            {"source": "data-ingestion-bb885cfcf-t86jm", "target": "redis-7c5b74cb9c-lznng", "type": "cache_read_write"}
-        ]
+        "nodes": nodes,
+        "edges": edges
     }
 
 @app.get("/ready")
@@ -189,6 +206,8 @@ def rca_predict(request: RCARequest):
         )
         
         if res.get("status") == "SUCCESS":
+            # ── Publish RCA result to shared state so /api/v1/ml/latest reflects it ──
+            state_store.update_rca(res)
             return RCAResponse(
                 status="SUCCESS",
                 predicted_root_cause_service=res["predicted_root_cause_service"],

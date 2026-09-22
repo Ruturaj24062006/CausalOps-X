@@ -59,6 +59,12 @@ class Model2V9Corrected(nn.Module):
 class Model2V9Engine:
     def __init__(self, model_dir=None, contract_dir=None):
         base_dir = os.environ.get("CAUSALOPS_ROOT", "/")
+        
+        # Smart fallback for local Windows execution without environment variables
+        local_base = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../.."))
+        if not os.path.exists(os.path.join(base_dir, "models")) and os.path.exists(os.path.join(local_base, "models")):
+            base_dir = local_base
+
         if not model_dir:
             model_dir = os.path.join(base_dir, "models", "root_cause_analysis")
         if not contract_dir:
