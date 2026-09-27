@@ -2,6 +2,7 @@ import json
 import joblib
 import os
 import logging
+from datetime import datetime
 from typing import Dict, List, Any
 import collections
 from .features.schema import FeatureVector
@@ -10,8 +11,8 @@ logger = logging.getLogger(__name__)
 
 # Hardware abstraction handler to securely cross windows workspace limitation
 try:
-    import torch
-    import torch.nn as nn
+    import torch  # type: ignore
+    import torch.nn as nn  # type: ignore
     import numpy as np
     TORCH_AVAILABLE = True
 except ImportError:
@@ -182,7 +183,7 @@ class Model1Engine:
             
         try:
             import numpy as np
-            import torch
+            import torch  # type: ignore
             
             raw_arr = np.array(raw_mat)
             logger.info(f"DIAGNOSTIC - input type: {type(raw_arr)}, input shape: {raw_arr.shape}")
