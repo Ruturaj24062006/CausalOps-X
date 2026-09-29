@@ -1,3 +1,0 @@
-﻿-- raw.metrics --
--- raw.logs --
--- raw.events --

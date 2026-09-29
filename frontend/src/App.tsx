@@ -71,9 +71,10 @@ const Overview = React.lazy(() => import('./pages/Overview'));
 const LiveTelemetry = React.lazy(() => import('./pages/LiveTelemetry'));
 const AnomalyDetection = React.lazy(() => import('./pages/AnomalyDetection'));
 const RootCause = React.lazy(() => import('./pages/RootCause'));
-const Shell = React.lazy(() => import('./pages/Shell'));
 const ServiceGraph = React.lazy(() => import('./pages/ServiceGraph'));
 const Incidents = React.lazy(() => import('./pages/Incidents'));
+const SettingsPage = React.lazy(() => import('./pages/SettingsPage'));
+const ProfilePage = React.lazy(() => import('./pages/ProfilePage'));
 
 export default function App() {
   return (
@@ -88,8 +89,8 @@ export default function App() {
               <Route path="root-cause" element={<RootCause />} />
               <Route path="incidents" element={<Incidents />} />
               <Route path="service-graph" element={<ServiceGraph />} />
-              <Route path="settings" element={<Shell />} />
-              <Route path="profile" element={<Shell />} />
+              <Route path="settings" element={<SettingsPage />} />
+              <Route path="profile" element={<ProfilePage />} />
             </Route>
           </Routes>
         </React.Suspense>
