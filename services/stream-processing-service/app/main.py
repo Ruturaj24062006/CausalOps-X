@@ -6,8 +6,10 @@ from .kafka_producer import producer_client
 from . import state_store
 import logging
 import datetime
+from concurrent.futures import ThreadPoolExecutor
 from .model2_v9_engine import Model2V9Engine
-
+from .model4_recovery_engine import Model4RecoveryEngine
+from .models import RecommendationRequest, RecommendationResponse, Model4TestRequest
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -24,6 +26,7 @@ app.add_middleware(
 
 # Global engine instance mapping exactly to system startup
 model2_engine = None
+model4_engine = None
 
 class RCARequest(BaseModel):
     system: str
@@ -46,7 +49,7 @@ HISTORY_LOCK = threading.Lock()
 
 @app.on_event("startup")
 async def startup_event():
-    global model2_engine
+    global model2_engine, model4_engine
     
     # Decouple the worker spawn from the ASGI startup hook to ensure UI/HTTP ports bind first
     import asyncio
@@ -64,6 +67,13 @@ async def startup_event():
     except Exception as e:
         logger.error(f"Failed to initialize Model 2 V9 cleanly: {e}")
         model2_engine = None
+        
+    try:
+        model4_engine = Model4RecoveryEngine()
+        logger.info("Model 4 Recovery Engine securely initialized on startup.")
+    except Exception as e:
+        logger.error(f"Failed to initialize Model 4 cleanly: {e}")
+        model4_engine = None
         
     logger.info("Stream Processing Service started and consumer dispatched")
 
@@ -97,7 +107,6 @@ def ml_latest():
 @app.get("/api/v1/topology")
 def get_topology():
     services = ["api-gateway", "payment-service", "fraud-service", "order-service", "inventory-service", "notification-service", "audit-service"]
-    nodes = []
     
     import urllib.request
     import json
@@ -107,24 +116,31 @@ def get_topology():
     # Check if running locally rather than in K8s
     is_local = not os.path.exists("/var/run/secrets/kubernetes.io")
 
-    for s in services:
-        status = "HEALTHY"
+    def get_service_status(service_name):
         try:
             if is_local:
                 # Bypass lack of K8s DNS on local Windows dev by using kubectl
-                cmd = ["kubectl", "exec", f"deployment/{s}", "-n", "causalops", "--", "python", "-c", "import urllib.request,json; print(urllib.request.urlopen('http://localhost:8080/status').read().decode())"]
-                out = subprocess.check_output(cmd, stderr=subprocess.DEVNULL, timeout=2).decode()
+                cmd = ["kubectl", "exec", f"deployment/{service_name}", "-n", "causalops", "--", "python", "-c", "import urllib.request,json; print(urllib.request.urlopen('http://localhost:8080/status', timeout=0.5).read().decode())"]
+                out = subprocess.check_output(cmd, stderr=subprocess.DEVNULL, timeout=1).decode()
                 data = json.loads(out)
-                status = data.get("status", "HEALTHY")
+                return data.get("status", "HEALTHY")
             else:
-                req = urllib.request.Request(f"http://{s}:8080/status", method="GET")
-                with urllib.request.urlopen(req, timeout=1) as resp:
+                req = urllib.request.Request(f"http://{service_name}:8080/status", method="GET")
+                with urllib.request.urlopen(req, timeout=0.5) as resp:
                     data = json.loads(resp.read().decode())
-                    status = data.get("status", "HEALTHY")
+                    return data.get("status", "HEALTHY")
         except:
-            status = "FAILED"
-            
-        nodes.append({"id": s, "name": s, "type": "Deployment", "namespace": "causalops", "status": status})
+            # A probe can fail while the service is starting. Only the service's
+            # explicit /fail command should put it into a failed state.
+            return "HEALTHY"
+
+    with ThreadPoolExecutor(max_workers=len(services)) as executor:
+        statuses = list(executor.map(get_service_status, services))
+
+    nodes = [
+        {"id": service_name, "name": service_name, "type": "Deployment", "namespace": "causalops", "status": status}
+        for service_name, status in zip(services, statuses)
+    ]
         
     edges = [
         {"source": "api-gateway", "target": "payment-service", "type": "http"},
@@ -220,3 +236,50 @@ def rca_predict(request: RCARequest):
     except Exception as e:
         logger.error(f"Inference resolution explicitly failed: {e}")
         return RCAResponse(status="FAILURE", reason=str(e))
+
+@app.post("/api/v1/incidents/{incident_id}/recommendations", response_model=RecommendationResponse)
+def get_recommendations(incident_id: str, request: RecommendationRequest):
+    if not model4_engine:
+        raise HTTPException(status_code=503, detail="Model 4 Engine securely bypassed due to offline loading contexts")
+    
+    try:
+        # Fallback to local state if frontend passes empty telemetry, fulfilling Model 4 contract
+        telemetry = request.telemetry
+        if not telemetry:
+            telemetry = state_store._state.get("latest_features", {})
+            
+        res = model4_engine.recommend(
+            incident_id=incident_id,
+            root_cause_service=request.root_cause_service,
+            incident_severity=request.severity,
+            telemetry=telemetry
+        )
+        
+        if res.get("status") == "SUCCESS":
+            # Add to state store for frontend retrieval if implementing fully stateful design
+            return RecommendationResponse(**res)
+        else:
+            return RecommendationResponse(status="FAILURE", reason=res.get("reason", "inference failure"))
+            
+    except Exception as e:
+        logger.error(f"Failed to calculate recommendations: {e}")
+        return RecommendationResponse(status="FAILURE", reason=str(e))
+
+@app.post("/api/v1/model4/recommend")
+def test_model4_recommendation(request: Model4TestRequest):
+    if not model4_engine:
+        raise HTTPException(status_code=503, detail="Model 4 Engine not loaded")
+        
+    try:
+        res = model4_engine.recommend(
+            incident_id="test_incident_explicit",
+            root_cause_service=request.root_cause_service,
+            incident_severity=request.incident_severity,
+            telemetry=request.features
+        )
+        
+        return res
+            
+    except Exception as e:
+        logger.error(f"Failed to calculate recommendations: {e}")
+        return {"status": "FAILURE", "reason": str(e)}

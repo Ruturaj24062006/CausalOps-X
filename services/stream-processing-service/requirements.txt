@@ -1,5 +1,6 @@
 fastapi
 uvicorn
+click
 kafka-python-ng
 pydantic
 pytest
@@ -7,3 +8,4 @@ torch
 torch_geometric
 numpy
 scikit-learn
+lightgbm

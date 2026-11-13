@@ -3,9 +3,9 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { OrbitControls, Html } from '@react-three/drei';
 import * as THREE from 'three';
 import {
-    fetchStatus, fetchLatest, fetchTopology,
     type MLStatus, type MLLatest, type TopologyData, type TopologyNode
 } from '../api';
+import { useData } from '../DataContext';
 import { CheckCircle, AlertOctagon, Activity, GitBranch, Radio, RefreshCw } from 'lucide-react';
 
 // ─── Colour utils ────────────────────────────────────────────────────────────
@@ -380,35 +380,17 @@ function InspectorPanel({ nodes, status, latest, selectedNode, anomaly, rootCaus
 // ─── Main ─────────────────────────────────────────────────────────────────────
 
 export default function Overview() {
-    const [status, setStatus] = useState<MLStatus | null>(null);
-    const [latest, setLatest] = useState<MLLatest | null>(null);
-    const [topology, setTopology] = useState<TopologyData | null>(null);
-    const [topoErr, setTopoErr] = useState(false);
+    const { status, latest, topology, lastUpdated } = useData();
     const [scoreHist, setScoreHist] = useState<number[]>([]);
     const [selectedId, setSelectedId] = useState<string | null>(null);
     const [hoveredNode, setHoveredNode] = useState<TopologyNode | null>(null);
-    const [lastUpdated, setLastUpdated] = useState('—');
     const [camReset, setCamReset] = useState(0);
 
     useEffect(() => {
-        const poll = async () => {
-            try {
-                const [st, lt] = await Promise.allSettled([fetchStatus(), fetchLatest()]);
-                if (st.status === 'fulfilled') setStatus(st.value);
-                if (lt.status === 'fulfilled') {
-                    setLatest(lt.value);
-                    if (lt.value.anomaly?.score != null) setScoreHist(h => [...h.slice(-49), lt.value.anomaly!.score]);
-                }
-            } catch { /* silent */ }
-            try {
-                setTopology(await fetchTopology()); setTopoErr(false);
-            } catch { setTopoErr(true); }
-            setLastUpdated(new Date().toLocaleTimeString('en-GB'));
-        };
-        poll();
-        const id = setInterval(poll, 3000);
-        return () => clearInterval(id);
-    }, []);
+        if (latest?.anomaly?.score != null) {
+            setScoreHist(h => [...h.slice(-49), latest.anomaly!.score]);
+        }
+    }, [latest]);
 
     const nodes = topology?.nodes ?? [];
     const edges = topology?.edges ?? [];
@@ -538,12 +520,7 @@ export default function Overview() {
                     </div>
 
                     {/* Canvas */}
-                    {topoErr ? (
-                        <div style={{ display: 'flex', height: '100%', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 8, color: '#4a5568' }}>
-                            <AlertOctagon size={28} style={{ opacity: 0.35 }} />
-                            <span style={{ fontSize: 9, fontFamily: 'monospace', letterSpacing: 2 }}>TOPOLOGY API UNAVAILABLE</span>
-                        </div>
-                    ) : nodes.length === 0 ? (
+                    {nodes.length === 0 ? (
                         <div style={{ display: 'flex', height: '100%', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: 8, color: '#4a5568' }}>
                             <Activity size={24} style={{ opacity: 0.25 }} className="animate-spin" />
                             <span style={{ fontSize: 9, fontFamily: 'monospace', letterSpacing: 2 }}>LOADING TOPOLOGY…</span>

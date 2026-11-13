@@ -3,18 +3,18 @@
   --bg-panel: #16181d;
   --bg-card: #1c1f26;
   --bg-hover: #232730;
-  
+
   --border-subtle: #2d313b;
   --border-focus: #3e4451;
-  
+
   --text-main: #e2e4e9;
   --text-muted: #8b92a5;
-  
+
   --brand-cyan: #00d2ff;
   --brand-green: #37d67a;
   --brand-amber: #f4b141;
   --brand-red: #ff4b4b;
-  
+
   --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -24,12 +24,17 @@
   padding: 0;
 }
 
+html {
+  /* Global scale: bumps all px-based inline font-sizes across all TSX pages */
+  font-size: 16px;
+}
+
 body {
   background-color: var(--bg-base);
   color: var(--text-main);
   font-family: var(--font-sans);
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: 16px;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -54,42 +59,79 @@ body {
 }
 
 .text-small {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .title {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 600;
   margin-bottom: 8px;
 }
 
 .subtitle {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--text-muted);
 }
 
-.flex { display: flex; }
-.flex-col { flex-direction: column; }
-.items-center { align-items: center; }
-.justify-between { justify-content: space-between; }
-.gap-2 { gap: 8px; }
-.gap-4 { gap: 16px; }
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-2 {
+  gap: 8px;
+}
+
+.gap-4 {
+  gap: 16px;
+}
 
 /* Status Badges */
 .badge {
   display: inline-flex;
   align-items: center;
-  padding: 2px 8px;
+  padding: 3px 10px;
   border-radius: 12px;
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
-.badge-green { background: rgba(55, 214, 122, 0.1); color: var(--brand-green); border: 1px solid rgba(55, 214, 122, 0.2); }
-.badge-red { background: rgba(255, 75, 75, 0.1); color: var(--brand-red); border: 1px solid rgba(255, 75, 75, 0.2); }
-.badge-amber { background: rgba(244, 177, 65, 0.1); color: var(--brand-amber); border: 1px solid rgba(244, 177, 65, 0.2); }
-.badge-muted { background: rgba(139, 146, 165, 0.1); color: var(--text-muted); border: 1px solid rgba(139, 146, 165, 0.2); }
+
+.badge-green {
+  background: rgba(55, 214, 122, 0.1);
+  color: var(--brand-green);
+  border: 1px solid rgba(55, 214, 122, 0.2);
+}
+
+.badge-red {
+  background: rgba(255, 75, 75, 0.1);
+  color: var(--brand-red);
+  border: 1px solid rgba(255, 75, 75, 0.2);
+}
+
+.badge-amber {
+  background: rgba(244, 177, 65, 0.1);
+  color: var(--brand-amber);
+  border: 1px solid rgba(244, 177, 65, 0.2);
+}
+
+.badge-muted {
+  background: rgba(139, 146, 165, 0.1);
+  color: var(--text-muted);
+  border: 1px solid rgba(139, 146, 165, 0.2);
+}
 
 /* Sidebar */
 .sidebar {
@@ -104,7 +146,7 @@ body {
   padding: 20px;
   border-bottom: 1px solid var(--border-subtle);
   font-weight: 700;
-  font-size: 16px;
+  font-size: 18px;
   letter-spacing: 1px;
   display: flex;
   align-items: center;
@@ -120,10 +162,11 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 10px 20px;
+  padding: 12px 20px;
   color: var(--text-muted);
   text-decoration: none;
   font-weight: 500;
+  font-size: 15px;
   transition: all 0.2s;
 }
 
@@ -192,15 +235,84 @@ table {
 
 th {
   text-align: left;
-  padding: 8px;
+  padding: 10px 8px;
   color: var(--text-muted);
-  font-size: 12px;
+  font-size: 13px;
   text-transform: uppercase;
   border-bottom: 1px solid var(--border-subtle);
 }
 
 td {
-  padding: 12px 8px;
+  padding: 13px 8px;
   border-bottom: 1px solid var(--border-subtle);
   font-variant-numeric: tabular-nums;
+  font-size: 14px;
+}
+
+/* ─── Global font scaling for inline-styled TSX components ─────────────────
+   All pages (AnomalyDetection, Overview, RootCause, Incidents, LiveTelemetry,
+   ServiceGraph, etc.) use hardcoded px values in inline styles. We scale them
+   up here by targeting their wrapper selectors so nothing in .tsx needs to change.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+/* Boost all monospace spans/divs inside the content area */
+.content-area span[style*="font-family: monospace"],
+.content-area div[style*="font-family: monospace"] {
+  font-size: max(12px, calc(1.45 * var(--inline-fs, 11px))) !important;
+}
+
+/* KPI label rows (tiny uppercase letter-spacing labels) */
+.content-area div[style*="letter-spacing"] {
+  font-size: 12px !important;
+}
+
+/* KPI big numbers */
+.content-area div[style*="font-size: 13px"],
+.content-area span[style*="font-size: 13px"] {
+  font-size: 15px !important;
+}
+
+.content-area div[style*="font-size: 12px"],
+.content-area span[style*="font-size: 12px"] {
+  font-size: 14px !important;
+}
+
+.content-area div[style*="font-size: 11px"],
+.content-area span[style*="font-size: 11px"] {
+  font-size: 13px !important;
+}
+
+.content-area div[style*="font-size: 10px"],
+.content-area span[style*="font-size: 10px"] {
+  font-size: 13px !important;
+}
+
+.content-area div[style*="font-size: 9px"],
+.content-area span[style*="font-size: 9px"] {
+  font-size: 13px !important;
+}
+
+.content-area div[style*="font-size: 8px"],
+.content-area span[style*="font-size: 8px"] {
+  font-size: 12px !important;
+}
+
+.content-area div[style*="font-size: 7px"],
+.content-area span[style*="font-size: 7px"] {
+  font-size: 12px !important;
+}
+
+/* Sidebar footer system status label */
+.sidebar-footer .text-small {
+  font-size: 13px !important;
+}
+
+/* Topbar subtitle */
+.topbar .text-small {
+  font-size: 13px !important;
+}
+
+/* Metric value (big KPI numbers) */
+.metric-value {
+  font-size: 28px;
 }
