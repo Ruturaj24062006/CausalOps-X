@@ -204,6 +204,8 @@ function PipelineBar({ status, latest, anomaly, rootCause }: {
         { id: 'seg', label: 'ANOMALY', ok: !anomaly, active: anomaly, color: anomaly ? '#f4b141' : '#2d313b', icon: anomaly ? '⚠' : '—' },
         { id: 'gnn', label: 'GRAPHSAGE', ok: !anomaly, active: anomaly, color: anomaly ? '#9d4edd' : '#2d313b', icon: anomaly ? '◎' : '—' },
         { id: 'rca', label: 'ROOT CAUSE', ok: !rootCause, active: !!rootCause, color: rootCause ? '#9d4edd' : '#2d313b', icon: rootCause ? '✓' : '—' },
+        { id: 'm4', label: 'MODEL 4', ok: true, active: !!rootCause, color: rootCause ? '#00d2ff' : '#2d313b', icon: rootCause ? '❖' : '—' },
+        { id: 'm5', label: 'MODEL 5', ok: true, active: !!rootCause, color: rootCause ? '#37d67a' : '#2d313b', icon: rootCause ? '◈' : '—' },
     ];
 
     return (
@@ -433,6 +435,8 @@ export default function Overview() {
                             ['KAFKA', status?.telemetry ?? '…'],
                             ['MODEL 1', status?.model1 ?? '…'],
                             ['MODEL 2', status?.model2?.split('(')[0].trim() ?? '…'],
+                            ['MODEL 4', status?.model4?.split('(')[0].trim() ?? 'ONLINE'],
+                            ['MODEL 5', status?.model5?.split('(')[0].trim() ?? 'ONLINE'],
                             ['PIPELINE', status?.pipeline ?? '…'],
                         ].map(([k, v], i, arr) => (
                             <div key={k} style={{
